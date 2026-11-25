@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_text_pop" parentIn="0">
+    <name>OuzFX Text · Text Pop</name>
+    <description>For title clips: pops in with a back overshoot in 8 frames (kinetic typography staple).</description>
+    <effect id="qtblend">
+        <property name="rect">0w=378 672 324 576 0;8=0 0 1080 1920 1</property>
+        <property name="rotation">0=0;8=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;8=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

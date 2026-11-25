@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_style_flashback" parentIn="0">
+    <name>OuzFX Stylize · B&amp;W Flashback</name>
+    <description>Black &amp; white, grain, vignette and old-film flicker for flashbacks / archive footage.</description>
+    <effect id="greyscale"/>
+    <effect id="grain">
+        <property name="noise">30</property>
+        <property name="contrast">130</property>
+        <property name="brightness">90</property>
+    </effect>
+    <effect id="vignette">
+        <property name="radius">0.75</property>
+        <property name="smooth">0.6</property>
+        <property name="opacity">0.6</property>
+        <property name="mode">0</property>
+    </effect>
+</effectgroup>

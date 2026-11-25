@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_flash_black" parentIn="0">
+    <name>OuzFX Stylize · Dip Flash (Black)</name>
+    <description>Quick dip to black and back in 6 frames.</description>
+    <effect id="brightness">
+        <property name="level">0=0.0;2e=0.0;6=1.0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=3;4=0</property>
+        <property name="hori">0=1;4=1</property>
+        <property name="vert">0=1;4=1</property>
+    </effect>
+</effectgroup>

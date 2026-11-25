@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_fast_speed_lines_zoom" parentIn="0">
+    <name>OuzFX Fast · Rush Zoom</name>
+    <description>Accelerating zoom (100→160%) with growing blur over 8 frames – cut on the last frame.</description>
+    <effect id="qtblend">
+        <property name="rect">0p=0 0 1920 1080 1;8=-576 -324 3072 1728 1</property>
+        <property name="rotation">0=0;8=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;8=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0;8=14</property>
+        <property name="hori">0=1;8=1</property>
+        <property name="vert">0=1;8=1</property>
+    </effect>
+</effectgroup>

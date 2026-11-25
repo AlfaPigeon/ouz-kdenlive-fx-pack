@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_shake_heavy_impact" parentIn="0">
+    <name>OuzFX Shake · Heavy Impact</name>
+    <description>20-frame violent hit that decays to rest, with motion blur on the first frames. Put the clip start on the impact / beat drop.</description>
+    <effect id="qtblend">
+        <property name="rect">0=-192 -108 4224 2376 1;2=-288 -61 4224 2376 1;4=-136 -136 4224 2376 1;6=-227 -95 4224 2376 1;8=-165 -123 4224 2376 1;10=-211 -95 4224 2376 1;12=-180 -113 4224 2376 1;14=-201 -102 4224 2376 1;16=-184 -111 4224 2376 1;18=-198 -105 4224 2376 1;20=-192 -108 4224 2376 1</property>
+        <property name="rotation">0=0.00;2=-2.26;4=1.31;6=-0.83;8=0.63;10=-0.44;12=0.29;14=-0.21;16=0.18;18=-0.13;20=0.00</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;2=0.5 0.5 0 0;4=0.5 0.5 0 0;6=0.5 0.5 0 0;8=0.5 0.5 0 0;10=0.5 0.5 0 0;12=0.5 0.5 0 0;14=0.5 0.5 0 0;16=0.5 0.5 0 0;18=0.5 0.5 0 0;20=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=6;6=2;12=0</property>
+        <property name="hori">0=1;6=1;12=1</property>
+        <property name="vert">0=1;6=1;12=1</property>
+    </effect>
+</effectgroup>

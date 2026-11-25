@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_zoom_screen_tl" parentIn="0">
+    <name>OuzFX Screen Zoom · Zoom to Top-Left (Screen Rec)</name>
+    <description>Smooth 15-frame zoom to 180% on the top-left of a screen recording, then holds. Razor the clip where you want to zoom; move the rectangle in the monitor to aim at the cursor.</description>
+    <effect id="qtblend">
+        <property name="rect">0i=0 0 1920 1080 1;15=0 0 3456 1944 1</property>
+        <property name="rotation">0=0;15=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;15=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0;5=2;12=0</property>
+        <property name="hori">0=1;5=1;12=1</property>
+        <property name="vert">0=1;5=1;12=1</property>
+    </effect>
+</effectgroup>

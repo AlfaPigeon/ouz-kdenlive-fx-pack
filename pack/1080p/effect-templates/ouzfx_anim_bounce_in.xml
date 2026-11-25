@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_anim_bounce_in" parentIn="0">
+    <name>OuzFX Anim · Bounce In (Drop)</name>
+    <description>Drops from above and bounces on the floor (20 frames).</description>
+    <effect id="qtblend">
+        <property name="rect">0C=0 -1134 1920 1080 1;20=0 0 1920 1080 1</property>
+        <property name="rotation">0=0;20=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;20=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

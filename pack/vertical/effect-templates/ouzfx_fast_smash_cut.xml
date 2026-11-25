@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_fast_smash_cut" parentIn="0">
+    <name>OuzFX Fast · Smash Cut In</name>
+    <description>Starts at 140% with blur and slams to 100% in 4 frames – energetic hard cut entry.</description>
+    <effect id="qtblend">
+        <property name="rect">0e=-216 -384 1512 2688 1;4=0 0 1080 1920 1</property>
+        <property name="rotation">0=0;4=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;4=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=10;4=0</property>
+        <property name="hori">0=1;4=1</property>
+        <property name="vert">0=1;4=1</property>
+    </effect>
+</effectgroup>

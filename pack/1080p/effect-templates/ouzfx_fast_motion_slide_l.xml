@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_fast_motion_slide_l" parentIn="0">
+    <name>OuzFX Fast · Motion-Blur Push Left</name>
+    <description>Last 6 frames of a clip: whips the picture out to the left with heavy blur. Pair with 'Whip-In' on the next clip.</description>
+    <effect id="qtblend">
+        <property name="rect">0p=0 0 1920 1080 1;6=-1920 0 1920 1080 1</property>
+        <property name="rotation">0=0;6=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;6=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="avfilter.dblur">
+        <property name="av.angle">0=0;2=0;6=0</property>
+        <property name="av.radius">0=0;2=60;6=150</property>
+        <property name="av.planes">7</property>
+    </effect>
+</effectgroup>

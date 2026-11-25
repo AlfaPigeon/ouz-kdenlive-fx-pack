@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_look_film_grain" parentIn="0">
+    <name>OuzFX Look · Film Grain + Dust</name>
+    <description>Organic grain with a few dust specks – makes digital footage feel shot on film.</description>
+    <effect id="grain">
+        <property name="noise">22</property>
+        <property name="contrast">110</property>
+        <property name="brightness">100</property>
+    </effect>
+    <effect id="dust">
+        <property name="maxdiameter">2</property>
+        <property name="maxcount">4</property>
+    </effect>
+</effectgroup>

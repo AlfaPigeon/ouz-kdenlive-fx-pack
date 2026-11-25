@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_anim_slide_in_left" parentIn="0">
+    <name>OuzFX Anim · Slide In from Left</name>
+    <description>Slides in from the left edge in 12 frames (expo ease-out) with directional motion blur.</description>
+    <effect id="qtblend">
+        <property name="rect">0q=-1188 0 1080 1920 1;12=0 0 1080 1920 1</property>
+        <property name="rotation">0=0;12=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;12=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="avfilter.dblur">
+        <property name="av.angle">0=0;6=0;12=0</property>
+        <property name="av.radius">0=60;6=10;12=0</property>
+        <property name="av.planes">7</property>
+    </effect>
+</effectgroup>

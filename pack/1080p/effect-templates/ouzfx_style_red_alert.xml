@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_style_red_alert" parentIn="0">
+    <name>OuzFX Stylize · Red Moment</name>
+    <description>MrBeast-style 'stress' tint: flash to deep red with a small punch (hold 1–2 s).</description>
+    <effect id="frei0r.colorize">
+        <property name="hue">0=0.0;4=0.0</property>
+        <property name="saturation">0e=0.0;4=0.9</property>
+        <property name="lightness">0=0.45;4=0.45</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0e=0 0 1920 1080 1;4=-77 -43 2074 1166 1</property>
+        <property name="rotation">0=0;4=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;4=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

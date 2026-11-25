@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_zoom_screen_out" parentIn="0">
+    <name>OuzFX Screen Zoom · Zoom Back Out (Screen Rec)</name>
+    <description>Companion to the screen zooms: from 180% (center) back to full frame in 15 frames.</description>
+    <effect id="qtblend">
+        <property name="rect">0i=-432 -768 1944 3456 1;15=0 0 1080 1920 1</property>
+        <property name="rotation">0=0;15=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;15=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0;5=2;12=0</property>
+        <property name="hori">0=1;5=1;12=1</property>
+        <property name="vert">0=1;5=1;12=1</property>
+    </effect>
+</effectgroup>

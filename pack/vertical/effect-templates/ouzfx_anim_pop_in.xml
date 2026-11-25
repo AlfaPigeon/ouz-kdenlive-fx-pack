@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_anim_pop_in" parentIn="0">
+    <name>OuzFX Anim · Pop-In</name>
+    <description>Scales from 0 to 100% with a back-overshoot in 12 frames.</description>
+    <effect id="qtblend">
+        <property name="rect">0w=540 960 0 0 0;12=0 0 1080 1920 1</property>
+        <property name="rotation">0=0;12=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;12=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=2;8=0</property>
+        <property name="hori">0=1;8=1</property>
+        <property name="vert">0=1;8=1</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_anim_spin_in" parentIn="0">
+    <name>OuzFX Anim · Spin-In</name>
+    <description>Spins 360° while scaling from 0 to 100% (15 frames, cubic ease-out).</description>
+    <effect id="qtblend">
+        <property name="rect">0h=960 540 0 0 0;15=0 0 1920 1080 1</property>
+        <property name="rotation">0h=-360;15=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;15=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=4;10=0</property>
+        <property name="hori">0=1;10=1</property>
+        <property name="vert">0=1;10=1</property>
+    </effect>
+</effectgroup>

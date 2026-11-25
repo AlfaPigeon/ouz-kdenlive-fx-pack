@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_text_wiggle" parentIn="0">
+    <name>OuzFX Text · Text Wiggle (Loop)</name>
+    <description>Playful ±3° wiggle and 2% breathe for 4 s – for stickers, arrows, emojis.</description>
+    <effect id="qtblend">
+        <property name="rect">0c=0 0 1920 1080 1;10c=-19 -11 1958 1102 1;20c=0 0 1920 1080 1;30c=-19 -11 1958 1102 1;40c=0 0 1920 1080 1;50c=-19 -11 1958 1102 1;60c=0 0 1920 1080 1;70c=-19 -11 1958 1102 1;80c=0 0 1920 1080 1;90c=-19 -11 1958 1102 1;100c=0 0 1920 1080 1</property>
+        <property name="rotation">0c=-3;10c=3;20c=-3;30c=3;40c=-3;50c=3;60c=-3;70c=3;80c=-3;90c=3;100c=-3</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;10=0.5 0.5 0 0;20=0.5 0.5 0 0;30=0.5 0.5 0 0;40=0.5 0.5 0 0;50=0.5 0.5 0 0;60=0.5 0.5 0 0;70=0.5 0.5 0 0;80=0.5 0.5 0 0;90=0.5 0.5 0 0;100=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_text_typewriter_flash" parentIn="0">
+    <name>OuzFX Text · Highlight Flash</name>
+    <description>Draws attention to a callout: brightness flash + 110% pulse (10 frames).</description>
+    <effect id="brightness">
+        <property name="level">0=1.0;2e=1.8;10=1.0</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0=0 0 1920 1080 1;2h=-96 -54 2112 1188 1;10=0 0 1920 1080 1</property>
+        <property name="rotation">0=0;2=0;10=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;2=0.5 0.5 0 0;10=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

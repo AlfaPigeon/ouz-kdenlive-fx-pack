@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_flash_white" parentIn="0">
+    <name>OuzFX Stylize · Flash Frame (White)</name>
+    <description>2-frame white flash that fades by frame 6 – hides a cut and adds punch.</description>
+    <effect id="brightness">
+        <property name="level">0=4.0;2e=3.0;6=1.0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=4;3=0</property>
+        <property name="hori">0=1;3=1</property>
+        <property name="vert">0=1;3=1</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_look_cinematic_239" parentIn="0">
+    <name>OuzFX Look · Cinematic 2.39:1 Bars + Vignette</name>
+    <description>Letterbox bars for a 2.39:1 look plus a soft vignette.</description>
+    <effect id="qtcrop">
+        <property name="rect">0 138 1920 803</property>
+        <property name="radius">0</property>
+        <property name="circle">0</property>
+        <property name="color">0x000000ff</property>
+    </effect>
+    <effect id="vignette">
+        <property name="radius">0.8</property>
+        <property name="smooth">0.7</property>
+        <property name="opacity">0.45</property>
+        <property name="mode">0</property>
+    </effect>
+</effectgroup>

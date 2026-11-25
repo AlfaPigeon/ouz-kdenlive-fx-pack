@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_screen_floating" parentIn="0">
+    <name>OuzFX Screen 3D · Floating Screen (Flat)</name>
+    <description>Flat floating window: rounded corners, 82% scale, big soft shadow.</description>
+    <effect id="qtcrop">
+        <property name="rect">0 0 1080 1920</property>
+        <property name="radius">0.03</property>
+        <property name="circle">0</property>
+        <property name="color">0x00000000</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">97 173 886 1574 1</property>
+        <property name="rotation">0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+    </effect>
+    <effect id="dropshadow">
+        <property name="radius">25</property>
+        <property name="x">14</property>
+        <property name="y">22</property>
+        <property name="color">#a0000000</property>
+    </effect>
+</effectgroup>

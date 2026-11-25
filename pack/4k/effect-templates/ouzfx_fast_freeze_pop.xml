@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_fast_freeze_pop" parentIn="0">
+    <name>OuzFX Fast · Freeze-Frame Pop</name>
+    <description>Pair with Kdenlive's freeze (Timeline ▸ Insert Freeze Frame / Freeze effect): saturation boost, slight zoom and white flash so the still frame 'pops'.</description>
+    <effect id="frei0r.saturat0r">
+        <property name="Saturation">0.25</property>
+    </effect>
+    <effect id="brightness">
+        <property name="level">0=2.4;6e=1.05</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0w=0 0 3840 2160 1;6=-134 -76 4109 2311 1</property>
+        <property name="rotation">0=0;6=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;6=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

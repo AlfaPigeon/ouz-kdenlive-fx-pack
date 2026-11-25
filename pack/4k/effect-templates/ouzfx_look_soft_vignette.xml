@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_look_soft_vignette" parentIn="0">
+    <name>OuzFX Look · Soft Vignette</name>
+    <description>Gentle edge darkening that pulls the eye to the centre.</description>
+    <effect id="vignette">
+        <property name="radius">0.7</property>
+        <property name="smooth">0.8</property>
+        <property name="opacity">0.35</property>
+        <property name="mode">0</property>
+    </effect>
+    <effect id="brightness">
+        <property name="level">1.02</property>
+    </effect>
+</effectgroup>

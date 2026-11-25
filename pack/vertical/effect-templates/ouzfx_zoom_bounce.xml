@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_zoom_bounce" parentIn="0">
+    <name>OuzFX Zoom · Zoom Bounce</name>
+    <description>Zooms from 100% to 125% with a bouncy landing (20 frames).</description>
+    <effect id="qtblend">
+        <property name="rect">0C=0 0 1080 1920 1;20=-135 -240 1350 2400 1</property>
+        <property name="rotation">0=0;20=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;20=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_zoom_boom" parentIn="0">
+    <name>OuzFX Zoom · Boom Zoom</name>
+    <description>Explosive 135% zoom with elastic settle at 112% (18 frames) – 'boom' moments.</description>
+    <effect id="qtblend">
+        <property name="rect">0q=0 0 1920 1080 1;3z=-336 -189 2592 1458 1;18=-115 -65 2150 1210 1</property>
+        <property name="rotation">0=0;3=0;18=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;3=0.5 0.5 0 0;18=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=8;4=2;10=0</property>
+        <property name="hori">0=1;4=1;10=1</property>
+        <property name="vert">0=1;4=1;10=1</property>
+    </effect>
+</effectgroup>

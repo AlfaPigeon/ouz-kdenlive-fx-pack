@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kpartgui>
+<transition tag="luma" id="ouzfx_comp_wipe_iris">
+    <name>OuzFX Wipe · Iris Wipe</name>
+    <description>Wipe composition using the bundled ouzfx_radial.png luma (softness 0.1). The same luma is also selectable in every Wipe/Luma transition and same-track mix.</description>
+    <author>Oğuz Kaan Özsoy (OuzFX)</author>
+    <parameter type="urllist" name="resource" paramlist="%lumaPaths" filter="Luma files (*.png *.pgm);;Videos (*.mp4 *.mov *.avi *.mpeg)" newstuff=":data/kdenlive_wipes.knsrc" optional="1" value="@LUMADIR@/HD/ouzfx/ouzfx_radial.png">
+        <name>Wipe Method</name>
+    </parameter>
+    <parameter type="double" name="softness" max="100" min="0" default="0" factor="100" value="0.1">
+        <name>Softness</name>
+    </parameter>
+    <parameter type="bool" name="alpha_over" max="1" min="0" default="0">
+        <name>Use transparency</name>
+    </parameter>
+    <parameter type="bool" name="fix_background_alpha" max="1" min="0" default="1">
+        <name>Make padding transparent</name>
+    </parameter>
+    <parameter type="bool" name="invert" max="1" min="0" default="0">
+        <name>Invert</name>
+    </parameter>
+    <parameter type="bool" name="reverse" max="1" min="0" default="0">
+        <name>Reverse</name>
+    </parameter>
+</transition>

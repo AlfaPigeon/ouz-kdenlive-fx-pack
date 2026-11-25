@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_screen_tilt_to_flat" parentIn="0">
+    <name>OuzFX Screen 3D · Swing to Front</name>
+    <description>Starts tilted left and swings to a flat, centred panel in 25 frames – nice opener for a demo.</description>
+    <effect id="qtcrop">
+        <property name="rect">0 0 3840 2160</property>
+        <property name="radius">0.035</property>
+        <property name="circle">0</property>
+        <property name="color">0x00000000</property>
+    </effect>
+    <effect id="frei0r.c0rners">
+        <property name="0">0i=0.3533;25=0.3633</property>
+        <property name="1">0i=0.3867;25=0.3633</property>
+        <property name="2">0i=0.6333;25=0.6367</property>
+        <property name="3">0i=0.3533;25=0.3633</property>
+        <property name="4">0i=0.6333;25=0.6367</property>
+        <property name="5">0i=0.6467;25=0.6367</property>
+        <property name="6">0i=0.3533;25=0.3633</property>
+        <property name="7">0i=0.6133;25=0.6367</property>
+        <property name="8">0</property>
+        <property name="9">0=0.5;25=0.5</property>
+        <property name="10">0=0.5;25=0.5</property>
+        <property name="11">0.166</property>
+        <property name="12">1</property>
+        <property name="13">0=0.01;25=0.01</property>
+        <property name="14">0</property>
+    </effect>
+    <effect id="dropshadow">
+        <property name="radius">25</property>
+        <property name="x">14</property>
+        <property name="y">22</property>
+        <property name="color">#a0000000</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_text_slam" parentIn="0">
+    <name>OuzFX Text · Text Slam</name>
+    <description>Title slams down from 300% and the frame shakes on landing (14 frames).</description>
+    <effect id="qtblend">
+        <property name="rect">0g=-1920 -1080 5760 3240 0;5=0 0 1920 1080 1;6=-11 7 1920 1080 1;7=7 -4 1920 1080 1;8=-8 2 1920 1080 1;9=5 -2 1920 1080 1;10=-2 1 1920 1080 1;11=2 -1 1920 1080 1;12=-2 0 1920 1080 1;13=1 -0 1920 1080 1;14=0 0 1920 1080 1</property>
+        <property name="rotation">0=0;5=0;6=0;7=0;8=0;9=0;10=0;11=0;12=0;13=0;14=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;5=0.5 0.5 0 0;6=0.5 0.5 0 0;7=0.5 0.5 0 0;8=0.5 0.5 0 0;9=0.5 0.5 0 0;10=0.5 0.5 0 0;11=0.5 0.5 0 0;12=0.5 0.5 0 0;13=0.5 0.5 0 0;14=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=6;5=0</property>
+        <property name="hori">0=1;5=1</property>
+        <property name="vert">0=1;5=1</property>
+    </effect>
+</effectgroup>

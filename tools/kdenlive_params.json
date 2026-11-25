@@ -1,0 +1,470 @@
+{
+ "avfilter.chromashift": [
+  {
+   "name": "av.cbh",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.cbv",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.crh",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.crv",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.edge",
+   "type": "list",
+   "default": "0",
+   "animated": false
+  }
+ ],
+ "avfilter.dblur": [
+  {
+   "name": "av.angle",
+   "type": "animated",
+   "default": "45",
+   "animated": true
+  },
+  {
+   "name": "av.radius",
+   "type": "animated",
+   "default": "5",
+   "animated": true
+  },
+  {
+   "name": "av.planes",
+   "type": "list",
+   "default": "7",
+   "animated": false
+  }
+ ],
+ "avfilter.gblur": [
+  {
+   "name": "av.steps",
+   "type": "list",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.planes",
+   "type": "list",
+   "default": "7",
+   "animated": false
+  },
+  {
+   "name": "av.sigma",
+   "type": "animated",
+   "default": "10",
+   "animated": true
+  },
+  {
+   "name": "av.sigmaV",
+   "type": "animated",
+   "default": "10",
+   "animated": true
+  }
+ ],
+ "avfilter.rgbashift": [
+  {
+   "name": "av.rh",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.rv",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.gh",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.gv",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.bh",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.bv",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.ah",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.av",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "av.edge",
+   "type": "list",
+   "default": "smear",
+   "animated": false
+  }
+ ],
+ "boxblur": [
+  {
+   "name": "hori",
+   "type": "animated",
+   "default": "1",
+   "animated": true
+  },
+  {
+   "name": "vert",
+   "type": "animated",
+   "default": "1",
+   "animated": true
+  },
+  {
+   "name": "blur",
+   "type": "animated",
+   "default": "5",
+   "animated": true
+  }
+ ],
+ "brightness": [
+  {
+   "name": "level",
+   "type": "animated",
+   "default": "1",
+   "animated": true
+  }
+ ],
+ "dropshadow": [
+  {
+   "name": "radius",
+   "type": "animated",
+   "default": "1",
+   "animated": true
+  },
+  {
+   "name": "x",
+   "type": "animated",
+   "default": "8",
+   "animated": true
+  },
+  {
+   "name": "y",
+   "type": "animated",
+   "default": "8",
+   "animated": true
+  },
+  {
+   "name": "color",
+   "type": "color",
+   "default": "#b4636363",
+   "animated": true
+  }
+ ],
+ "dust": [
+  {
+   "name": "maxdiameter",
+   "type": "animated",
+   "default": "2",
+   "animated": true
+  },
+  {
+   "name": "maxcount",
+   "type": "animated",
+   "default": "10",
+   "animated": true
+  }
+ ],
+ "frei0r.c0rners": [
+  {
+   "name": "0",
+   "type": "animated",
+   "default": "0.3335",
+   "animated": true
+  },
+  {
+   "name": "1",
+   "type": "animated",
+   "default": "0.334",
+   "animated": true
+  },
+  {
+   "name": "2",
+   "type": "animated",
+   "default": "0.667",
+   "animated": true
+  },
+  {
+   "name": "3",
+   "type": "animated",
+   "default": "0.334",
+   "animated": true
+  },
+  {
+   "name": "4",
+   "type": "animated",
+   "default": "0.667",
+   "animated": true
+  },
+  {
+   "name": "5",
+   "type": "animated",
+   "default": "0.667",
+   "animated": true
+  },
+  {
+   "name": "6",
+   "type": "animated",
+   "default": "0.334",
+   "animated": true
+  },
+  {
+   "name": "7",
+   "type": "animated",
+   "default": "0.667",
+   "animated": true
+  },
+  {
+   "name": "9",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "10",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "13",
+   "type": "animated",
+   "default": "0.05",
+   "animated": true
+  },
+  {
+   "name": "8",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "11",
+   "type": "list",
+   "default": "0.166",
+   "animated": false
+  },
+  {
+   "name": "12",
+   "type": "bool",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "14",
+   "type": "list",
+   "default": "0",
+   "animated": false
+  }
+ ],
+ "frei0r.colorize": [
+  {
+   "name": "hue",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "saturation",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "lightness",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  }
+ ],
+ "frei0r.glitch0r": [
+  {
+   "name": "0",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "1",
+   "type": "animated",
+   "default": "0.1",
+   "animated": true
+  },
+  {
+   "name": "2",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "3",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  }
+ ],
+ "frei0r.glow": [
+  {
+   "name": "Blur",
+   "type": "animated",
+   "default": "0.01",
+   "animated": true
+  }
+ ],
+ "frei0r.saturat0r": [
+  {
+   "name": "Saturation",
+   "type": "animated",
+   "default": "0.125",
+   "animated": true
+  }
+ ],
+ "frei0r.scanline0r": [],
+ "grain": [
+  {
+   "name": "noise",
+   "type": "double",
+   "default": "40",
+   "animated": false
+  },
+  {
+   "name": "contrast",
+   "type": "double",
+   "default": "160",
+   "animated": false
+  },
+  {
+   "name": "brightness",
+   "type": "double",
+   "default": "70",
+   "animated": false
+  }
+ ],
+ "greyscale": [],
+ "qtblend": [
+  {
+   "name": "compositing",
+   "type": "list",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "distort",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "rect",
+   "type": "animatedrect",
+   "default": "0 0 %width %height 1",
+   "animated": true
+  },
+  {
+   "name": "rotate_anchor",
+   "type": "animatedpoint",
+   "default": "0.5 0.5 0 0",
+   "animated": true
+  },
+  {
+   "name": "rotation",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  }
+ ],
+ "qtcrop": [
+  {
+   "name": "rect",
+   "type": "animatedrect",
+   "default": "0 0 %width %height",
+   "animated": true
+  },
+  {
+   "name": "radius",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "circle",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "color",
+   "type": "color",
+   "default": "0x00000000",
+   "animated": true
+  }
+ ],
+ "vignette": [
+  {
+   "name": "mode",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "kdenlive:point",
+   "type": "animatedfakepoint",
+   "default": null,
+   "animated": true
+  },
+  {
+   "name": "radius",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "smooth",
+   "type": "animated",
+   "default": "0.8",
+   "animated": true
+  },
+  {
+   "name": "opacity",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  }
+ ]
+}

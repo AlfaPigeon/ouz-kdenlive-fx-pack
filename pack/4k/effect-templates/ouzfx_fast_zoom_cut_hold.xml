@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_fast_zoom_cut_hold" parentIn="0">
+    <name>OuzFX Fast · Zoom Cut (Hard 130%)</name>
+    <description>Instant 130% reframe, no animation – the MrBeast wide→close 'zoom cut'.</description>
+    <effect id="qtblend">
+        <property name="rect">-576 -324 4992 2808 1</property>
+        <property name="rotation">0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

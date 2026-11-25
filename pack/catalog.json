@@ -1,0 +1,1422 @@
+{
+ "effects": [
+  {
+   "slug": "shake_handheld_light",
+   "category": "Camera Shake",
+   "name": "Handheld · Light",
+   "desc": "Subtle, smooth handheld drift for 10 s (loopable feel). Great on static talking-head or screen footage. Trim/extend: keyframes stop at clip end.",
+   "frames": 250,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "loop"
+   ],
+   "id": "ouzfx_shake_handheld_light",
+   "display": "OuzFX Shake · Handheld · Light"
+  },
+  {
+   "slug": "shake_micro_jitter",
+   "category": "Camera Shake",
+   "name": "Micro Jitter",
+   "desc": "Barely-there high-frequency jitter (10 s) that makes locked-off shots feel alive.",
+   "frames": 250,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_shake_micro_jitter",
+   "display": "OuzFX Shake · Micro Jitter"
+  },
+  {
+   "slug": "shake_heavy_impact",
+   "category": "Camera Shake",
+   "name": "Heavy Impact",
+   "desc": "20-frame violent hit that decays to rest, with motion blur on the first frames. Put the clip start on the impact / beat drop.",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_shake_heavy_impact",
+   "display": "OuzFX Shake · Heavy Impact"
+  },
+  {
+   "slug": "shake_earthquake",
+   "category": "Camera Shake",
+   "name": "Earthquake",
+   "desc": "3 s of strong rumbling shake that slowly calms down, with light blur.",
+   "frames": 75,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_shake_earthquake",
+   "display": "OuzFX Shake · Earthquake"
+  },
+  {
+   "slug": "shake_rotational",
+   "category": "Camera Shake",
+   "name": "Rotational",
+   "desc": "Rocking rotational shake (30 frames, decaying) – feels like a punch to the camera.",
+   "frames": 30,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_shake_rotational",
+   "display": "OuzFX Shake · Rotational"
+  },
+  {
+   "slug": "shake_walk_bounce",
+   "category": "Camera Shake",
+   "name": "Walking Bounce",
+   "desc": "Vertical bob of a walking camera operator (10 s loop).",
+   "frames": 240,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_shake_walk_bounce",
+   "display": "OuzFX Shake · Walking Bounce"
+  },
+  {
+   "slug": "zoom_punch_in",
+   "category": "Dynamic Zoom",
+   "name": "Punch-In 115%",
+   "desc": "Snaps to 115% in 3 frames and holds – the classic jump-cut cover.",
+   "frames": 3,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_zoom_punch_in",
+   "display": "OuzFX Zoom · Punch-In 115%"
+  },
+  {
+   "slug": "zoom_punch_in_out",
+   "category": "Dynamic Zoom",
+   "name": "Punch In-Out (Beat)",
+   "desc": "Zooms to 120% on frame 2 and settles back by frame 10. Drop one on every beat.",
+   "frames": 10,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_zoom_punch_in_out",
+   "display": "OuzFX Zoom · Punch In-Out (Beat)"
+  },
+  {
+   "slug": "zoom_boom",
+   "category": "Dynamic Zoom",
+   "name": "Boom Zoom",
+   "desc": "Explosive 135% zoom with elastic settle at 112% (18 frames) – 'boom' moments.",
+   "frames": 18,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_zoom_boom",
+   "display": "OuzFX Zoom · Boom Zoom"
+  },
+  {
+   "slug": "zoom_bounce",
+   "category": "Dynamic Zoom",
+   "name": "Zoom Bounce",
+   "desc": "Zooms from 100% to 125% with a bouncy landing (20 frames).",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_zoom_bounce",
+   "display": "OuzFX Zoom · Zoom Bounce"
+  },
+  {
+   "slug": "zoom_ken_burns_in",
+   "category": "Dynamic Zoom",
+   "name": "Slow Push-In (5 s)",
+   "desc": "Ken Burns style 100→112% push over 5 s (use the composition version to fit any length).",
+   "frames": 125,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_zoom_ken_burns_in",
+   "display": "OuzFX Zoom · Slow Push-In (5 s)"
+  },
+  {
+   "slug": "zoom_ken_burns_out",
+   "category": "Dynamic Zoom",
+   "name": "Slow Pull-Out (5 s)",
+   "desc": "Ken Burns style 112→100% pull-back over 5 s.",
+   "frames": 125,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_zoom_ken_burns_out",
+   "display": "OuzFX Zoom · Slow Pull-Out (5 s)"
+  },
+  {
+   "slug": "zoom_screen_tl",
+   "category": "Screen Zoom",
+   "name": "Zoom to Top-Left (Screen Rec)",
+   "desc": "Smooth 15-frame zoom to 180% on the top-left of a screen recording, then holds. Razor the clip where you want to zoom; move the rectangle in the monitor to aim at the cursor.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_zoom_screen_tl",
+   "display": "OuzFX Screen Zoom · Zoom to Top-Left (Screen Rec)"
+  },
+  {
+   "slug": "zoom_screen_tr",
+   "category": "Screen Zoom",
+   "name": "Zoom to Top-Right (Screen Rec)",
+   "desc": "Smooth 15-frame zoom to 180% on the top-right of a screen recording, then holds. Razor the clip where you want to zoom; move the rectangle in the monitor to aim at the cursor.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_zoom_screen_tr",
+   "display": "OuzFX Screen Zoom · Zoom to Top-Right (Screen Rec)"
+  },
+  {
+   "slug": "zoom_screen_bl",
+   "category": "Screen Zoom",
+   "name": "Zoom to Bottom-Left (Screen Rec)",
+   "desc": "Smooth 15-frame zoom to 180% on the bottom-left of a screen recording, then holds. Razor the clip where you want to zoom; move the rectangle in the monitor to aim at the cursor.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_zoom_screen_bl",
+   "display": "OuzFX Screen Zoom · Zoom to Bottom-Left (Screen Rec)"
+  },
+  {
+   "slug": "zoom_screen_br",
+   "category": "Screen Zoom",
+   "name": "Zoom to Bottom-Right (Screen Rec)",
+   "desc": "Smooth 15-frame zoom to 180% on the bottom-right of a screen recording, then holds. Razor the clip where you want to zoom; move the rectangle in the monitor to aim at the cursor.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_zoom_screen_br",
+   "display": "OuzFX Screen Zoom · Zoom to Bottom-Right (Screen Rec)"
+  },
+  {
+   "slug": "zoom_screen_c",
+   "category": "Screen Zoom",
+   "name": "Zoom to Center (Screen Rec)",
+   "desc": "Smooth 15-frame zoom to 180% on the center of a screen recording, then holds. Razor the clip where you want to zoom; move the rectangle in the monitor to aim at the cursor.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_zoom_screen_c",
+   "display": "OuzFX Screen Zoom · Zoom to Center (Screen Rec)"
+  },
+  {
+   "slug": "zoom_screen_out",
+   "category": "Screen Zoom",
+   "name": "Zoom Back Out (Screen Rec)",
+   "desc": "Companion to the screen zooms: from 180% (center) back to full frame in 15 frames.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_zoom_screen_out",
+   "display": "OuzFX Screen Zoom · Zoom Back Out (Screen Rec)"
+  },
+  {
+   "slug": "anim_pop_in",
+   "category": "Animations",
+   "name": "Pop-In",
+   "desc": "Scales from 0 to 100% with a back-overshoot in 12 frames.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_pop_in",
+   "display": "OuzFX Anim · Pop-In"
+  },
+  {
+   "slug": "anim_slide_in_left",
+   "category": "Animations",
+   "name": "Slide In from Left",
+   "desc": "Slides in from the left edge in 12 frames (expo ease-out) with directional motion blur.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_slide_in_left",
+   "display": "OuzFX Anim · Slide In from Left"
+  },
+  {
+   "slug": "anim_slide_in_right",
+   "category": "Animations",
+   "name": "Slide In from Right",
+   "desc": "Slides in from the right edge in 12 frames (expo ease-out) with directional motion blur.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_slide_in_right",
+   "display": "OuzFX Anim · Slide In from Right"
+  },
+  {
+   "slug": "anim_slide_in_top",
+   "category": "Animations",
+   "name": "Slide In from Top",
+   "desc": "Slides in from the top edge in 12 frames (expo ease-out) with directional motion blur.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_slide_in_top",
+   "display": "OuzFX Anim · Slide In from Top"
+  },
+  {
+   "slug": "anim_slide_in_bottom",
+   "category": "Animations",
+   "name": "Slide In from Bottom",
+   "desc": "Slides in from the bottom edge in 12 frames (expo ease-out) with directional motion blur.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_slide_in_bottom",
+   "display": "OuzFX Anim · Slide In from Bottom"
+  },
+  {
+   "slug": "anim_bounce_in",
+   "category": "Animations",
+   "name": "Bounce In (Drop)",
+   "desc": "Drops from above and bounces on the floor (20 frames).",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_bounce_in",
+   "display": "OuzFX Anim · Bounce In (Drop)"
+  },
+  {
+   "slug": "anim_spin_in",
+   "category": "Animations",
+   "name": "Spin-In",
+   "desc": "Spins 360° while scaling from 0 to 100% (15 frames, cubic ease-out).",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_spin_in",
+   "display": "OuzFX Anim · Spin-In"
+  },
+  {
+   "slug": "anim_fade_scale_in",
+   "category": "Animations",
+   "name": "Fade + Scale In",
+   "desc": "Gentle 92→100% scale with fade-in over 15 frames – clean Apple-style reveal.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_fade_scale_in",
+   "display": "OuzFX Anim · Fade + Scale In"
+  },
+  {
+   "slug": "anim_whip_in",
+   "category": "Animations",
+   "name": "Whip-In",
+   "desc": "Very fast slide from the right with heavy motion blur (6 frames).",
+   "frames": 6,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_anim_whip_in",
+   "display": "OuzFX Anim · Whip-In"
+  },
+  {
+   "slug": "anim_elastic_in",
+   "category": "Animations",
+   "name": "Elastic Zoom-In",
+   "desc": "Springs in from 40% to 100% with an elastic wobble (20 frames).",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_elastic_in",
+   "display": "OuzFX Anim · Elastic Zoom-In"
+  },
+  {
+   "slug": "anim_blur_in",
+   "category": "Animations",
+   "name": "Blur-In",
+   "desc": "Starts heavily blurred and transparent, resolves to sharp in 15 frames.",
+   "frames": 15,
+   "effects": [
+    "avfilter.gblur",
+    "qtblend"
+   ],
+   "tags": [],
+   "id": "ouzfx_anim_blur_in",
+   "display": "OuzFX Anim · Blur-In"
+  },
+  {
+   "slug": "screen_tilt_left",
+   "category": "Perspective Screen",
+   "name": "Tilt Left",
+   "desc": "Screen recording turned into a 3D panel facing left: rounded corners, perspective and a soft drop shadow. Put a background on the track below.",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "frei0r.c0rners",
+    "dropshadow"
+   ],
+   "tags": [],
+   "id": "ouzfx_screen_tilt_left",
+   "display": "OuzFX Screen 3D · Tilt Left"
+  },
+  {
+   "slug": "screen_tilt_right",
+   "category": "Perspective Screen",
+   "name": "Tilt Right",
+   "desc": "Mirror of Tilt Left – panel facing right.",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "frei0r.c0rners",
+    "dropshadow"
+   ],
+   "tags": [],
+   "id": "ouzfx_screen_tilt_right",
+   "display": "OuzFX Screen 3D · Tilt Right"
+  },
+  {
+   "slug": "screen_tilt_back",
+   "category": "Perspective Screen",
+   "name": "Laptop Lean",
+   "desc": "Panel leaning back like a laptop screen seen from the desk.",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "frei0r.c0rners",
+    "dropshadow"
+   ],
+   "tags": [],
+   "id": "ouzfx_screen_tilt_back",
+   "display": "OuzFX Screen 3D · Laptop Lean"
+  },
+  {
+   "slug": "screen_floating",
+   "category": "Perspective Screen",
+   "name": "Floating Screen (Flat)",
+   "desc": "Flat floating window: rounded corners, 82% scale, big soft shadow.",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "qtblend",
+    "dropshadow"
+   ],
+   "tags": [],
+   "id": "ouzfx_screen_floating",
+   "display": "OuzFX Screen 3D · Floating Screen (Flat)"
+  },
+  {
+   "slug": "screen_tilt_to_flat",
+   "category": "Perspective Screen",
+   "name": "Swing to Front",
+   "desc": "Starts tilted left and swings to a flat, centred panel in 25 frames – nice opener for a demo.",
+   "frames": 25,
+   "effects": [
+    "qtcrop",
+    "frei0r.c0rners",
+    "dropshadow"
+   ],
+   "tags": [],
+   "id": "ouzfx_screen_tilt_to_flat",
+   "display": "OuzFX Screen 3D · Swing to Front"
+  },
+  {
+   "slug": "screen_pop_in",
+   "category": "Perspective Screen",
+   "name": "Floating Screen · Pop In",
+   "desc": "Floating window pops in from 40% with overshoot (18 frames), rounded + shadow.",
+   "frames": 18,
+   "effects": [
+    "qtcrop",
+    "frei0r.c0rners",
+    "dropshadow"
+   ],
+   "tags": [],
+   "id": "ouzfx_screen_pop_in",
+   "display": "OuzFX Screen 3D · Floating Screen · Pop In"
+  },
+  {
+   "slug": "glitch_rgb_split_hit",
+   "category": "Glitch & Stylize",
+   "name": "RGB Split Hit",
+   "desc": "8-frame chromatic split that kicks hard and snaps back – sync to a beat or a cut.",
+   "frames": 8,
+   "effects": [
+    "avfilter.rgbashift",
+    "qtblend"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_glitch_rgb_split_hit",
+   "display": "OuzFX Stylize · RGB Split Hit"
+  },
+  {
+   "slug": "glitch_digital_burst",
+   "category": "Glitch & Stylize",
+   "name": "Digital Glitch Burst",
+   "desc": "12 frames of block glitching + RGB tearing that fades out.",
+   "frames": 12,
+   "effects": [
+    "frei0r.glitch0r",
+    "avfilter.rgbashift"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_glitch_digital_burst",
+   "display": "OuzFX Stylize · Digital Glitch Burst"
+  },
+  {
+   "slug": "style_vhs",
+   "category": "Glitch & Stylize",
+   "name": "VHS Tape",
+   "desc": "Scanlines, chroma bleed, soft blur, noise and slightly washed colour – instant 90s tape.",
+   "frames": 0,
+   "effects": [
+    "avfilter.chromashift",
+    "avfilter.gblur",
+    "grain",
+    "frei0r.scanline0r"
+   ],
+   "tags": [],
+   "id": "ouzfx_style_vhs",
+   "display": "OuzFX Stylize · VHS Tape"
+  },
+  {
+   "slug": "flash_white",
+   "category": "Glitch & Stylize",
+   "name": "Flash Frame (White)",
+   "desc": "2-frame white flash that fades by frame 6 – hides a cut and adds punch.",
+   "frames": 6,
+   "effects": [
+    "brightness",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_flash_white",
+   "display": "OuzFX Stylize · Flash Frame (White)"
+  },
+  {
+   "slug": "flash_black",
+   "category": "Glitch & Stylize",
+   "name": "Dip Flash (Black)",
+   "desc": "Quick dip to black and back in 6 frames.",
+   "frames": 6,
+   "effects": [
+    "brightness",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_flash_black",
+   "display": "OuzFX Stylize · Dip Flash (Black)"
+  },
+  {
+   "slug": "style_film_burn",
+   "category": "Glitch & Stylize",
+   "name": "Film Burn Flash",
+   "desc": "Warm orange over-exposure with glow that peaks at frame 6 and clears by 16.",
+   "frames": 16,
+   "effects": [
+    "frei0r.colorize",
+    "frei0r.glow",
+    "brightness"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_style_film_burn",
+   "display": "OuzFX Stylize · Film Burn Flash"
+  },
+  {
+   "slug": "style_light_leak",
+   "category": "Glitch & Stylize",
+   "name": "Warm Light Leak Look",
+   "desc": "Soft warm glow and lifted highlights (static look). For moving leaks, also drop overlays/ouzfx_light_leak.mp4 on a track above with Screen blend.",
+   "frames": 0,
+   "effects": [
+    "frei0r.glow",
+    "frei0r.colorize"
+   ],
+   "tags": [],
+   "id": "ouzfx_style_light_leak",
+   "display": "OuzFX Stylize · Warm Light Leak Look"
+  },
+  {
+   "slug": "style_red_alert",
+   "category": "Glitch & Stylize",
+   "name": "Red Moment",
+   "desc": "MrBeast-style 'stress' tint: flash to deep red with a small punch (hold 1–2 s).",
+   "frames": 4,
+   "effects": [
+    "frei0r.colorize",
+    "qtblend"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_style_red_alert",
+   "display": "OuzFX Stylize · Red Moment"
+  },
+  {
+   "slug": "style_flashback",
+   "category": "Glitch & Stylize",
+   "name": "B&W Flashback",
+   "desc": "Black & white, grain, vignette and old-film flicker for flashbacks / archive footage.",
+   "frames": 0,
+   "effects": [
+    "greyscale",
+    "grain",
+    "vignette"
+   ],
+   "tags": [],
+   "id": "ouzfx_style_flashback",
+   "display": "OuzFX Stylize · B&W Flashback"
+  },
+  {
+   "slug": "look_cinematic_239",
+   "category": "Overlays",
+   "name": "Cinematic 2.39:1 Bars + Vignette",
+   "desc": "Letterbox bars for a 2.39:1 look plus a soft vignette.",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "vignette"
+   ],
+   "tags": [],
+   "id": "ouzfx_look_cinematic_239",
+   "display": "OuzFX Look · Cinematic 2.39:1 Bars + Vignette"
+  },
+  {
+   "slug": "look_bars_slide_in",
+   "category": "Overlays",
+   "name": "Cinematic Bars Slide-In",
+   "desc": "2.39:1 letterbox bars glide in over 15 frames – 'movie moment' / dramatic beat.",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "vignette"
+   ],
+   "tags": [],
+   "id": "ouzfx_look_bars_slide_in",
+   "display": "OuzFX Look · Cinematic Bars Slide-In"
+  },
+  {
+   "slug": "look_film_grain",
+   "category": "Overlays",
+   "name": "Film Grain + Dust",
+   "desc": "Organic grain with a few dust specks – makes digital footage feel shot on film.",
+   "frames": 0,
+   "effects": [
+    "grain",
+    "dust"
+   ],
+   "tags": [],
+   "id": "ouzfx_look_film_grain",
+   "display": "OuzFX Look · Film Grain + Dust"
+  },
+  {
+   "slug": "look_soft_vignette",
+   "category": "Overlays",
+   "name": "Soft Vignette",
+   "desc": "Gentle edge darkening that pulls the eye to the centre.",
+   "frames": 0,
+   "effects": [
+    "vignette",
+    "brightness"
+   ],
+   "tags": [],
+   "id": "ouzfx_look_soft_vignette",
+   "display": "OuzFX Look · Soft Vignette"
+  },
+  {
+   "slug": "fast_impact_hit",
+   "category": "Fast-Paced",
+   "name": "Impact Hit (Shake + Flash + Zoom)",
+   "desc": "All-in-one hit: 2-frame flash, 125% punch and a decaying shake (12 frames). Use on beat drops.",
+   "frames": 12,
+   "effects": [
+    "brightness",
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_fast_impact_hit",
+   "display": "OuzFX Fast · Impact Hit (Shake + Flash + Zoom)"
+  },
+  {
+   "slug": "fast_smash_cut",
+   "category": "Fast-Paced",
+   "name": "Smash Cut In",
+   "desc": "Starts at 140% with blur and slams to 100% in 4 frames – energetic hard cut entry.",
+   "frames": 4,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_fast_smash_cut",
+   "display": "OuzFX Fast · Smash Cut In"
+  },
+  {
+   "slug": "fast_zoom_cut_hold",
+   "category": "Fast-Paced",
+   "name": "Zoom Cut (Hard 130%)",
+   "desc": "Instant 130% reframe, no animation – the MrBeast wide→close 'zoom cut'.",
+   "frames": 0,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_fast_zoom_cut_hold",
+   "display": "OuzFX Fast · Zoom Cut (Hard 130%)"
+  },
+  {
+   "slug": "fast_beat_pulse",
+   "category": "Fast-Paced",
+   "name": "Beat Pulse ×4",
+   "desc": "Four quick 108% pulses, one every 12 frames (≈120 BPM at 24 fps). Stretch keyframes to your tempo.",
+   "frames": 48,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_fast_beat_pulse",
+   "display": "OuzFX Fast · Beat Pulse ×4"
+  },
+  {
+   "slug": "fast_stutter_strobe",
+   "category": "Fast-Paced",
+   "name": "Stutter Strobe",
+   "desc": "6-frame on/off brightness strobe – for glitchy, aggressive moments.",
+   "frames": 6,
+   "effects": [
+    "brightness",
+    "qtblend"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_fast_stutter_strobe",
+   "display": "OuzFX Fast · Stutter Strobe"
+  },
+  {
+   "slug": "fast_freeze_pop",
+   "category": "Fast-Paced",
+   "name": "Freeze-Frame Pop",
+   "desc": "Pair with Kdenlive's freeze (Timeline ▸ Insert Freeze Frame / Freeze effect): saturation boost, slight zoom and white flash so the still frame 'pops'.",
+   "frames": 6,
+   "effects": [
+    "frei0r.saturat0r",
+    "brightness",
+    "qtblend"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_fast_freeze_pop",
+   "display": "OuzFX Fast · Freeze-Frame Pop"
+  },
+  {
+   "slug": "fast_motion_slide_l",
+   "category": "Fast-Paced",
+   "name": "Motion-Blur Push Left",
+   "desc": "Last 6 frames of a clip: whips the picture out to the left with heavy blur. Pair with 'Whip-In' on the next clip.",
+   "frames": 6,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_fast_motion_slide_l",
+   "display": "OuzFX Fast · Motion-Blur Push Left"
+  },
+  {
+   "slug": "fast_speed_lines_zoom",
+   "category": "Fast-Paced",
+   "name": "Rush Zoom",
+   "desc": "Accelerating zoom (100→160%) with growing blur over 8 frames – cut on the last frame.",
+   "frames": 8,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_fast_speed_lines_zoom",
+   "display": "OuzFX Fast · Rush Zoom"
+  },
+  {
+   "slug": "text_pop",
+   "category": "Text & Titles",
+   "name": "Text Pop",
+   "desc": "For title clips: pops in with a back overshoot in 8 frames (kinetic typography staple).",
+   "frames": 8,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_text_pop",
+   "display": "OuzFX Text · Text Pop"
+  },
+  {
+   "slug": "text_slam",
+   "category": "Text & Titles",
+   "name": "Text Slam",
+   "desc": "Title slams down from 300% and the frame shakes on landing (14 frames).",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_text_slam",
+   "display": "OuzFX Text · Text Slam"
+  },
+  {
+   "slug": "text_rise",
+   "category": "Text & Titles",
+   "name": "Text Rise",
+   "desc": "Rises 6% and fades in over 12 frames – clean lower-third / callout entry.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_text_rise",
+   "display": "OuzFX Text · Text Rise"
+  },
+  {
+   "slug": "text_wiggle",
+   "category": "Text & Titles",
+   "name": "Text Wiggle (Loop)",
+   "desc": "Playful ±3° wiggle and 2% breathe for 4 s – for stickers, arrows, emojis.",
+   "frames": 100,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "id": "ouzfx_text_wiggle",
+   "display": "OuzFX Text · Text Wiggle (Loop)"
+  },
+  {
+   "slug": "text_typewriter_flash",
+   "category": "Text & Titles",
+   "name": "Highlight Flash",
+   "desc": "Draws attention to a callout: brightness flash + 110% pulse (10 frames).",
+   "frames": 10,
+   "effects": [
+    "brightness",
+    "qtblend"
+   ],
+   "tags": [],
+   "id": "ouzfx_text_typewriter_flash",
+   "display": "OuzFX Text · Highlight Flash"
+  }
+ ],
+ "compositions": [
+  {
+   "slug": "comp_zoom_through_in",
+   "category": "Transitions",
+   "name": "Zoom-Through In",
+   "desc": "Top clip flies in from 300% (transparent) to full frame – put it over the end of the lower clip.",
+   "tag": "affine",
+   "values": {
+    "rect": "0q=-100% -100% 300% 300% 0%;-1=0% 0% 100% 100% 100%"
+   },
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_comp_zoom_through_in",
+   "display": "OuzFX Trans · Zoom-Through In",
+   "values_1080p": {
+    "rect": "0q=-1920 -1080 5760 3240 0;-1=0 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_zoom_through_out",
+   "category": "Transitions",
+   "name": "Zoom-Through Out",
+   "desc": "Top clip rushes towards the camera (100→300%) and fades, revealing the clip below.",
+   "tag": "affine",
+   "values": {
+    "rect": "0p=0% 0% 100% 100% 100%;-1=-100% -100% 300% 300% 0%"
+   },
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_comp_zoom_through_out",
+   "display": "OuzFX Trans · Zoom-Through Out",
+   "values_1080p": {
+    "rect": "0p=0 0 1920 1080 1;-1=-1920 -1080 5760 3240 0"
+   }
+  },
+  {
+   "slug": "comp_zoom_out_reveal",
+   "category": "Transitions",
+   "name": "Shrink Away",
+   "desc": "Top clip shrinks to nothing in the centre, revealing the lower track.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0g=0% 0% 100% 100% 100%;-1=50% 50% 0% 0% 0%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_zoom_out_reveal",
+   "display": "OuzFX Trans · Shrink Away",
+   "values_1080p": {
+    "rect": "0g=0 0 1920 1080 1;-1=960 540 0 0 0"
+   }
+  },
+  {
+   "slug": "comp_whip_left",
+   "category": "Transitions",
+   "name": "Whip Pan Left",
+   "desc": "Top clip enters from the opposite side and whips left into place with strong ease-out (add a dblur/boxblur for extra smear). Keep it 6–10 frames.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0q=100% 0% 100% 100% 100%;-1=0% 0% 100% 100% 100%"
+   },
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_comp_whip_left",
+   "display": "OuzFX Trans · Whip Pan Left",
+   "values_1080p": {
+    "rect": "0q=1920 0 1920 1080 1;-1=0 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_whip_right",
+   "category": "Transitions",
+   "name": "Whip Pan Right",
+   "desc": "Top clip enters from the opposite side and whips right into place with strong ease-out (add a dblur/boxblur for extra smear). Keep it 6–10 frames.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0q=-100% 0% 100% 100% 100%;-1=0% 0% 100% 100% 100%"
+   },
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_comp_whip_right",
+   "display": "OuzFX Trans · Whip Pan Right",
+   "values_1080p": {
+    "rect": "0q=-1920 0 1920 1080 1;-1=0 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_whip_up",
+   "category": "Transitions",
+   "name": "Whip Pan Up",
+   "desc": "Top clip enters from the opposite side and whips up into place with strong ease-out (add a dblur/boxblur for extra smear). Keep it 6–10 frames.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0q=0% 100% 100% 100% 100%;-1=0% 0% 100% 100% 100%"
+   },
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_comp_whip_up",
+   "display": "OuzFX Trans · Whip Pan Up",
+   "values_1080p": {
+    "rect": "0q=0 1080 1920 1080 1;-1=0 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_whip_down",
+   "category": "Transitions",
+   "name": "Whip Pan Down",
+   "desc": "Top clip enters from the opposite side and whips down into place with strong ease-out (add a dblur/boxblur for extra smear). Keep it 6–10 frames.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0q=0% -100% 100% 100% 100%;-1=0% 0% 100% 100% 100%"
+   },
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_comp_whip_down",
+   "display": "OuzFX Trans · Whip Pan Down",
+   "values_1080p": {
+    "rect": "0q=0 -1080 1920 1080 1;-1=0 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_spin_in",
+   "category": "Transitions",
+   "name": "Spin In",
+   "desc": "Top clip spins in 360° from 0% – fun, high-energy reveal.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0h=50% 50% 0% 0% 0%;-1=0% 0% 100% 100% 100%",
+    "rotation": "0=-360;-1=0"
+   },
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_comp_spin_in",
+   "display": "OuzFX Trans · Spin In",
+   "values_1080p": {
+    "rect": "0h=960 540 0 0 0;-1=0 0 1920 1080 1",
+    "rotation": "0=-360;-1=0"
+   }
+  },
+  {
+   "slug": "comp_spin_out",
+   "category": "Transitions",
+   "name": "Spin Out",
+   "desc": "Top clip spins away 360° shrinking to 0%.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0g=0% 0% 100% 100% 100%;-1=50% 50% 0% 0% 0%",
+    "rotation": "0=0;-1=360"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_spin_out",
+   "display": "OuzFX Trans · Spin Out",
+   "values_1080p": {
+    "rect": "0g=0 0 1920 1080 1;-1=960 540 0 0 0",
+    "rotation": "0=0;-1=360"
+   }
+  },
+  {
+   "slug": "comp_slide_out_left",
+   "category": "Animations",
+   "name": "Slide Out Left",
+   "desc": "Top clip exits to the left (expo ease-in). Place it over the END of the clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0p=0% 0% 100% 100% 100%;-1=-100% 0% 100% 100% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_slide_out_left",
+   "display": "OuzFX Anim · Slide Out Left",
+   "values_1080p": {
+    "rect": "0p=0 0 1920 1080 1;-1=-1920 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_slide_out_right",
+   "category": "Animations",
+   "name": "Slide Out Right",
+   "desc": "Top clip exits to the right (expo ease-in). Place it over the END of the clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0p=0% 0% 100% 100% 100%;-1=100% 0% 100% 100% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_slide_out_right",
+   "display": "OuzFX Anim · Slide Out Right",
+   "values_1080p": {
+    "rect": "0p=0 0 1920 1080 1;-1=1920 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_slide_out_up",
+   "category": "Animations",
+   "name": "Slide Out Up",
+   "desc": "Top clip exits to the up (expo ease-in). Place it over the END of the clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0p=0% 0% 100% 100% 100%;-1=0% -100% 100% 100% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_slide_out_up",
+   "display": "OuzFX Anim · Slide Out Up",
+   "values_1080p": {
+    "rect": "0p=0 0 1920 1080 1;-1=0 -1080 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_slide_out_down",
+   "category": "Animations",
+   "name": "Slide Out Down",
+   "desc": "Top clip exits to the down (expo ease-in). Place it over the END of the clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0p=0% 0% 100% 100% 100%;-1=0% 100% 100% 100% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_slide_out_down",
+   "display": "OuzFX Anim · Slide Out Down",
+   "values_1080p": {
+    "rect": "0p=0 0 1920 1080 1;-1=0 1080 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_pop_out",
+   "category": "Animations",
+   "name": "Pop Out",
+   "desc": "Anticipates (grows to 106%) then collapses to 0% – place over the end of a clip/title.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0v=0% 0% 100% 100% 100%;-1=50% 50% 0% 0% 0%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_pop_out",
+   "display": "OuzFX Anim · Pop Out",
+   "values_1080p": {
+    "rect": "0v=0 0 1920 1080 1;-1=960 540 0 0 0"
+   }
+  },
+  {
+   "slug": "comp_fade_scale_out",
+   "category": "Animations",
+   "name": "Fade + Scale Out",
+   "desc": "Soft 100→92% shrink with fade-out.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0g=0% 0% 100% 100% 100%;-1=4% 4% 92% 92% 0%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_fade_scale_out",
+   "display": "OuzFX Anim · Fade + Scale Out",
+   "values_1080p": {
+    "rect": "0g=0 0 1920 1080 1;-1=77 43 1766 994 0"
+   }
+  },
+  {
+   "slug": "comp_pop_in",
+   "category": "Animations",
+   "name": "Pop In (Any Length)",
+   "desc": "Back-overshoot pop-in that stretches to the composition length.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0w=50% 50% 0% 0% 0%;-1=0% 0% 100% 100% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_pop_in",
+   "display": "OuzFX Anim · Pop In (Any Length)",
+   "values_1080p": {
+    "rect": "0w=960 540 0 0 0;-1=0 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_ken_burns_in",
+   "category": "Dynamic Zoom",
+   "name": "Ken Burns Push-In (Any Length)",
+   "desc": "100→115% slow push that always spans the whole composition – stretch it over a photo/clip.",
+   "tag": "affine",
+   "values": {
+    "rect": "0c=0% 0% 100% 100% 100%;-1=-7.5% -7.5% 115% 115% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_ken_burns_in",
+   "display": "OuzFX Zoom · Ken Burns Push-In (Any Length)",
+   "values_1080p": {
+    "rect": "0c=0 0 1920 1080 1;-1=-144 -81 2208 1242 1"
+   }
+  },
+  {
+   "slug": "comp_ken_burns_out",
+   "category": "Dynamic Zoom",
+   "name": "Ken Burns Pull-Out (Any Length)",
+   "desc": "115→100% slow pull-back spanning the composition.",
+   "tag": "affine",
+   "values": {
+    "rect": "0c=-7.5% -7.5% 115% 115% 100%;-1=0% 0% 100% 100% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_ken_burns_out",
+   "display": "OuzFX Zoom · Ken Burns Pull-Out (Any Length)",
+   "values_1080p": {
+    "rect": "0c=-144 -81 2208 1242 1;-1=0 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "comp_ken_burns_pan",
+   "category": "Dynamic Zoom",
+   "name": "Ken Burns Pan L→R (Any Length)",
+   "desc": "Pans across a 120% image from left to right over the composition length.",
+   "tag": "affine",
+   "values": {
+    "rect": "0c=0% -10% 120% 120% 100%;-1=-20% -10% 120% 120% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_ken_burns_pan",
+   "display": "OuzFX Zoom · Ken Burns Pan L→R (Any Length)",
+   "values_1080p": {
+    "rect": "0c=0 -108 2304 1296 1;-1=-384 -108 2304 1296 1"
+   }
+  },
+  {
+   "slug": "comp_picture_in_picture",
+   "category": "Perspective Screen",
+   "name": "Picture-in-Picture Corner (Pop)",
+   "desc": "Webcam/facecam bubble: pops into the bottom-right corner at 30% size.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0w=84% 84% 0% 0% 0%;12=67% 66% 30% 30% 100%;-1=67% 66% 30% 30% 100%"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_picture_in_picture",
+   "display": "OuzFX Screen 3D · Picture-in-Picture Corner (Pop)",
+   "values_1080p": {
+    "rect": "0w=1613 907 0 0 0;12=1286 713 576 324 1;-1=1286 713 576 324 1"
+   }
+  },
+  {
+   "slug": "comp_wipe_burn",
+   "category": "Luma Wipes",
+   "name": "Film Burn Wipe",
+   "desc": "Wipe composition using the bundled ouzfx_burn.png luma (softness 0.25). The same luma is also selectable in every Wipe/Luma transition and same-track mix.",
+   "tag": "luma",
+   "values": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_burn.png",
+    "softness": "0.25"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_wipe_burn",
+   "display": "OuzFX Wipe · Film Burn Wipe",
+   "values_1080p": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_burn.png",
+    "softness": "0.25"
+   }
+  },
+  {
+   "slug": "comp_wipe_glitch",
+   "category": "Luma Wipes",
+   "name": "Glitch Blocks Wipe",
+   "desc": "Wipe composition using the bundled ouzfx_glitch_blocks.png luma (softness 0.0). The same luma is also selectable in every Wipe/Luma transition and same-track mix.",
+   "tag": "luma",
+   "values": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_glitch_blocks.png",
+    "softness": "0.0"
+   },
+   "tags": [
+    "fast"
+   ],
+   "id": "ouzfx_comp_wipe_glitch",
+   "display": "OuzFX Wipe · Glitch Blocks Wipe",
+   "values_1080p": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_glitch_blocks.png",
+    "softness": "0.0"
+   }
+  },
+  {
+   "slug": "comp_wipe_diamond",
+   "category": "Luma Wipes",
+   "name": "Diamond Wipe",
+   "desc": "Wipe composition using the bundled ouzfx_diamond.png luma (softness 0.08). The same luma is also selectable in every Wipe/Luma transition and same-track mix.",
+   "tag": "luma",
+   "values": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_diamond.png",
+    "softness": "0.08"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_wipe_diamond",
+   "display": "OuzFX Wipe · Diamond Wipe",
+   "values_1080p": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_diamond.png",
+    "softness": "0.08"
+   }
+  },
+  {
+   "slug": "comp_wipe_clock",
+   "category": "Luma Wipes",
+   "name": "Clock Wipe",
+   "desc": "Wipe composition using the bundled ouzfx_clock.png luma (softness 0.04). The same luma is also selectable in every Wipe/Luma transition and same-track mix.",
+   "tag": "luma",
+   "values": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_clock.png",
+    "softness": "0.04"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_wipe_clock",
+   "display": "OuzFX Wipe · Clock Wipe",
+   "values_1080p": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_clock.png",
+    "softness": "0.04"
+   }
+  },
+  {
+   "slug": "comp_wipe_iris",
+   "category": "Luma Wipes",
+   "name": "Iris Wipe",
+   "desc": "Wipe composition using the bundled ouzfx_radial.png luma (softness 0.1). The same luma is also selectable in every Wipe/Luma transition and same-track mix.",
+   "tag": "luma",
+   "values": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_radial.png",
+    "softness": "0.1"
+   },
+   "tags": [],
+   "id": "ouzfx_comp_wipe_iris",
+   "display": "OuzFX Wipe · Iris Wipe",
+   "values_1080p": {
+    "resource": "@LUMADIR@/HD/ouzfx/ouzfx_radial.png",
+    "softness": "0.1"
+   }
+  }
+ ],
+ "lumas": [
+  {
+   "name": "ouzfx_radial",
+   "desc": "Iris / radial from centre"
+  },
+  {
+   "name": "ouzfx_radial_soft",
+   "desc": "Soft round spotlight"
+  },
+  {
+   "name": "ouzfx_diagonal_tl",
+   "desc": "Diagonal from top-left"
+  },
+  {
+   "name": "ouzfx_diagonal_tr",
+   "desc": "Diagonal from top-right"
+  },
+  {
+   "name": "ouzfx_clock",
+   "desc": "Clock sweep from 12 o'clock"
+  },
+  {
+   "name": "ouzfx_blinds_h",
+   "desc": "Horizontal blinds (8 slats)"
+  },
+  {
+   "name": "ouzfx_blinds_v",
+   "desc": "Vertical blinds (12 slats)"
+  },
+  {
+   "name": "ouzfx_diamond",
+   "desc": "Diamond from centre"
+  },
+  {
+   "name": "ouzfx_burn",
+   "desc": "Organic film-burn noise"
+  },
+  {
+   "name": "ouzfx_glitch_blocks",
+   "desc": "Random glitch blocks"
+  },
+  {
+   "name": "ouzfx_zigzag",
+   "desc": "Zig-zag teeth from left"
+  },
+  {
+   "name": "ouzfx_barn_doors",
+   "desc": "Barn doors opening from centre"
+  },
+  {
+   "name": "ouzfx_spiral",
+   "desc": "Spiral from centre"
+  },
+  {
+   "name": "ouzfx_heart",
+   "desc": "Heart iris (for fun edits)"
+  },
+  {
+   "name": "ouzfx_pixel_dissolve",
+   "desc": "Pixel dissolve (32px cells)"
+  },
+  {
+   "name": "ouzfx_swipe_up_soft",
+   "desc": "Soft swipe upwards"
+  }
+ ]
+}

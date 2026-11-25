@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kpartgui>
+<transition tag="qtblend" id="ouzfx_comp_spin_out">
+    <name>OuzFX Trans · Spin Out</name>
+    <description>Top clip spins away 360° shrinking to 0%.</description>
+    <author>Oğuz Kaan Özsoy (OuzFX)</author>
+    <parameter type="animatedrect" name="rect" default="0 0 %width %height 1" value="0g=0 0 1920 1080 1;-1=960 540 0 0 0">
+        <name>Rectangle</name>
+    </parameter>
+    <parameter type="keyframe" name="rotation" max="360" min="-360" default="0" notintimeline="1" suffix="°" value="0=0;-1=360">
+        <name>Rotation</name>
+    </parameter>
+    <parameter type="list" name="compositing" default="0" paramlist="0;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;6;8">
+        <name>Compositing</name>
+        <paramlistdisplay>Alpha blend,Xor,Plus,Multiply,Screen,Overlay,Darken,Lighten,Color dodge,Color burn,Hard light,Soft light,Difference,Exclusion,Bitwise or,Bitwise and,Bitwise xor,Bitwise nor,Bitwise nand,Bitwise not xor,Destination in,Destination out</paramlistdisplay>
+    </parameter>
+    <parameter type="bool" name="distort" default="0" min="0" max="1">
+        <name>Distort</name>
+    </parameter>
+    <parameter type="bool" name="rotate_center" default="1" min="0" max="1">
+        <name>Rotate from center</name>
+    </parameter>
+</transition>

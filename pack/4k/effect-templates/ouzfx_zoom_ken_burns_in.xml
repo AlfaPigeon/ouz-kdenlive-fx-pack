@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_zoom_ken_burns_in" parentIn="0">
+    <name>OuzFX Zoom · Slow Push-In (5 s)</name>
+    <description>Ken Burns style 100→112% push over 5 s (use the composition version to fit any length).</description>
+    <effect id="qtblend">
+        <property name="rect">0c=0 0 3840 2160 1;125=-230 -130 4301 2419 1</property>
+        <property name="rotation">0=0;125=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;125=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>
