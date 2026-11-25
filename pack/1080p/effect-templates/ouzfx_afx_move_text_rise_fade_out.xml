@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_text_rise_fade_out" parentIn="0">
+    <name>OuzFX AFX_Move_Text_Rise_Fade_Out</name>
+    <description>Lower-third exit, mirror of 'Text · Text Rise': sinks 6% while fading out (12 frames, cubic ease-in). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).</description>
+    <effect id="qtblend">
+        <property name="rect">0g=0 0 1920 1080 1;11=0 65 1920 1080 0</property>
+        <property name="rotation">0=0;11=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;11=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0;4=0;11=2</property>
+        <property name="hori">0=1;4=1;11=1</property>
+        <property name="vert">0=1;4=1;11=1</property>
+    </effect>
+</effectgroup>

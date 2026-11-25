@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_util_highlighter_wipe_out" parentIn="0">
+    <name>OuzFX AFX_Util_Highlighter_Wipe_Out</name>
+    <description>Out half of Highlighter_Wipe: the marker band retracts right-to-left (12 frames, cubic ease-in). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).</description>
+    <effect id="qtcrop">
+        <property name="rect">0g=0 0 1920 1080;11=0 0 1 1080</property>
+        <property name="radius">0=0;11=0</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000;11=0x00000000</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0=192 486 1536 97 0.45</property>
+        <property name="rotation">0=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">1</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

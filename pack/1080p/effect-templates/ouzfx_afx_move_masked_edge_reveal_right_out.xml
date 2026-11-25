@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_masked_edge_reveal_right_out" parentIn="0">
+    <name>OuzFX AFX_Move_Masked_Edge_Reveal_Right_Out</name>
+    <description>Out half of Masked_Edge_Reveal_Right: the layer slides back into the invisible line it came from (15 frames, expo ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).</description>
+    <effect id="qtblend">
+        <property name="rect">0p=0 0 1920 1080 1;14=-960 0 1920 1080 1</property>
+        <property name="rotation">0=0;14=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;14=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="qtcrop">
+        <property name="rect">0=960 0 960 1080</property>
+        <property name="radius">0=0</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000</property>
+    </effect>
+</effectgroup>

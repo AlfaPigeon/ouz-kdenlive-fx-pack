@@ -924,7 +924,7 @@
    "slug": "afx_move_overshoot_slide_in_left",
    "category": "AFX_Move",
    "name": "Overshoot_Slide_In_Left",
-   "desc": "Slides in from the left edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.",
+   "desc": "Slides in from the left edge, swings past its resting spot and settles back (14 frames, Kdenlive/MLT back ease-out – the overshoot peaks at ≈ 37% of the travel) with a short motion-blur peak.",
    "frames": 14,
    "effects": [
     "qtblend",
@@ -942,7 +942,7 @@
    "slug": "afx_move_overshoot_slide_in_right",
    "category": "AFX_Move",
    "name": "Overshoot_Slide_In_Right",
-   "desc": "Slides in from the right edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.",
+   "desc": "Slides in from the right edge, swings past its resting spot and settles back (14 frames, Kdenlive/MLT back ease-out – the overshoot peaks at ≈ 37% of the travel) with a short motion-blur peak.",
    "frames": 14,
    "effects": [
     "qtblend",
@@ -960,7 +960,7 @@
    "slug": "afx_move_overshoot_slide_in_top",
    "category": "AFX_Move",
    "name": "Overshoot_Slide_In_Top",
-   "desc": "Slides in from the top edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.",
+   "desc": "Slides in from the top edge, swings past its resting spot and settles back (14 frames, Kdenlive/MLT back ease-out – the overshoot peaks at ≈ 37% of the travel) with a short motion-blur peak.",
    "frames": 14,
    "effects": [
     "qtblend",
@@ -978,7 +978,7 @@
    "slug": "afx_move_overshoot_slide_in_bottom",
    "category": "AFX_Move",
    "name": "Overshoot_Slide_In_Bottom",
-   "desc": "Slides in from the bottom edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.",
+   "desc": "Slides in from the bottom edge, swings past its resting spot and settles back (14 frames, Kdenlive/MLT back ease-out – the overshoot peaks at ≈ 37% of the travel) with a short motion-blur peak.",
    "frames": 14,
    "effects": [
     "qtblend",
@@ -1926,6 +1926,658 @@
    "audio": true,
    "id": "ouzfx_afx_audio_voiceover_quick_polish",
    "display": "OuzFX AFX_Audio_Voiceover_Quick_Polish"
+  },
+  {
+   "slug": "afx_move_whip_slide_out_left",
+   "category": "AFX_Move",
+   "name": "Whip_Slide_Out_Left",
+   "desc": "Whip-slide OUT to the left: accelerates off-screen (expo ease-in) while directional motion blur builds up – the exact mirror of 'Anim · Slide In from Left' (12 frames). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden). Faster 6–8 frame camera-push tier: 'Fast · Motion-Blur Push Left' / 'AFX_Cam_Whip_Pan_Push_*'.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_anim_slide_in_left",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_whip_slide_out_left",
+   "display": "OuzFX AFX_Move_Whip_Slide_Out_Left"
+  },
+  {
+   "slug": "afx_move_whip_slide_out_right",
+   "category": "AFX_Move",
+   "name": "Whip_Slide_Out_Right",
+   "desc": "Whip-slide OUT to the right: accelerates off-screen (expo ease-in) while directional motion blur builds up – the exact mirror of 'Anim · Slide In from Right' (12 frames). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden). Faster 6–8 frame camera-push tier: 'Fast · Motion-Blur Push Left' / 'AFX_Cam_Whip_Pan_Push_*'.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_anim_slide_in_right",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_whip_slide_out_right",
+   "display": "OuzFX AFX_Move_Whip_Slide_Out_Right"
+  },
+  {
+   "slug": "afx_move_whip_slide_out_up",
+   "category": "AFX_Move",
+   "name": "Whip_Slide_Out_Up",
+   "desc": "Whip-slide OUT to the up: accelerates off-screen (expo ease-in) while directional motion blur builds up – the exact mirror of 'Anim · Slide In from Top' (12 frames). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden). Faster 6–8 frame camera-push tier: 'Fast · Motion-Blur Push Left' / 'AFX_Cam_Whip_Pan_Push_*'.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_anim_slide_in_top",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_whip_slide_out_up",
+   "display": "OuzFX AFX_Move_Whip_Slide_Out_Up"
+  },
+  {
+   "slug": "afx_move_whip_slide_out_down",
+   "category": "AFX_Move",
+   "name": "Whip_Slide_Out_Down",
+   "desc": "Whip-slide OUT to the down: accelerates off-screen (expo ease-in) while directional motion blur builds up – the exact mirror of 'Anim · Slide In from Bottom' (12 frames). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden). Faster 6–8 frame camera-push tier: 'Fast · Motion-Blur Push Left' / 'AFX_Cam_Whip_Pan_Push_*'.",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_anim_slide_in_bottom",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_whip_slide_out_down",
+   "display": "OuzFX AFX_Move_Whip_Slide_Out_Down"
+  },
+  {
+   "slug": "afx_move_overshoot_slide_out_left",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_Out_Left",
+   "desc": "Anticipation exit, the exact time-reverse of Overshoot_Slide_In_Left: winds up the other way (Kdenlive/MLT back ease-in, ≈ 37% of the travel), then shoots out to the left with a motion-blur tail (14 frames). Razor 14 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_afx_move_overshoot_slide_in_left",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_overshoot_slide_out_left",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_Out_Left"
+  },
+  {
+   "slug": "afx_move_overshoot_slide_out_right",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_Out_Right",
+   "desc": "Anticipation exit, the exact time-reverse of Overshoot_Slide_In_Right: winds up the other way (Kdenlive/MLT back ease-in, ≈ 37% of the travel), then shoots out to the right with a motion-blur tail (14 frames). Razor 14 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_afx_move_overshoot_slide_in_right",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_overshoot_slide_out_right",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_Out_Right"
+  },
+  {
+   "slug": "afx_move_overshoot_slide_out_top",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_Out_Top",
+   "desc": "Anticipation exit, the exact time-reverse of Overshoot_Slide_In_Top: winds up the other way (Kdenlive/MLT back ease-in, ≈ 37% of the travel), then shoots out to the top with a motion-blur tail (14 frames). Razor 14 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_afx_move_overshoot_slide_in_top",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_overshoot_slide_out_top",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_Out_Top"
+  },
+  {
+   "slug": "afx_move_overshoot_slide_out_bottom",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_Out_Bottom",
+   "desc": "Anticipation exit, the exact time-reverse of Overshoot_Slide_In_Bottom: winds up the other way (Kdenlive/MLT back ease-in, ≈ 37% of the travel), then shoots out to the bottom with a motion-blur tail (14 frames). Razor 14 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_afx_move_overshoot_slide_in_bottom",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_overshoot_slide_out_bottom",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_Out_Bottom"
+  },
+  {
+   "slug": "afx_move_masked_edge_reveal_up_out",
+   "category": "AFX_Move",
+   "name": "Masked_Edge_Reveal_Up_Out",
+   "desc": "Out half of Masked_Edge_Reveal_Up: the layer slides back into the invisible line it came from (15 frames, expo ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "qtcrop"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_masked_edge_reveal_up",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_masked_edge_reveal_up_out",
+   "display": "OuzFX AFX_Move_Masked_Edge_Reveal_Up_Out"
+  },
+  {
+   "slug": "afx_move_masked_edge_reveal_down_out",
+   "category": "AFX_Move",
+   "name": "Masked_Edge_Reveal_Down_Out",
+   "desc": "Out half of Masked_Edge_Reveal_Down: the layer slides back into the invisible line it came from (15 frames, expo ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "qtcrop"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_masked_edge_reveal_down",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_masked_edge_reveal_down_out",
+   "display": "OuzFX AFX_Move_Masked_Edge_Reveal_Down_Out"
+  },
+  {
+   "slug": "afx_move_masked_edge_reveal_left_out",
+   "category": "AFX_Move",
+   "name": "Masked_Edge_Reveal_Left_Out",
+   "desc": "Out half of Masked_Edge_Reveal_Left: the layer slides back into the invisible line it came from (15 frames, expo ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "qtcrop"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_masked_edge_reveal_left",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_masked_edge_reveal_left_out",
+   "display": "OuzFX AFX_Move_Masked_Edge_Reveal_Left_Out"
+  },
+  {
+   "slug": "afx_move_masked_edge_reveal_right_out",
+   "category": "AFX_Move",
+   "name": "Masked_Edge_Reveal_Right_Out",
+   "desc": "Out half of Masked_Edge_Reveal_Right: the layer slides back into the invisible line it came from (15 frames, expo ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "qtcrop"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_masked_edge_reveal_right",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_masked_edge_reveal_right_out",
+   "display": "OuzFX AFX_Move_Masked_Edge_Reveal_Right_Out"
+  },
+  {
+   "slug": "afx_move_bounce_drop_out",
+   "category": "AFX_Move",
+   "name": "Bounce_Drop_Out",
+   "desc": "Mirror of 'Anim · Bounce In (Drop)': a few growing hops on the floor, then it launches out of the top (20 frames, bounce ease-in). Razor 20 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_anim_bounce_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_bounce_drop_out",
+   "display": "OuzFX AFX_Move_Bounce_Drop_Out"
+  },
+  {
+   "slug": "afx_move_elastic_zoom_out",
+   "category": "AFX_Move",
+   "name": "Elastic_Zoom_Out",
+   "desc": "Mirror of 'Anim · Elastic Zoom-In': wobbles, then snaps down to 40% and vanishes (20 frames, elastic ease-in). Razor 20 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_anim_elastic_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_elastic_zoom_out",
+   "display": "OuzFX AFX_Move_Elastic_Zoom_Out"
+  },
+  {
+   "slug": "afx_move_blur_out",
+   "category": "AFX_Move",
+   "name": "Blur_Out",
+   "desc": "Mirror of 'Anim · Blur-In': dissolves into a heavy blur while fading out and growing to 104% (15 frames). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "avfilter.gblur",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_anim_blur_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_blur_out",
+   "display": "OuzFX AFX_Move_Blur_Out"
+  },
+  {
+   "slug": "afx_move_screen_swing_back_out",
+   "category": "AFX_Move",
+   "name": "Screen_Swing_Back_Out",
+   "desc": "Out half of 'Screen 3D · Swing to Front': the flat floating panel swings back to the tilted-left 3D view (25 frames, cubic ease-in). Razor 25 frames before the end. Kdenlive 25.04+ (Drop Shadow).",
+   "frames": 25,
+   "effects": [
+    "qtcrop",
+    "frei0r.c0rners",
+    "dropshadow"
+   ],
+   "tags": [],
+   "pair": "ouzfx_screen_tilt_to_flat",
+   "end": "changed",
+   "audio": false,
+   "id": "ouzfx_afx_move_screen_swing_back_out",
+   "display": "OuzFX AFX_Move_Screen_Swing_Back_Out"
+  },
+  {
+   "slug": "afx_move_screen_pop_out",
+   "category": "AFX_Move",
+   "name": "Screen_Pop_Out",
+   "desc": "Out half of 'Screen 3D · Floating Screen · Pop In': the floating window anticipates, collapses to the centre and fades (18 frames, back ease-in). Razor 18 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden). Kdenlive 25.04+ (Drop Shadow).",
+   "frames": 18,
+   "effects": [
+    "qtcrop",
+    "frei0r.c0rners",
+    "dropshadow",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_screen_pop_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_screen_pop_out",
+   "display": "OuzFX AFX_Move_Screen_Pop_Out"
+  },
+  {
+   "slug": "afx_move_card_3d_swing_out_left",
+   "category": "AFX_Move",
+   "name": "Card_3D_Swing_Out_Left",
+   "desc": "Card / tweet / document turns away in 3D perspective and swings out to the left (18 frames, cubic ease-in). Mirror of Card_3D_Swing_In_Left. Razor 18 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 18,
+   "effects": [
+    "frei0r.c0rners",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_card_3d_swing_in_left",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_card_3d_swing_out_left",
+   "display": "OuzFX AFX_Move_Card_3D_Swing_Out_Left"
+  },
+  {
+   "slug": "afx_move_card_3d_swing_out_right",
+   "category": "AFX_Move",
+   "name": "Card_3D_Swing_Out_Right",
+   "desc": "Card / tweet / document turns away in 3D perspective and swings out to the right (18 frames, cubic ease-in). Mirror of Card_3D_Swing_In_Right. Razor 18 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 18,
+   "effects": [
+    "frei0r.c0rners",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_card_3d_swing_in_right",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_card_3d_swing_out_right",
+   "display": "OuzFX AFX_Move_Card_3D_Swing_Out_Right"
+  },
+  {
+   "slug": "afx_move_hinge_swing_out_top_left",
+   "category": "AFX_Move",
+   "name": "Hinge_Swing_Out_Top_Left",
+   "desc": "Out half of Hinge_Swing_In_Top_Left: dips the other way, then swings up and away around the top-left corner (16 frames, back ease-in). Razor 16 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 16,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_hinge_swing_in_top_left",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_hinge_swing_out_top_left",
+   "display": "OuzFX AFX_Move_Hinge_Swing_Out_Top_Left"
+  },
+  {
+   "slug": "afx_move_hinge_swing_out_top_right",
+   "category": "AFX_Move",
+   "name": "Hinge_Swing_Out_Top_Right",
+   "desc": "Out half of Hinge_Swing_In_Top_Right: dips the other way, then swings up and away around the top-right corner (16 frames, back ease-in). Razor 16 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 16,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_hinge_swing_in_top_right",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_hinge_swing_out_top_right",
+   "display": "OuzFX AFX_Move_Hinge_Swing_Out_Top_Right"
+  },
+  {
+   "slug": "afx_move_pip_snap_top_left_out",
+   "category": "AFX_Move",
+   "name": "PiP_Snap_Top_Left_Out",
+   "desc": "Out half of PiP_Snap_Top_Left: the 32% corner picture grows back to full screen and loses its rounded corners (12 frames, cubic ease-in). Razor where the PiP should end and drop it on the right-hand piece (after PiP_Snap_Top_Left).",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_pip_snap_top_left",
+   "end": "rest",
+   "audio": false,
+   "id": "ouzfx_afx_move_pip_snap_top_left_out",
+   "display": "OuzFX AFX_Move_PiP_Snap_Top_Left_Out"
+  },
+  {
+   "slug": "afx_move_pip_snap_top_right_out",
+   "category": "AFX_Move",
+   "name": "PiP_Snap_Top_Right_Out",
+   "desc": "Out half of PiP_Snap_Top_Right: the 32% corner picture grows back to full screen and loses its rounded corners (12 frames, cubic ease-in). Razor where the PiP should end and drop it on the right-hand piece (after PiP_Snap_Top_Right).",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_pip_snap_top_right",
+   "end": "rest",
+   "audio": false,
+   "id": "ouzfx_afx_move_pip_snap_top_right_out",
+   "display": "OuzFX AFX_Move_PiP_Snap_Top_Right_Out"
+  },
+  {
+   "slug": "afx_move_pip_snap_bottom_left_out",
+   "category": "AFX_Move",
+   "name": "PiP_Snap_Bottom_Left_Out",
+   "desc": "Out half of PiP_Snap_Bottom_Left: the 32% corner picture grows back to full screen and loses its rounded corners (12 frames, cubic ease-in). Razor where the PiP should end and drop it on the right-hand piece (after PiP_Snap_Bottom_Left).",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_pip_snap_bottom_left",
+   "end": "rest",
+   "audio": false,
+   "id": "ouzfx_afx_move_pip_snap_bottom_left_out",
+   "display": "OuzFX AFX_Move_PiP_Snap_Bottom_Left_Out"
+  },
+  {
+   "slug": "afx_move_pip_snap_bottom_right_out",
+   "category": "AFX_Move",
+   "name": "PiP_Snap_Bottom_Right_Out",
+   "desc": "Out half of PiP_Snap_Bottom_Right: the 32% corner picture grows back to full screen and loses its rounded corners (12 frames, cubic ease-in). Razor where the PiP should end and drop it on the right-hand piece (after PiP_Snap_Bottom_Right).",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_pip_snap_bottom_right",
+   "end": "rest",
+   "audio": false,
+   "id": "ouzfx_afx_move_pip_snap_bottom_right_out",
+   "display": "OuzFX AFX_Move_PiP_Snap_Bottom_Right_Out"
+  },
+  {
+   "slug": "afx_move_text_word_pop_shorts_out",
+   "category": "AFX_Move",
+   "name": "Text_Word_Pop_Shorts_Out",
+   "desc": "Caption pop OUT for Shorts/Reels: 100% → 105% → 85% and gone in 4 frames (mirror of Text_Word_Pop_Shorts). Drop it on the last 4 frames of a caption clip.",
+   "frames": 4,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_afx_move_text_word_pop_shorts",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_word_pop_shorts_out",
+   "display": "OuzFX AFX_Move_Text_Word_Pop_Shorts_Out"
+  },
+  {
+   "slug": "afx_move_text_rise_fade_out",
+   "category": "AFX_Move",
+   "name": "Text_Rise_Fade_Out",
+   "desc": "Lower-third exit, mirror of 'Text · Text Rise': sinks 6% while fading out (12 frames, cubic ease-in). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_text_rise",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_rise_fade_out",
+   "display": "OuzFX AFX_Move_Text_Rise_Fade_Out"
+  },
+  {
+   "slug": "afx_move_text_typewriter_wipe_fast_out",
+   "category": "AFX_Move",
+   "name": "Text_Typewriter_Wipe_Fast_Out",
+   "desc": "Backspace-style exit: a linear right-to-left crop erases the line over 25 frames (mirror of Text_Typewriter_Wipe_Fast). Razor 25 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 25,
+   "effects": [
+    "qtcrop",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_text_typewriter_wipe_fast",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_typewriter_wipe_fast_out",
+   "display": "OuzFX AFX_Move_Text_Typewriter_Wipe_Fast_Out"
+  },
+  {
+   "slug": "afx_move_text_typewriter_wipe_slow_out",
+   "category": "AFX_Move",
+   "name": "Text_Typewriter_Wipe_Slow_Out",
+   "desc": "Backspace-style exit: a linear right-to-left crop erases the line over 50 frames (mirror of Text_Typewriter_Wipe_Slow). Razor 50 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 50,
+   "effects": [
+    "qtcrop",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_move_text_typewriter_wipe_slow",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_typewriter_wipe_slow_out",
+   "display": "OuzFX AFX_Move_Text_Typewriter_Wipe_Slow_Out"
+  },
+  {
+   "slug": "afx_move_text_glitch_out",
+   "category": "AFX_Move",
+   "name": "Text_Glitch_Out",
+   "desc": "Title glitches off: steady, then erratic opacity drops, jitter and RGB tearing until it is gone on frame 6 (mirror of Text_Glitch_In). Drop it on the last 7 frames of the title.",
+   "frames": 7,
+   "effects": [
+    "qtblend",
+    "avfilter.rgbashift"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_afx_move_text_glitch_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_glitch_out",
+   "display": "OuzFX AFX_Move_Text_Glitch_Out"
+  },
+  {
+   "slug": "afx_util_split_screen_left_slide_out",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Left_Slide_Out",
+   "desc": "Out half of Split_Screen_Left_Slide_In: the left half slides back out of its edge (15 frames, cubic ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_util_split_screen_left_slide_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_left_slide_out",
+   "display": "OuzFX AFX_Util_Split_Screen_Left_Slide_Out"
+  },
+  {
+   "slug": "afx_util_split_screen_right_slide_out",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Right_Slide_Out",
+   "desc": "Out half of Split_Screen_Right_Slide_In: the right half slides back out of its edge (15 frames, cubic ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_util_split_screen_right_slide_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_right_slide_out",
+   "display": "OuzFX AFX_Util_Split_Screen_Right_Slide_Out"
+  },
+  {
+   "slug": "afx_util_split_screen_top_slide_out",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Top_Slide_Out",
+   "desc": "Out half of Split_Screen_Top_Slide_In: the top half slides back out of its edge (15 frames, cubic ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_util_split_screen_top_slide_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_top_slide_out",
+   "display": "OuzFX AFX_Util_Split_Screen_Top_Slide_Out"
+  },
+  {
+   "slug": "afx_util_split_screen_bottom_slide_out",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Bottom_Slide_Out",
+   "desc": "Out half of Split_Screen_Bottom_Slide_In: the bottom half slides back out of its edge (15 frames, cubic ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_util_split_screen_bottom_slide_in",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_bottom_slide_out",
+   "display": "OuzFX AFX_Util_Split_Screen_Bottom_Slide_Out"
+  },
+  {
+   "slug": "afx_util_highlighter_wipe_out",
+   "category": "AFX_Util",
+   "name": "Highlighter_Wipe_Out",
+   "desc": "Out half of Highlighter_Wipe: the marker band retracts right-to-left (12 frames, cubic ease-in). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_util_highlighter_wipe",
+   "end": "gone",
+   "audio": false,
+   "id": "ouzfx_afx_util_highlighter_wipe_out",
+   "display": "OuzFX AFX_Util_Highlighter_Wipe_Out"
+  },
+  {
+   "slug": "afx_cam_dutch_angle_subtle_8deg_out",
+   "category": "AFX_Cam",
+   "name": "Dutch_Angle_Subtle_8deg_Out",
+   "desc": "Out half of Dutch_Angle_Subtle_8deg: eases the horizon from 8° back to level and the auto-zoom back to 100% over 20 frames. Razor where the tilt should end and drop it on the right-hand piece.",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_cam_dutch_angle_subtle_8deg",
+   "end": "rest",
+   "audio": false,
+   "id": "ouzfx_afx_cam_dutch_angle_subtle_8deg_out",
+   "display": "OuzFX AFX_Cam_Dutch_Angle_Subtle_8deg_Out"
+  },
+  {
+   "slug": "afx_cam_dutch_angle_strong_15deg_out",
+   "category": "AFX_Cam",
+   "name": "Dutch_Angle_Strong_15deg_Out",
+   "desc": "Out half of Dutch_Angle_Strong_15deg: eases the horizon from 15° back to level and the auto-zoom back to 100% over 20 frames. Razor where the tilt should end and drop it on the right-hand piece.",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "pair": "ouzfx_afx_cam_dutch_angle_strong_15deg",
+   "end": "rest",
+   "audio": false,
+   "id": "ouzfx_afx_cam_dutch_angle_strong_15deg_out",
+   "display": "OuzFX AFX_Cam_Dutch_Angle_Strong_15deg_Out"
   }
  ],
  "compositions": [
@@ -2159,7 +2811,7 @@
    "slug": "comp_pop_out",
    "category": "Animations",
    "name": "Pop Out",
-   "desc": "Anticipates (grows to 106%) then collapses to 0% – place over the end of a clip/title.",
+   "desc": "Anticipates (MLT back ease-in: grows to ≈ 137%) then collapses to 0% – place over the end of a clip/title.",
    "tag": "qtblend",
    "values": {
     "rect": "0v=0% 0% 100% 100% 100%;-1=50% 50% 0% 0% 0%"
@@ -2408,6 +3060,230 @@
    "display": "OuzFX AFX_Cam_Ken_Burns_Pan_Down",
    "values_1080p": {
     "rect": "0c=-192 0 2304 1296 1;-1=-192 -216 2304 1296 1"
+   }
+  },
+  {
+   "slug": "afx_cam_whip_push_out_left",
+   "category": "AFX_Cam",
+   "name": "Whip_Push_Out_Left",
+   "desc": "Whip-pan push transition: the outgoing clip (lower track) whips out to the left while the incoming clip (upper track) pushes in behind it – expo ease-in-out, so it is slow at the edges and a blur-fast smear in the middle. Overlap the two clips by 6–12 frames and drop it on the overlap. Built on Kdenlive's Push composition (frei0r sleid0r).",
+   "tag": "frei0r.sleid0r_push-left",
+   "values": {
+    "position": "0r=0;-1=1"
+   },
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_comp_whip_left",
+   "end": "top",
+   "id": "ouzfx_afx_cam_whip_push_out_left",
+   "display": "OuzFX AFX_Cam_Whip_Push_Out_Left",
+   "values_1080p": {
+    "position": "0r=0;-1=1"
+   }
+  },
+  {
+   "slug": "afx_cam_whip_push_out_right",
+   "category": "AFX_Cam",
+   "name": "Whip_Push_Out_Right",
+   "desc": "Whip-pan push transition: the outgoing clip (lower track) whips out to the right while the incoming clip (upper track) pushes in behind it – expo ease-in-out, so it is slow at the edges and a blur-fast smear in the middle. Overlap the two clips by 6–12 frames and drop it on the overlap. Built on Kdenlive's Push composition (frei0r sleid0r).",
+   "tag": "frei0r.sleid0r_push-right",
+   "values": {
+    "position": "0r=0;-1=1"
+   },
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_comp_whip_right",
+   "end": "top",
+   "id": "ouzfx_afx_cam_whip_push_out_right",
+   "display": "OuzFX AFX_Cam_Whip_Push_Out_Right",
+   "values_1080p": {
+    "position": "0r=0;-1=1"
+   }
+  },
+  {
+   "slug": "afx_cam_whip_push_out_up",
+   "category": "AFX_Cam",
+   "name": "Whip_Push_Out_Up",
+   "desc": "Whip-pan push transition: the outgoing clip (lower track) whips out to the up while the incoming clip (upper track) pushes in behind it – expo ease-in-out, so it is slow at the edges and a blur-fast smear in the middle. Overlap the two clips by 6–12 frames and drop it on the overlap. Built on Kdenlive's Push composition (frei0r sleid0r).",
+   "tag": "frei0r.sleid0r_push-up",
+   "values": {
+    "position": "0r=0;-1=1"
+   },
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_comp_whip_up",
+   "end": "top",
+   "id": "ouzfx_afx_cam_whip_push_out_up",
+   "display": "OuzFX AFX_Cam_Whip_Push_Out_Up",
+   "values_1080p": {
+    "position": "0r=0;-1=1"
+   }
+  },
+  {
+   "slug": "afx_cam_whip_push_out_down",
+   "category": "AFX_Cam",
+   "name": "Whip_Push_Out_Down",
+   "desc": "Whip-pan push transition: the outgoing clip (lower track) whips out to the down while the incoming clip (upper track) pushes in behind it – expo ease-in-out, so it is slow at the edges and a blur-fast smear in the middle. Overlap the two clips by 6–12 frames and drop it on the overlap. Built on Kdenlive's Push composition (frei0r sleid0r).",
+   "tag": "frei0r.sleid0r_push-down",
+   "values": {
+    "position": "0r=0;-1=1"
+   },
+   "tags": [
+    "fast"
+   ],
+   "pair": "ouzfx_comp_whip_down",
+   "end": "top",
+   "id": "ouzfx_afx_cam_whip_push_out_down",
+   "display": "OuzFX AFX_Cam_Whip_Push_Out_Down",
+   "values_1080p": {
+    "position": "0r=0;-1=1"
+   }
+  },
+  {
+   "slug": "afx_move_overshoot_slide_out_left_anylength",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_Out_Left_AnyLength",
+   "desc": "Composition version of Overshoot_Slide_Out_Left: the upper clip anticipates and shoots out to the left (back ease-in), always ending exactly at the end of the composition. Put it over the END of the clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0v=0% 0% 100% 100% 100%;-1=-105% 0% 100% 100% 100%"
+   },
+   "tags": [],
+   "pair": "ouzfx_afx_move_overshoot_slide_in_left",
+   "end": "bottom",
+   "id": "ouzfx_afx_move_overshoot_slide_out_left_anylength",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_Out_Left_AnyLength",
+   "values_1080p": {
+    "rect": "0v=0 0 1920 1080 1;-1=-2016 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "afx_move_overshoot_slide_out_right_anylength",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_Out_Right_AnyLength",
+   "desc": "Composition version of Overshoot_Slide_Out_Right: the upper clip anticipates and shoots out to the right (back ease-in), always ending exactly at the end of the composition. Put it over the END of the clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0v=0% 0% 100% 100% 100%;-1=105% 0% 100% 100% 100%"
+   },
+   "tags": [],
+   "pair": "ouzfx_afx_move_overshoot_slide_in_right",
+   "end": "bottom",
+   "id": "ouzfx_afx_move_overshoot_slide_out_right_anylength",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_Out_Right_AnyLength",
+   "values_1080p": {
+    "rect": "0v=0 0 1920 1080 1;-1=2016 0 1920 1080 1"
+   }
+  },
+  {
+   "slug": "afx_move_overshoot_slide_out_top_anylength",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_Out_Top_AnyLength",
+   "desc": "Composition version of Overshoot_Slide_Out_Top: the upper clip anticipates and shoots out to the top (back ease-in), always ending exactly at the end of the composition. Put it over the END of the clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0v=0% 0% 100% 100% 100%;-1=0% -105% 100% 100% 100%"
+   },
+   "tags": [],
+   "pair": "ouzfx_afx_move_overshoot_slide_in_top",
+   "end": "bottom",
+   "id": "ouzfx_afx_move_overshoot_slide_out_top_anylength",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_Out_Top_AnyLength",
+   "values_1080p": {
+    "rect": "0v=0 0 1920 1080 1;-1=0 -1134 1920 1080 1"
+   }
+  },
+  {
+   "slug": "afx_move_overshoot_slide_out_bottom_anylength",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_Out_Bottom_AnyLength",
+   "desc": "Composition version of Overshoot_Slide_Out_Bottom: the upper clip anticipates and shoots out to the bottom (back ease-in), always ending exactly at the end of the composition. Put it over the END of the clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0v=0% 0% 100% 100% 100%;-1=0% 105% 100% 100% 100%"
+   },
+   "tags": [],
+   "pair": "ouzfx_afx_move_overshoot_slide_in_bottom",
+   "end": "bottom",
+   "id": "ouzfx_afx_move_overshoot_slide_out_bottom_anylength",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_Out_Bottom_AnyLength",
+   "values_1080p": {
+    "rect": "0v=0 0 1920 1080 1;-1=0 1134 1920 1080 1"
+   }
+  },
+  {
+   "slug": "afx_move_bounce_drop_out_anylength",
+   "category": "AFX_Move",
+   "name": "Bounce_Drop_Out_AnyLength",
+   "desc": "Composition version of Bounce_Drop_Out: growing hops, then the upper clip launches out of the top, ending at the end of the composition.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0B=0% 0% 100% 100% 100%;-1=0% -105% 100% 100% 100%"
+   },
+   "tags": [],
+   "pair": "ouzfx_anim_bounce_in",
+   "end": "bottom",
+   "id": "ouzfx_afx_move_bounce_drop_out_anylength",
+   "display": "OuzFX AFX_Move_Bounce_Drop_Out_AnyLength",
+   "values_1080p": {
+    "rect": "0B=0 0 1920 1080 1;-1=0 -1134 1920 1080 1"
+   }
+  },
+  {
+   "slug": "afx_move_elastic_zoom_out_anylength",
+   "category": "AFX_Move",
+   "name": "Elastic_Zoom_Out_AnyLength",
+   "desc": "Composition version of Elastic_Zoom_Out: wobble, then the upper clip snaps to 40% and vanishes at the end of the composition.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0y=0% 0% 100% 100% 100%;-1=30% 30% 40% 40% 0%"
+   },
+   "tags": [],
+   "pair": "ouzfx_anim_elastic_in",
+   "end": "bottom",
+   "id": "ouzfx_afx_move_elastic_zoom_out_anylength",
+   "display": "OuzFX AFX_Move_Elastic_Zoom_Out_AnyLength",
+   "values_1080p": {
+    "rect": "0y=0 0 1920 1080 1;-1=576 324 768 432 0"
+   }
+  },
+  {
+   "slug": "afx_move_text_rise_fade_out_anylength",
+   "category": "AFX_Move",
+   "name": "Text_Rise_Fade_Out_AnyLength",
+   "desc": "Composition version of Text_Rise_Fade_Out for a title on the upper track: sinks 6% and fades out by the end of the composition.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0g=0% 0% 100% 100% 100%;-1=0% 6% 100% 100% 0%"
+   },
+   "tags": [],
+   "pair": "ouzfx_text_rise",
+   "end": "bottom",
+   "id": "ouzfx_afx_move_text_rise_fade_out_anylength",
+   "display": "OuzFX AFX_Move_Text_Rise_Fade_Out_AnyLength",
+   "values_1080p": {
+    "rect": "0g=0 0 1920 1080 1;-1=0 65 1920 1080 0"
+   }
+  },
+  {
+   "slug": "afx_move_pip_corner_pop_out",
+   "category": "AFX_Move",
+   "name": "PiP_Corner_Pop_Out",
+   "desc": "Out half of 'Animations · Picture-in-Picture Corner (Pop)': the 30% bottom-right bubble anticipates and collapses into the corner by the end of the composition. Put it right after the PiP composition, over the last frames of the facecam clip.",
+   "tag": "qtblend",
+   "values": {
+    "rect": "0v=67% 66% 30% 30% 100%;-1=84% 84% 0% 0% 0%"
+   },
+   "tags": [],
+   "pair": "ouzfx_comp_picture_in_picture",
+   "end": "bottom",
+   "id": "ouzfx_afx_move_pip_corner_pop_out",
+   "display": "OuzFX AFX_Move_PiP_Corner_Pop_Out",
+   "values_1080p": {
+    "rect": "0v=1286 713 576 324 1;-1=1613 907 0 0 0"
    }
   }
  ],

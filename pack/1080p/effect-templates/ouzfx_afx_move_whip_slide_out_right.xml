@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_whip_slide_out_right" parentIn="0">
+    <name>OuzFX AFX_Move_Whip_Slide_Out_Right</name>
+    <description>Whip-slide OUT to the right: accelerates off-screen (expo ease-in) while directional motion blur builds up – the exact mirror of 'Anim · Slide In from Right' (12 frames). Razor 12 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden). Faster 6–8 frame camera-push tier: 'Fast · Motion-Blur Push Left' / 'AFX_Cam_Whip_Pan_Push_*'.</description>
+    <effect id="qtblend">
+        <property name="rect">0p=0 0 1920 1080 1;11=2112 0 1920 1080 1</property>
+        <property name="rotation">0=0;11=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;11=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="avfilter.dblur">
+        <property name="av.angle">0=0;6=0;11=0</property>
+        <property name="av.radius">0=0;6=10;11=60</property>
+        <property name="av.planes">7</property>
+    </effect>
+</effectgroup>

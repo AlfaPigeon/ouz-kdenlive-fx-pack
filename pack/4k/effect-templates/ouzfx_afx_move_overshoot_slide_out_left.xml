@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_overshoot_slide_out_left" parentIn="0">
+    <name>OuzFX AFX_Move_Overshoot_Slide_Out_Left</name>
+    <description>Anticipation exit, the exact time-reverse of Overshoot_Slide_In_Left: winds up the other way (Kdenlive/MLT back ease-in, ≈ 37% of the travel), then shoots out to the left with a motion-blur tail (14 frames). Razor 14 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).</description>
+    <effect id="qtblend">
+        <property name="rect">0v=0 0 3840 2160 1;13=-4032 0 3840 2160 1</property>
+        <property name="rotation">0=0;13=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;13=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="avfilter.dblur">
+        <property name="av.angle">0=0;8=0;13=0</property>
+        <property name="av.radius">0=0;8=6;13=40</property>
+        <property name="av.planes">7</property>
+    </effect>
+</effectgroup>

@@ -2,7 +2,7 @@
 <!DOCTYPE kpartgui>
 <transition tag="qtblend" id="ouzfx_comp_pop_out">
     <name>OuzFX Anim · Pop Out</name>
-    <description>Anticipates (grows to 106%) then collapses to 0% – place over the end of a clip/title.</description>
+    <description>Anticipates (MLT back ease-in: grows to ≈ 137%) then collapses to 0% – place over the end of a clip/title.</description>
     <author>Oğuz Kaan Özsoy (OuzFX)</author>
     <parameter type="animatedrect" name="rect" default="0 0 %width %height 1" value="0v=0 0 1920 1080 1;-1=960 540 0 0 0">
         <name>Rectangle</name>

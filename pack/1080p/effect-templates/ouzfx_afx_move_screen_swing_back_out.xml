@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_screen_swing_back_out" parentIn="0">
+    <name>OuzFX AFX_Move_Screen_Swing_Back_Out</name>
+    <description>Out half of 'Screen 3D · Swing to Front': the flat floating panel swings back to the tilted-left 3D view (25 frames, cubic ease-in). Razor 25 frames before the end. Kdenlive 25.04+ (Drop Shadow).</description>
+    <effect id="qtcrop">
+        <property name="rect">0=0 0 1920 1080</property>
+        <property name="radius">0=0.035</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000</property>
+    </effect>
+    <effect id="frei0r.c0rners">
+        <property name="0">0g=0.3633;24=0.3533</property>
+        <property name="1">0g=0.3633;24=0.3867</property>
+        <property name="2">0g=0.6367;24=0.6333</property>
+        <property name="3">0g=0.3633;24=0.3533</property>
+        <property name="4">0g=0.6367;24=0.6333</property>
+        <property name="5">0g=0.6367;24=0.6467</property>
+        <property name="6">0g=0.3633;24=0.3533</property>
+        <property name="7">0g=0.6367;24=0.6133</property>
+        <property name="8">0</property>
+        <property name="9">0=0.5;24=0.5</property>
+        <property name="10">0=0.5;24=0.5</property>
+        <property name="11">0.166</property>
+        <property name="12">1</property>
+        <property name="13">0=0.01;24=0.01</property>
+        <property name="14">0</property>
+    </effect>
+    <effect id="dropshadow">
+        <property name="radius">0=25</property>
+        <property name="x">0=14</property>
+        <property name="y">0=22</property>
+        <property name="color">0=#a0000000</property>
+    </effect>
+</effectgroup>

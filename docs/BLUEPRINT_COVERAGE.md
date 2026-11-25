@@ -1,4 +1,4 @@
-# Blueprint coverage (v1.1)
+# Blueprint coverage (v1.1) + In/Out pairs (v1.2)
 
 Audit of every item in the *Kdenlive FX Pack: Expansion Blueprint* against the v1.0 pack, done before
 building anything, so nothing is implemented twice. **Present** = an existing preset already does essentially
@@ -25,7 +25,7 @@ Totals: **41 blueprint items** – 12 already present, 8 partial (missing varian
 | 1.2 | Overshoot / Bounce Slide | 🆕 new | – | `ouzfx_afx_move_overshoot_slide_in_left`<br>`ouzfx_afx_move_overshoot_slide_in_right`<br>`ouzfx_afx_move_overshoot_slide_in_top`<br>`ouzfx_afx_move_overshoot_slide_in_bottom` | 4 directions, back ease-out. |
 | 1.3 | Whip-Slide (with simulated motion blur) | ✅ present | `ouzfx_anim_slide_in_left`<br>`ouzfx_anim_whip_in`<br>`ouzfx_fast_motion_slide_l` | – (no duplicate built) | The v1.0 slides already carry a directional-blur peak; Whip-In is the 6-frame fast tier. Missing push directions are added under 2.5. |
 | 1.4 | Masked Edge Reveal | 🆕 new | – | `ouzfx_afx_move_masked_edge_reveal_up`<br>`ouzfx_afx_move_masked_edge_reveal_down`<br>`ouzfx_afx_move_masked_edge_reveal_left`<br>`ouzfx_afx_move_masked_edge_reveal_right` | Transform slide + static crop mask, emerges from the centre line (4 directions). |
-| 1.5 | Elastic Pop-In / Pop-Out | ✅ present | `ouzfx_anim_pop_in`<br>`ouzfx_anim_elastic_in`<br>`ouzfx_comp_pop_in`<br>`ouzfx_comp_pop_out`<br>`ouzfx_text_pop` | – (no duplicate built) | Back-overshoot pop-in (0→~108→100%) and anticipation pop-out already exist. |
+| 1.5 | Elastic Pop-In / Pop-Out | ✅ present | `ouzfx_anim_pop_in`<br>`ouzfx_anim_elastic_in`<br>`ouzfx_comp_pop_in`<br>`ouzfx_comp_pop_out`<br>`ouzfx_text_pop` | – (no duplicate built) | Back-overshoot pop-in and anticipation pop-out already exist (Kdenlive/MLT back easing, so the overshoot is stronger than 108%). |
 | 1.6 | Drop & Gravity Bounce | ✅ present | `ouzfx_anim_bounce_in` | – (no duplicate built) | Drops from the top edge with bounce easing (decaying rebounds). |
 | 1.7 | Idle Float / Gentle Hover | 🆕 new | – | `ouzfx_afx_move_idle_float_gentle`<br>`ouzfx_afx_move_idle_float_strong` | Closest v1.0 presets (Text Wiggle = fast ±3° wiggle, Walking Bounce = camera bob) are different motions. |
 | 1.8 | Perspective Card Tilt / 3D Swing-In | ➕ partial | `ouzfx_screen_tilt_left`<br>`ouzfx_screen_tilt_right`<br>`ouzfx_screen_tilt_back`<br>`ouzfx_screen_tilt_to_flat` | `ouzfx_afx_move_card_3d_swing_in_left`<br>`ouzfx_afx_move_card_3d_swing_in_right` | Static tilts and an in-place swing existed; added the missing swing-IN from off-screen (left/right). |
@@ -87,6 +87,86 @@ Totals: **41 blueprint items** – 12 already present, 8 partial (missing varian
 | 6.2 | Walkie-Talkie / Telephone Voice | 🆕 new | – | `ouzfx_afx_audio_telephone_voice`<br>`ouzfx_afx_audio_walkie_talkie_radio` | Two variants: clean telephone and crunchy radio. |
 | 6.3 | Dramatic Echo / Hall Reverb | 🆕 new | – | `ouzfx_afx_audio_hall_echo_reverb` | Kdenlive hides FFmpeg aecho/acompressor, so built from included delay + limiter effects. |
 | 6.4 | Voiceover Quick Polish | 🆕 new | – | `ouzfx_afx_audio_voiceover_quick_polish` | High-pass + Dynamic Loudness leveler + limiter. |
+
+## In/Out pairs (v1.2)
+
+Every entrance / intro animation in the pack was checked for a matching exit. Intros that already had one were left alone; the rest got an Out preset in v1.2 (time-mirrored timing, ease-in acceleration).
+
+**How the Out timing works in Kdenlive** – compositions use `0=`/`-1=` keyframes, so an Out *composition* always ends exactly at the end of the composition, whatever its length. Kdenlive re-bases *effect template* keyframes on the clip start and drops end-relative (negative) keyframes when a template is applied, so Out *templates* work like the whip pushes: razor N frames before the end and drop the template on that last piece – the layer is gone on its last frame. Every Out preset is melt-tested that way (`tools/out_tests.py`): its first frame matches the last frame of its intro and its last frame shows only the background (PiP and Dutch Angle Outs: the clip back at rest; Screen_Swing_Back_Out: the tilted panel).
+
+### New in v1.2
+
+| Intro | New Out preset(s) | Type |
+|---|---|---|
+| OuzFX Anim · Slide In from Left<br><sub>`ouzfx_anim_slide_in_left`</sub> | **OuzFX AFX_Move_Whip_Slide_Out_Left** | effect template |
+| OuzFX Anim · Slide In from Right<br><sub>`ouzfx_anim_slide_in_right`</sub> | **OuzFX AFX_Move_Whip_Slide_Out_Right** | effect template |
+| OuzFX Anim · Slide In from Top<br><sub>`ouzfx_anim_slide_in_top`</sub> | **OuzFX AFX_Move_Whip_Slide_Out_Up** | effect template |
+| OuzFX Anim · Slide In from Bottom<br><sub>`ouzfx_anim_slide_in_bottom`</sub> | **OuzFX AFX_Move_Whip_Slide_Out_Down** | effect template |
+| OuzFX AFX_Move_Overshoot_Slide_In_Left<br><sub>`ouzfx_afx_move_overshoot_slide_in_left`</sub> | **OuzFX AFX_Move_Overshoot_Slide_Out_Left**<br>**OuzFX AFX_Move_Overshoot_Slide_Out_Left_AnyLength** | composition, effect template |
+| OuzFX AFX_Move_Overshoot_Slide_In_Right<br><sub>`ouzfx_afx_move_overshoot_slide_in_right`</sub> | **OuzFX AFX_Move_Overshoot_Slide_Out_Right**<br>**OuzFX AFX_Move_Overshoot_Slide_Out_Right_AnyLength** | composition, effect template |
+| OuzFX AFX_Move_Overshoot_Slide_In_Top<br><sub>`ouzfx_afx_move_overshoot_slide_in_top`</sub> | **OuzFX AFX_Move_Overshoot_Slide_Out_Top**<br>**OuzFX AFX_Move_Overshoot_Slide_Out_Top_AnyLength** | composition, effect template |
+| OuzFX AFX_Move_Overshoot_Slide_In_Bottom<br><sub>`ouzfx_afx_move_overshoot_slide_in_bottom`</sub> | **OuzFX AFX_Move_Overshoot_Slide_Out_Bottom**<br>**OuzFX AFX_Move_Overshoot_Slide_Out_Bottom_AnyLength** | composition, effect template |
+| OuzFX AFX_Move_Masked_Edge_Reveal_Up<br><sub>`ouzfx_afx_move_masked_edge_reveal_up`</sub> | **OuzFX AFX_Move_Masked_Edge_Reveal_Up_Out** | effect template |
+| OuzFX AFX_Move_Masked_Edge_Reveal_Down<br><sub>`ouzfx_afx_move_masked_edge_reveal_down`</sub> | **OuzFX AFX_Move_Masked_Edge_Reveal_Down_Out** | effect template |
+| OuzFX AFX_Move_Masked_Edge_Reveal_Left<br><sub>`ouzfx_afx_move_masked_edge_reveal_left`</sub> | **OuzFX AFX_Move_Masked_Edge_Reveal_Left_Out** | effect template |
+| OuzFX AFX_Move_Masked_Edge_Reveal_Right<br><sub>`ouzfx_afx_move_masked_edge_reveal_right`</sub> | **OuzFX AFX_Move_Masked_Edge_Reveal_Right_Out** | effect template |
+| OuzFX Anim · Bounce In (Drop)<br><sub>`ouzfx_anim_bounce_in`</sub> | **OuzFX AFX_Move_Bounce_Drop_Out**<br>**OuzFX AFX_Move_Bounce_Drop_Out_AnyLength** | composition, effect template |
+| OuzFX Anim · Elastic Zoom-In<br><sub>`ouzfx_anim_elastic_in`</sub> | **OuzFX AFX_Move_Elastic_Zoom_Out**<br>**OuzFX AFX_Move_Elastic_Zoom_Out_AnyLength** | composition, effect template |
+| OuzFX Anim · Blur-In<br><sub>`ouzfx_anim_blur_in`</sub> | **OuzFX AFX_Move_Blur_Out** | effect template |
+| OuzFX Screen 3D · Swing to Front<br><sub>`ouzfx_screen_tilt_to_flat`</sub> | **OuzFX AFX_Move_Screen_Swing_Back_Out** | effect template |
+| OuzFX Screen 3D · Floating Screen · Pop In<br><sub>`ouzfx_screen_pop_in`</sub> | **OuzFX AFX_Move_Screen_Pop_Out** | effect template |
+| OuzFX AFX_Move_Card_3D_Swing_In_Left<br><sub>`ouzfx_afx_move_card_3d_swing_in_left`</sub> | **OuzFX AFX_Move_Card_3D_Swing_Out_Left** | effect template |
+| OuzFX AFX_Move_Card_3D_Swing_In_Right<br><sub>`ouzfx_afx_move_card_3d_swing_in_right`</sub> | **OuzFX AFX_Move_Card_3D_Swing_Out_Right** | effect template |
+| OuzFX AFX_Move_Hinge_Swing_In_Top_Left<br><sub>`ouzfx_afx_move_hinge_swing_in_top_left`</sub> | **OuzFX AFX_Move_Hinge_Swing_Out_Top_Left** | effect template |
+| OuzFX AFX_Move_Hinge_Swing_In_Top_Right<br><sub>`ouzfx_afx_move_hinge_swing_in_top_right`</sub> | **OuzFX AFX_Move_Hinge_Swing_Out_Top_Right** | effect template |
+| OuzFX AFX_Move_PiP_Snap_Top_Left<br><sub>`ouzfx_afx_move_pip_snap_top_left`</sub> | **OuzFX AFX_Move_PiP_Snap_Top_Left_Out** | effect template |
+| OuzFX AFX_Move_PiP_Snap_Top_Right<br><sub>`ouzfx_afx_move_pip_snap_top_right`</sub> | **OuzFX AFX_Move_PiP_Snap_Top_Right_Out** | effect template |
+| OuzFX AFX_Move_PiP_Snap_Bottom_Left<br><sub>`ouzfx_afx_move_pip_snap_bottom_left`</sub> | **OuzFX AFX_Move_PiP_Snap_Bottom_Left_Out** | effect template |
+| OuzFX AFX_Move_PiP_Snap_Bottom_Right<br><sub>`ouzfx_afx_move_pip_snap_bottom_right`</sub> | **OuzFX AFX_Move_PiP_Snap_Bottom_Right_Out** | effect template |
+| OuzFX AFX_Move_Text_Word_Pop_Shorts<br><sub>`ouzfx_afx_move_text_word_pop_shorts`</sub> | **OuzFX AFX_Move_Text_Word_Pop_Shorts_Out** | effect template |
+| OuzFX Text · Text Rise<br><sub>`ouzfx_text_rise`</sub> | **OuzFX AFX_Move_Text_Rise_Fade_Out**<br>**OuzFX AFX_Move_Text_Rise_Fade_Out_AnyLength** | composition, effect template |
+| OuzFX AFX_Move_Text_Typewriter_Wipe_Fast<br><sub>`ouzfx_afx_move_text_typewriter_wipe_fast`</sub> | **OuzFX AFX_Move_Text_Typewriter_Wipe_Fast_Out** | effect template |
+| OuzFX AFX_Move_Text_Typewriter_Wipe_Slow<br><sub>`ouzfx_afx_move_text_typewriter_wipe_slow`</sub> | **OuzFX AFX_Move_Text_Typewriter_Wipe_Slow_Out** | effect template |
+| OuzFX AFX_Move_Text_Glitch_In<br><sub>`ouzfx_afx_move_text_glitch_in`</sub> | **OuzFX AFX_Move_Text_Glitch_Out** | effect template |
+| OuzFX AFX_Util_Split_Screen_Left_Slide_In<br><sub>`ouzfx_afx_util_split_screen_left_slide_in`</sub> | **OuzFX AFX_Util_Split_Screen_Left_Slide_Out** | effect template |
+| OuzFX AFX_Util_Split_Screen_Right_Slide_In<br><sub>`ouzfx_afx_util_split_screen_right_slide_in`</sub> | **OuzFX AFX_Util_Split_Screen_Right_Slide_Out** | effect template |
+| OuzFX AFX_Util_Split_Screen_Top_Slide_In<br><sub>`ouzfx_afx_util_split_screen_top_slide_in`</sub> | **OuzFX AFX_Util_Split_Screen_Top_Slide_Out** | effect template |
+| OuzFX AFX_Util_Split_Screen_Bottom_Slide_In<br><sub>`ouzfx_afx_util_split_screen_bottom_slide_in`</sub> | **OuzFX AFX_Util_Split_Screen_Bottom_Slide_Out** | effect template |
+| OuzFX AFX_Util_Highlighter_Wipe<br><sub>`ouzfx_afx_util_highlighter_wipe`</sub> | **OuzFX AFX_Util_Highlighter_Wipe_Out** | effect template |
+| OuzFX AFX_Cam_Dutch_Angle_Subtle_8deg<br><sub>`ouzfx_afx_cam_dutch_angle_subtle_8deg`</sub> | **OuzFX AFX_Cam_Dutch_Angle_Subtle_8deg_Out** | effect template |
+| OuzFX AFX_Cam_Dutch_Angle_Strong_15deg<br><sub>`ouzfx_afx_cam_dutch_angle_strong_15deg`</sub> | **OuzFX AFX_Cam_Dutch_Angle_Strong_15deg_Out** | effect template |
+| OuzFX Trans · Whip Pan Left<br><sub>`ouzfx_comp_whip_left`</sub> | **OuzFX AFX_Cam_Whip_Push_Out_Left** | composition |
+| OuzFX Trans · Whip Pan Right<br><sub>`ouzfx_comp_whip_right`</sub> | **OuzFX AFX_Cam_Whip_Push_Out_Right** | composition |
+| OuzFX Trans · Whip Pan Up<br><sub>`ouzfx_comp_whip_up`</sub> | **OuzFX AFX_Cam_Whip_Push_Out_Up** | composition |
+| OuzFX Trans · Whip Pan Down<br><sub>`ouzfx_comp_whip_down`</sub> | **OuzFX AFX_Cam_Whip_Push_Out_Down** | composition |
+| OuzFX Screen 3D · Picture-in-Picture Corner (Pop)<br><sub>`ouzfx_comp_picture_in_picture`</sub> | **OuzFX AFX_Move_PiP_Corner_Pop_Out** | composition |
+
+### Already had an Out before v1.2 (not rebuilt)
+
+| Intro(s) | Existing Out(s) | Note |
+|---|---|---|
+| OuzFX Anim · Slide In from Left<br>OuzFX Anim · Slide In from Right<br>OuzFX Anim · Slide In from Top<br>OuzFX Anim · Slide In from Bottom | OuzFX Anim · Slide Out Left<br>OuzFX Anim · Slide Out Right<br>OuzFX Anim · Slide Out Up<br>OuzFX Anim · Slide Out Down | Out compositions (expo ease-in). v1.2 adds the effect-template whip-slide Outs with motion blur (below). |
+| OuzFX Anim · Whip-In | OuzFX Fast · Motion-Blur Push Left<br>OuzFX AFX_Cam_Whip_Pan_Push_Right<br>OuzFX AFX_Cam_Whip_Pan_Push_Up<br>OuzFX AFX_Cam_Whip_Pan_Push_Down | 6–8 frame whip-outs with heavy blur (fast tier). Motion-Blur Push Left is the exact mirror of Whip-In. |
+| OuzFX Trans · Whip Pan Left<br>OuzFX Trans · Whip Pan Right<br>OuzFX Trans · Whip Pan Up<br>OuzFX Trans · Whip Pan Down | OuzFX Anim · Slide Out Left<br>OuzFX Anim · Slide Out Right<br>OuzFX Anim · Slide Out Up<br>OuzFX Anim · Slide Out Down | Slide Out = time-reverse of Whip Pan (expo in vs. expo out). v1.2 adds the two-clip Whip_Push_Out transitions. |
+| OuzFX Anim · Pop-In<br>OuzFX Anim · Pop In (Any Length)<br>OuzFX Text · Text Pop | OuzFX Anim · Pop Out |  |
+| OuzFX Anim · Spin-In<br>OuzFX Trans · Spin In | OuzFX Trans · Spin Out |  |
+| OuzFX Anim · Fade + Scale In | OuzFX Anim · Fade + Scale Out |  |
+| OuzFX Trans · Zoom-Through In<br>OuzFX Text · Text Slam | OuzFX Trans · Zoom-Through Out | Slam reversed = rush towards the camera and fade. |
+| OuzFX Fast · Smash Cut In | OuzFX Fast · Rush Zoom | Rush Zoom is the accelerating exit of a smash cut. |
+| OuzFX Look · Cinematic Bars Slide-In | OuzFX AFX_Cam_Cinematic_Bars_Slide_Out |  |
+| OuzFX Screen Zoom · Zoom to Top-Left (Screen Rec)<br>OuzFX Screen Zoom · Zoom to Top-Right (Screen Rec)<br>OuzFX Screen Zoom · Zoom to Bottom-Left (Screen Rec)<br>OuzFX Screen Zoom · Zoom to Bottom-Right (Screen Rec)<br>OuzFX Screen Zoom · Zoom to Center (Screen Rec) | OuzFX AFX_Cam_Zoom_Callout_Return_Top_Left<br>OuzFX AFX_Cam_Zoom_Callout_Return_Top_Right<br>OuzFX AFX_Cam_Zoom_Callout_Return_Bottom_Left<br>OuzFX AFX_Cam_Zoom_Callout_Return_Bottom_Right<br>OuzFX Screen Zoom · Zoom Back Out (Screen Rec) |  |
+| OuzFX Zoom · Slow Push-In (5 s)<br>OuzFX Zoom · Ken Burns Push-In (Any Length) | OuzFX Zoom · Slow Pull-Out (5 s)<br>OuzFX Zoom · Ken Burns Pull-Out (Any Length) |  |
+| OuzFX AFX_Util_BG_Dim_Blur_In | OuzFX AFX_Util_BG_Dim_Blur_Out |  |
+| OuzFX AFX_Util_Spotlight_Focus_In | OuzFX AFX_Util_Spotlight_Focus_Out |  |
+
+### No Out needed
+
+| Kind | Presets |
+|---|---|
+| Loops / continuous | shake_*, Idle_Float_*, Text Wiggle, Walking Bounce, Beat Pulse, Heartbeat_Pulse – they have no entry to reverse. |
+| Hits that return to rest | Punch In-Out, Boom Zoom, Zoom Bounce, Impact hits/shakes, RGB Split Hit, Glitch Burst/Flicker, flashes, Film Burn, Red Moment, Damage Pulse, Highlight Flash, Pendulum_Swing_Settle (starts in frame and settles). |
+| Static looks / holds | VHS, film looks, vignette, Cinematic 2.39, Zoom Cut, Punch-In 115% (a hold – reverse it with Zoom Back Out / Punch In-Out), Split_Screen_* (static halves), censor boxes, drop shadow, Perspective Screen tilts. |
+| Record_Scratch_Freeze | a style hold, not an entrance. |
 
 ## Sound effects (new)
 

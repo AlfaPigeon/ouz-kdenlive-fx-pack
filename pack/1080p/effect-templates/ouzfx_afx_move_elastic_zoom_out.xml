@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_elastic_zoom_out" parentIn="0">
+    <name>OuzFX AFX_Move_Elastic_Zoom_Out</name>
+    <description>Mirror of 'Anim · Elastic Zoom-In': wobbles, then snaps down to 40% and vanishes (20 frames, elastic ease-in). Razor 20 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).</description>
+    <effect id="qtblend">
+        <property name="rect">0y=0 0 1920 1080 1;19=576 324 768 432 0</property>
+        <property name="rotation">0=0;19=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;19=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

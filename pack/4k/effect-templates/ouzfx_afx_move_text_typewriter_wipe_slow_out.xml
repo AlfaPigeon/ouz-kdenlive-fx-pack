@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_text_typewriter_wipe_slow_out" parentIn="0">
+    <name>OuzFX AFX_Move_Text_Typewriter_Wipe_Slow_Out</name>
+    <description>Backspace-style exit: a linear right-to-left crop erases the line over 50 frames (mirror of Text_Typewriter_Wipe_Slow). Razor 50 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).</description>
+    <effect id="qtcrop">
+        <property name="rect">0=0 0 3840 2160;49=0 0 1 2160</property>
+        <property name="radius">0=0;49=0</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000;49=0x00000000</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

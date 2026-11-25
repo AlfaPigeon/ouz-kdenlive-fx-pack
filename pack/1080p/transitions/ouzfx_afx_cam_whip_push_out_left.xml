@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kpartgui>
+<transition tag="frei0r.sleid0r_push-left" id="ouzfx_afx_cam_whip_push_out_left">
+    <name>OuzFX AFX_Cam_Whip_Push_Out_Left</name>
+    <description>Whip-pan push transition: the outgoing clip (lower track) whips out to the left while the incoming clip (upper track) pushes in behind it – expo ease-in-out, so it is slow at the edges and a blur-fast smear in the middle. Overlap the two clips by 6–12 frames and drop it on the overlap. Built on Kdenlive's Push composition (frei0r sleid0r).</description>
+    <author>Oğuz Kaan Özsoy (OuzFX)</author>
+    <parameter type="animated" name="position" max="1000" min="0" default="0=0;%out=1" factor="1000" value="0r=0;-1=1">
+        <name>Push position</name>
+    </parameter>
+</transition>

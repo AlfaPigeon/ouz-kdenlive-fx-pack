@@ -16,6 +16,7 @@ from PIL import Image
 sys.path.insert(0, os.path.dirname(__file__))
 import presets  # noqa: E402
 import presets_afx  # noqa: E402
+import presets_out  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 PACK = os.path.join(ROOT, "pack")
@@ -37,11 +38,11 @@ def display_name(item):
 
 
 def all_effects(p):
-    return presets.effect_templates(p) + presets_afx.afx_templates(p)
+    return presets.effect_templates(p) + presets_afx.afx_templates(p) + presets_out.out_templates(p)
 
 
 def all_compositions():
-    return presets.compositions() + presets_afx.afx_compositions()
+    return presets.compositions() + presets_afx.afx_compositions() + presets_out.out_compositions()
 
 
 def effect_id(item):
@@ -151,7 +152,15 @@ LUMA_PARAMS = [
 ]
 
 
-COMP_ANIMATED = {"qtblend": ["rect", "rotation"], "affine": ["rect", "rotate_x", "rotate_y", "rotate_z"], "luma": []}
+# Kdenlive's own frei0r Push compositions (data/transitions/frei0r/frei0r_push-*.xml)
+PUSH_PARAMS = [("animated", "position", 'max="1000" min="0" default="0=0;%out=1" factor="1000"', "Push position")]
+
+COMP_ANIMATED = {"qtblend": ["rect", "rotation"], "affine": ["rect", "rotate_x", "rotate_y", "rotate_z"], "luma": [],
+                 "push": ["position"]}
+
+
+def comp_kind(tag):
+    return "push" if tag.startswith("frei0r.sleid0r_push-") else tag
 
 
 def pct_rect_to_px(value, w, h):
@@ -164,14 +173,15 @@ def pct_rect_to_px(value, w, h):
 
 
 def composition_xml(item, w, h):
-    params = {"qtblend": QTBLEND_PARAMS, "affine": AFFINE_PARAMS, "luma": LUMA_PARAMS}[item["tag"]]
+    kind = comp_kind(item["tag"])
+    params = {"qtblend": QTBLEND_PARAMS, "affine": AFFINE_PARAMS, "luma": LUMA_PARAMS, "push": PUSH_PARAMS}[kind]
     vals = dict(item["values"])
     if "rect" in vals:
         vals["rect"] = pct_rect_to_px(vals["rect"], w, h)
-    keyed = [key_frames(vals[k]) for k in COMP_ANIMATED[item["tag"]] if k in vals and key_frames(vals[k])]
+    keyed = [key_frames(vals[k]) for k in COMP_ANIMATED[kind] if k in vals and key_frames(vals[k])]
     if keyed:
         union = sorted(set(keyed[0]), key=lambda f: (f < 0, f))
-        for k in COMP_ANIMATED[item["tag"]]:
+        for k in COMP_ANIMATED[kind]:
             if k in vals:
                 assert sorted(key_frames(vals[k]), key=lambda f: (f < 0, f)) == union, (item["slug"], k)
             else:

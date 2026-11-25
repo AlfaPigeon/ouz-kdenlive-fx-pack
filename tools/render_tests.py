@@ -148,6 +148,8 @@ def main(argv):
             fg = MEDIA + "/title.png"
         if any(k in item["name"] for k in ("Idle_Float", "Hinge", "Pendulum", "Drop_Shadow", "Card_3D", "Overshoot")):
             fg = MEDIA + "/sticker.png"
+        if item["name"].startswith("Screen_"):
+            fg = MEDIA + "/screen.png"
         if "Highlighter" in item["name"]:
             fg = MEDIA + "/yellow.png"
             if not os.path.exists(fg):

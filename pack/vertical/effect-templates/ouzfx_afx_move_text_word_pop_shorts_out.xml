@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_text_word_pop_shorts_out" parentIn="0">
+    <name>OuzFX AFX_Move_Text_Word_Pop_Shorts_Out</name>
+    <description>Caption pop OUT for Shorts/Reels: 100% → 105% → 85% and gone in 4 frames (mirror of Text_Word_Pop_Shorts). Drop it on the last 4 frames of a caption clip.</description>
+    <effect id="qtblend">
+        <property name="rect">0e=0 0 1080 1920 1;1d=-27 -48 1134 2016 1;3=81 144 918 1632 0</property>
+        <property name="rotation">0=0;1=0;3=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;1=0.5 0.5 0 0;3=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

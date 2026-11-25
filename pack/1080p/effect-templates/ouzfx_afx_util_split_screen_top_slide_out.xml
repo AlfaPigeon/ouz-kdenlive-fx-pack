@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_util_split_screen_top_slide_out" parentIn="0">
+    <name>OuzFX AFX_Util_Split_Screen_Top_Slide_Out</name>
+    <description>Out half of Split_Screen_Top_Slide_In: the top half slides back out of its edge (15 frames, cubic ease-in). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).</description>
+    <effect id="qtcrop">
+        <property name="rect">0=0 270 1920 540</property>
+        <property name="radius">0=0</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0g=0 -270 1920 1080 1;14=0 -1080 1920 1080 1</property>
+        <property name="rotation">0=0;14=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;14=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_blur_out" parentIn="0">
+    <name>OuzFX AFX_Move_Blur_Out</name>
+    <description>Mirror of 'Anim · Blur-In': dissolves into a heavy blur while fading out and growing to 104% (15 frames). Razor 15 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden).</description>
+    <effect id="avfilter.gblur">
+        <property name="av.sigma">0g=0;14=40</property>
+        <property name="av.sigmaV">0g=0;14=40</property>
+        <property name="av.steps">1</property>
+        <property name="av.planes">15</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0g=0 0 1080 1920 1;14=-22 -38 1123 1997 0</property>
+        <property name="rotation">0=0;14=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;14=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

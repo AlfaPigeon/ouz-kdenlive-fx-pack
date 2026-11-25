@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_cam_dutch_angle_subtle_8deg_out" parentIn="0">
+    <name>OuzFX AFX_Cam_Dutch_Angle_Subtle_8deg_Out</name>
+    <description>Out half of Dutch_Angle_Subtle_8deg: eases the horizon from 8° back to level and the auto-zoom back to 100% over 20 frames. Razor where the tilt should end and drop it on the right-hand piece.</description>
+    <effect id="qtblend">
+        <property name="rect">0=-234 -132 2388 1343 1;2=-228 -128 2376 1337 1;4=-211 -119 2342 1317 1;6=-184 -104 2288 1287 1;8=-150 -84 2220 1249 1;10=-113 -63 2145 1207 1;12=-76 -43 2071 1165 1;14=-43 -24 2006 1129 1;16=-19 -11 1958 1102 1;18=-6 -4 1933 1087 1;19=0 0 1920 1080 1</property>
+        <property name="rotation">0=8.00;2=7.78;4=7.16;6=6.19;8=4.98;10=3.67;12=2.39;14=1.29;16=0.48;18=0.05;19=0.00</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;2=0.5 0.5 0 0;4=0.5 0.5 0 0;6=0.5 0.5 0 0;8=0.5 0.5 0 0;10=0.5 0.5 0 0;12=0.5 0.5 0 0;14=0.5 0.5 0 0;16=0.5 0.5 0 0;18=0.5 0.5 0 0;19=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

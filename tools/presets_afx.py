@@ -72,8 +72,8 @@ def afx_templates(p: P):
     for nm, sx, sy in DIRS:
         ang = 0 if sy == 0 else 90
         add("AFX_Move", f"Overshoot_Slide_In_{nm}", "1.2 Overshoot / Bounce Slide",
-            f"Slides in from the {nm.lower()} edge, overshoots its resting spot by ~8% and settles back "
-            "(14 frames, back ease-out) with a short motion-blur peak.", 14,
+            f"Slides in from the {nm.lower()} edge, swings past its resting spot and settles back "
+            "(14 frames, Kdenlive/MLT back ease-out – the overshoot peaks at ≈ 37% of the travel) with a short motion-blur peak.", 14,
             [transform(kf((0, "w", p.rect(1.0, 1.05 * sx, 1.05 * sy)), (14, p.rect(1.0)))),
              dblur_kf(ang, (0, 40), (5, 6), (14, 0))], tags=["fast"])
 

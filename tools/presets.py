@@ -439,7 +439,7 @@ def compositions():
             f"Top clip exits to the {nm.lower()} (expo ease-in). Place it over the END of the clip.",
             "qtblend", {"rect": f"0p={FULL};-1={R(ex, ey, 100, 100)}"})
     add("comp_pop_out", "Animations", "Pop Out",
-        "Anticipates (grows to 106%) then collapses to 0% – place over the end of a clip/title.",
+        "Anticipates (MLT back ease-in: grows to ≈ 137%) then collapses to 0% – place over the end of a clip/title.",
         "qtblend", {"rect": f"0v={FULL};-1={scaled(0, 0)}"})
     add("comp_fade_scale_out", "Animations", "Fade + Scale Out",
         "Soft 100→92% shrink with fade-out.",

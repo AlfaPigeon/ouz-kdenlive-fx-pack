@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effectgroup id="ouzfx_afx_move_overshoot_slide_in_left" parentIn="0">
     <name>OuzFX AFX_Move_Overshoot_Slide_In_Left</name>
-    <description>Slides in from the left edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.</description>
+    <description>Slides in from the left edge, swings past its resting spot and settles back (14 frames, Kdenlive/MLT back ease-out – the overshoot peaks at ≈ 37% of the travel) with a short motion-blur peak.</description>
     <effect id="qtblend">
         <property name="rect">0w=-1134 0 1080 1920 1;14=0 0 1080 1920 1</property>
         <property name="rotation">0=0;14=0</property>

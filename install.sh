@@ -127,7 +127,10 @@ case "$ACTION" in
     for c in move cam util style audio; do
       printf '  AFX_%-6s %3d\n' "${c^}" "$(ls "$ET" | grep -c "^ouzfx_afx_${c}_")"
     done
-    echo "Compositions: $(ls "$PACK/$PROFILE/transitions" | wc -l)"
+    echo "  Out / exit presets among the AFX ones: $(ls "$ET" | grep '^ouzfx_afx_' | grep -c '_out')"
+    TR="$PACK/$PROFILE/transitions"
+    echo "Compositions: $(ls "$TR" | wc -l)"
+    echo "  v1.0: $(ls "$TR" | grep -vc '^ouzfx_afx_')   AFX: $(ls "$TR" | grep -c '^ouzfx_afx_') (whip push transitions: $(ls "$TR" | grep -c 'whip_push_out'), Out compositions: $(ls "$TR" | grep '^ouzfx_afx_' | grep -v whip_push | grep -c '_out'))"
     echo "Luma wipes: $(ls "$PACK/lumas/HD/ouzfx" | wc -l) (HD) + $(ls "$PACK/lumas/VERTICAL/ouzfx" | wc -l) (vertical)"
     [[ -d "$HERE/overlays" ]] && echo "Overlay clips: $(ls "$HERE/overlays" | wc -l)"
     if [[ -d "$HERE/sfx" ]]; then

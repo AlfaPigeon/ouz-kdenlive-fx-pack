@@ -25,7 +25,7 @@ ITEMS = [
     ("1.4", "Masked Edge Reveal", "new", [], "Transform slide + static crop mask, emerges from the centre line (4 directions)."),
     ("1.5", "Elastic Pop-In / Pop-Out", "present",
      ["ouzfx_anim_pop_in", "ouzfx_anim_elastic_in", "ouzfx_comp_pop_in", "ouzfx_comp_pop_out", "ouzfx_text_pop"],
-     "Back-overshoot pop-in (0→~108→100%) and anticipation pop-out already exist."),
+     "Back-overshoot pop-in and anticipation pop-out already exist (Kdenlive/MLT back easing, so the overshoot is stronger than 108%)."),
     ("1.6", "Drop & Gravity Bounce", "present", ["ouzfx_anim_bounce_in"], "Drops from the top edge with bounce easing (decaying rebounds)."),
     ("1.7", "Idle Float / Gentle Hover", "new", [],
      "Closest v1.0 presets (Text Wiggle = fast ±3° wiggle, Walking Bounce = camera bob) are different motions."),
@@ -80,6 +80,70 @@ ITEMS = [
 ]
 
 
+# v1.2 In/Out audit: intros that ALREADY had an Out counterpart before v1.2 (nothing rebuilt)
+PAIRS_EXISTING = [
+    (["ouzfx_anim_slide_in_left", "ouzfx_anim_slide_in_right", "ouzfx_anim_slide_in_top", "ouzfx_anim_slide_in_bottom"],
+     ["ouzfx_comp_slide_out_left", "ouzfx_comp_slide_out_right", "ouzfx_comp_slide_out_up", "ouzfx_comp_slide_out_down"],
+     "Out compositions (expo ease-in). v1.2 adds the effect-template whip-slide Outs with motion blur (below)."),
+    (["ouzfx_anim_whip_in"], ["ouzfx_fast_motion_slide_l", "ouzfx_afx_cam_whip_pan_push_right", "ouzfx_afx_cam_whip_pan_push_up",
+                              "ouzfx_afx_cam_whip_pan_push_down"],
+     "6–8 frame whip-outs with heavy blur (fast tier). Motion-Blur Push Left is the exact mirror of Whip-In."),
+    (["ouzfx_comp_whip_left", "ouzfx_comp_whip_right", "ouzfx_comp_whip_up", "ouzfx_comp_whip_down"],
+     ["ouzfx_comp_slide_out_left", "ouzfx_comp_slide_out_right", "ouzfx_comp_slide_out_up", "ouzfx_comp_slide_out_down"],
+     "Slide Out = time-reverse of Whip Pan (expo in vs. expo out). v1.2 adds the two-clip Whip_Push_Out transitions."),
+    (["ouzfx_anim_pop_in", "ouzfx_comp_pop_in", "ouzfx_text_pop"], ["ouzfx_comp_pop_out"], ""),
+    (["ouzfx_anim_spin_in", "ouzfx_comp_spin_in"], ["ouzfx_comp_spin_out"], ""),
+    (["ouzfx_anim_fade_scale_in"], ["ouzfx_comp_fade_scale_out"], ""),
+    (["ouzfx_comp_zoom_through_in", "ouzfx_text_slam"], ["ouzfx_comp_zoom_through_out"], "Slam reversed = rush towards the camera and fade."),
+    (["ouzfx_fast_smash_cut"], ["ouzfx_fast_speed_lines_zoom"], "Rush Zoom is the accelerating exit of a smash cut."),
+    (["ouzfx_look_bars_slide_in"], ["ouzfx_afx_cam_cinematic_bars_slide_out"], ""),
+    (["ouzfx_zoom_screen_tl", "ouzfx_zoom_screen_tr", "ouzfx_zoom_screen_bl", "ouzfx_zoom_screen_br", "ouzfx_zoom_screen_c"],
+     ["ouzfx_afx_cam_zoom_callout_return_top_left", "ouzfx_afx_cam_zoom_callout_return_top_right",
+      "ouzfx_afx_cam_zoom_callout_return_bottom_left", "ouzfx_afx_cam_zoom_callout_return_bottom_right", "ouzfx_zoom_screen_out"], ""),
+    (["ouzfx_zoom_ken_burns_in", "ouzfx_comp_ken_burns_in"], ["ouzfx_zoom_ken_burns_out", "ouzfx_comp_ken_burns_out"], ""),
+    (["ouzfx_afx_util_bg_dim_blur_in"], ["ouzfx_afx_util_bg_dim_blur_out"], ""),
+    (["ouzfx_afx_util_spotlight_focus_in"], ["ouzfx_afx_util_spotlight_focus_out"], ""),
+]
+# presets that are not entrances, so they get no Out
+NO_OUT = [
+    ("Loops / continuous", "shake_*, Idle_Float_*, Text Wiggle, Walking Bounce, Beat Pulse, Heartbeat_Pulse – they have no entry to reverse."),
+    ("Hits that return to rest", "Punch In-Out, Boom Zoom, Zoom Bounce, Impact hits/shakes, RGB Split Hit, Glitch Burst/Flicker, flashes, "
+                                 "Film Burn, Red Moment, Damage Pulse, Highlight Flash, Pendulum_Swing_Settle (starts in frame and settles)."),
+    ("Static looks / holds", "VHS, film looks, vignette, Cinematic 2.39, Zoom Cut, Punch-In 115% (a hold – reverse it with Zoom Back Out / "
+                             "Punch In-Out), Split_Screen_* (static halves), censor boxes, drop shadow, Perspective Screen tilts."),
+    ("Record_Scratch_Freeze", "a style hold, not an entrance."),
+]
+
+
+def inout_section(cat, ids):
+    lines = ["## In/Out pairs (v1.2)", "",
+             "Every entrance / intro animation in the pack was checked for a matching exit. Intros that already had one were "
+             "left alone; the rest got an Out preset in v1.2 (time-mirrored timing, ease-in acceleration).", "",
+             "**How the Out timing works in Kdenlive** – compositions use `0=`/`-1=` keyframes, so an Out *composition* always "
+             "ends exactly at the end of the composition, whatever its length. Kdenlive re-bases *effect template* keyframes "
+             "on the clip start and drops end-relative (negative) keyframes when a template is applied, so Out *templates* "
+             "work like the whip pushes: razor N frames before the end and drop the template on that last piece – the layer "
+             "is gone on its last frame. Every Out preset is melt-tested that way (`tools/out_tests.py`): its first frame "
+             "matches the last frame of its intro and its last frame shows only the background (PiP and Dutch Angle Outs: the clip back at rest; Screen_Swing_Back_Out: the tilted panel).", "",
+             "### New in v1.2", "", "| Intro | New Out preset(s) | Type |", "|---|---|---|"]
+    by_pair = {}
+    for e in cat["effects"] + cat["compositions"]:
+        if e.get("pair"):
+            by_pair.setdefault(e["pair"], []).append(e)
+    for pair, outs in by_pair.items():
+        intro = ids.get(pair, {"display": pair})
+        kinds = sorted({"composition" if o in cat["compositions"] else "effect template" for o in outs})
+        lines.append(f"| {intro['display']}<br><sub>`{pair}`</sub> | " + "<br>".join(f"**{o['display']}**" for o in outs)
+                     + f" | {', '.join(kinds)} |")
+    lines += ["", "### Already had an Out before v1.2 (not rebuilt)", "", "| Intro(s) | Existing Out(s) | Note |", "|---|---|---|"]
+    for ins, outs, note in PAIRS_EXISTING:
+        lines.append("| " + "<br>".join(ids[i]["display"] for i in ins) + " | " + "<br>".join(ids[o]["display"] for o in outs)
+                     + f" | {note} |")
+    lines += ["", "### No Out needed", "", "| Kind | Presets |", "|---|---|"]
+    lines += [f"| {k} | {v} |" for k, v in NO_OUT]
+    return lines + [""]
+
+
 def main():
     cat = json.load(open(os.path.join(ROOT, "pack", "catalog.json")))
     ids = {e["id"]: e for e in cat["effects"] + cat["compositions"]}
@@ -88,6 +152,16 @@ def main():
         if e.get("bp"):
             new_by_bp.setdefault(e["bp"].split()[0], []).append(e)
     errors = []
+    for ins, outs, _ in PAIRS_EXISTING:
+        for x in ins + outs:
+            if x not in ids:
+                errors.append(f"in/out table: unknown preset {x}")
+    for e in cat["effects"] + cat["compositions"]:
+        if e.get("pair") and e["pair"] not in ids:
+            errors.append(f"{e['id']}: unknown intro {e['pair']}")
+        if e.get("pair") and any(e["pair"] in ins for ins, _, _ in PAIRS_EXISTING):
+            if not (e["pair"].startswith("ouzfx_anim_slide_in_") or e["pair"].startswith("ouzfx_comp_whip_")):
+                errors.append(f"{e['id']}: its intro already had an Out (duplicate)")
     for iid, title, status, existing, note in ITEMS:
         for x in existing:
             if x not in ids:
@@ -105,7 +179,7 @@ def main():
         return 1
     sfx = json.load(open(os.path.join(ROOT, "sfx", "sfx.json")))
     count = {s: sum(1 for i in ITEMS if i[2] == s) for s in ("present", "partial", "new")}
-    lines = ["# Blueprint coverage (v1.1)", "",
+    lines = ["# Blueprint coverage (v1.1) + In/Out pairs (v1.2)", "",
              "Audit of every item in the *Kdenlive FX Pack: Expansion Blueprint* against the v1.0 pack, done before",
              "building anything, so nothing is implemented twice. **Present** = an existing preset already does essentially",
              "the same thing (nothing added). **Partial** = the effect existed but a variant was missing (direction, In/Out",
@@ -132,6 +206,7 @@ def main():
             st = {"present": "✅ present", "partial": "➕ partial", "new": "🆕 new"}[status]
             lines.append(f"| {iid} | {title} | {st} | {ex} | {nw} | {note} |")
         lines.append("")
+    lines += inout_section(cat, ids)
     lines += ["## Sound effects (new)", "", "| File | Length | Description |", "|---|---|---|"]
     for s in sfx:
         lines.append(f"| `{s['file']}` | {s['seconds']:.2f} s | {s['desc']} |")

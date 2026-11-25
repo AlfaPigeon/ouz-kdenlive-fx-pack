@@ -1,0 +1,468 @@
+[
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_whip_slide_out_left",
+  "pair": "ouzfx_anim_slide_in_left",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_whip_slide_out_right",
+  "pair": "ouzfx_anim_slide_in_right",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_whip_slide_out_up",
+  "pair": "ouzfx_anim_slide_in_top",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_whip_slide_out_down",
+  "pair": "ouzfx_anim_slide_in_bottom",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_overshoot_slide_out_left",
+  "pair": "ouzfx_afx_move_overshoot_slide_in_left",
+  "frames": 14,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_overshoot_slide_out_right",
+  "pair": "ouzfx_afx_move_overshoot_slide_in_right",
+  "frames": 14,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_overshoot_slide_out_top",
+  "pair": "ouzfx_afx_move_overshoot_slide_in_top",
+  "frames": 14,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_overshoot_slide_out_bottom",
+  "pair": "ouzfx_afx_move_overshoot_slide_in_bottom",
+  "frames": 14,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_masked_edge_reveal_up_out",
+  "pair": "ouzfx_afx_move_masked_edge_reveal_up",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_masked_edge_reveal_down_out",
+  "pair": "ouzfx_afx_move_masked_edge_reveal_down",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_masked_edge_reveal_left_out",
+  "pair": "ouzfx_afx_move_masked_edge_reveal_left",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_masked_edge_reveal_right_out",
+  "pair": "ouzfx_afx_move_masked_edge_reveal_right",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_bounce_drop_out",
+  "pair": "ouzfx_anim_bounce_in",
+  "frames": 20,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_elastic_zoom_out",
+  "pair": "ouzfx_anim_elastic_in",
+  "frames": 20,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_blur_out",
+  "pair": "ouzfx_anim_blur_in",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_screen_swing_back_out",
+  "pair": "ouzfx_screen_tilt_to_flat",
+  "frames": 25,
+  "continuity": 0.0,
+  "end": "changed",
+  "end_metric": 4.8,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_screen_pop_out",
+  "pair": "ouzfx_screen_pop_in",
+  "frames": 18,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_card_3d_swing_out_left",
+  "pair": "ouzfx_afx_move_card_3d_swing_in_left",
+  "frames": 18,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_card_3d_swing_out_right",
+  "pair": "ouzfx_afx_move_card_3d_swing_in_right",
+  "frames": 18,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_hinge_swing_out_top_left",
+  "pair": "ouzfx_afx_move_hinge_swing_in_top_left",
+  "frames": 16,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_hinge_swing_out_top_right",
+  "pair": "ouzfx_afx_move_hinge_swing_in_top_right",
+  "frames": 16,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_pip_snap_top_left_out",
+  "pair": "ouzfx_afx_move_pip_snap_top_left",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "rest",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_pip_snap_top_right_out",
+  "pair": "ouzfx_afx_move_pip_snap_top_right",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "rest",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_pip_snap_bottom_left_out",
+  "pair": "ouzfx_afx_move_pip_snap_bottom_left",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "rest",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_pip_snap_bottom_right_out",
+  "pair": "ouzfx_afx_move_pip_snap_bottom_right",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "rest",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_text_word_pop_shorts_out",
+  "pair": "ouzfx_afx_move_text_word_pop_shorts",
+  "frames": 4,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_text_rise_fade_out",
+  "pair": "ouzfx_text_rise",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_text_typewriter_wipe_fast_out",
+  "pair": "ouzfx_afx_move_text_typewriter_wipe_fast",
+  "frames": 25,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_text_typewriter_wipe_slow_out",
+  "pair": "ouzfx_afx_move_text_typewriter_wipe_slow",
+  "frames": 50,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_move_text_glitch_out",
+  "pair": "ouzfx_afx_move_text_glitch_in",
+  "frames": 7,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_util_split_screen_left_slide_out",
+  "pair": "ouzfx_afx_util_split_screen_left_slide_in",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_util_split_screen_right_slide_out",
+  "pair": "ouzfx_afx_util_split_screen_right_slide_in",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_util_split_screen_top_slide_out",
+  "pair": "ouzfx_afx_util_split_screen_top_slide_in",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_util_split_screen_bottom_slide_out",
+  "pair": "ouzfx_afx_util_split_screen_bottom_slide_in",
+  "frames": 15,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_util_highlighter_wipe_out",
+  "pair": "ouzfx_afx_util_highlighter_wipe",
+  "frames": 12,
+  "continuity": 0.0,
+  "end": "gone",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_cam_dutch_angle_subtle_8deg_out",
+  "pair": "ouzfx_afx_cam_dutch_angle_subtle_8deg",
+  "frames": 20,
+  "continuity": 0.0,
+  "end": "rest",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "effect",
+  "id": "ouzfx_afx_cam_dutch_angle_strong_15deg_out",
+  "pair": "ouzfx_afx_cam_dutch_angle_strong_15deg",
+  "frames": 20,
+  "continuity": 0.0,
+  "end": "rest",
+  "end_metric": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_cam_whip_push_out_left",
+  "pair": "ouzfx_comp_whip_left",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_cam_whip_push_out_right",
+  "pair": "ouzfx_comp_whip_right",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_cam_whip_push_out_up",
+  "pair": "ouzfx_comp_whip_up",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_cam_whip_push_out_down",
+  "pair": "ouzfx_comp_whip_down",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_move_overshoot_slide_out_left_anylength",
+  "pair": "ouzfx_afx_move_overshoot_slide_in_left",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_move_overshoot_slide_out_right_anylength",
+  "pair": "ouzfx_afx_move_overshoot_slide_in_right",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_move_overshoot_slide_out_top_anylength",
+  "pair": "ouzfx_afx_move_overshoot_slide_in_top",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_move_overshoot_slide_out_bottom_anylength",
+  "pair": "ouzfx_afx_move_overshoot_slide_in_bottom",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_move_bounce_drop_out_anylength",
+  "pair": "ouzfx_anim_bounce_in",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_move_elastic_zoom_out_anylength",
+  "pair": "ouzfx_anim_elastic_in",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_move_text_rise_fade_out_anylength",
+  "pair": "ouzfx_text_rise",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ },
+ {
+  "kind": "comp",
+  "id": "ouzfx_afx_move_pip_corner_pop_out",
+  "pair": "ouzfx_comp_picture_in_picture",
+  "first": 0.0,
+  "last": 0.0,
+  "ok": true
+ }
+]

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_screen_pop_out" parentIn="0">
+    <name>OuzFX AFX_Move_Screen_Pop_Out</name>
+    <description>Out half of 'Screen 3D · Floating Screen · Pop In': the floating window anticipates, collapses to the centre and fades (18 frames, back ease-in). Razor 18 frames before the end of the clip and drop it on that last piece – the layer is gone on the last frame (anything after stays hidden). Kdenlive 25.04+ (Drop Shadow).</description>
+    <effect id="qtcrop">
+        <property name="rect">0=0 0 1920 1080</property>
+        <property name="radius">0=0.035</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000</property>
+    </effect>
+    <effect id="frei0r.c0rners">
+        <property name="0">0v=0.3633;17=0.4933</property>
+        <property name="1">0v=0.3633;17=0.4933</property>
+        <property name="2">0v=0.6367;17=0.5067</property>
+        <property name="3">0v=0.3633;17=0.4933</property>
+        <property name="4">0v=0.6367;17=0.5067</property>
+        <property name="5">0v=0.6367;17=0.5067</property>
+        <property name="6">0v=0.3633;17=0.4933</property>
+        <property name="7">0v=0.6367;17=0.5067</property>
+        <property name="8">0</property>
+        <property name="9">0=0.5;17=0.5</property>
+        <property name="10">0=0.5;17=0.5</property>
+        <property name="11">0.166</property>
+        <property name="12">1</property>
+        <property name="13">0=0.01;17=0.01</property>
+        <property name="14">0</property>
+    </effect>
+    <effect id="dropshadow">
+        <property name="radius">0=25</property>
+        <property name="x">0=14</property>
+        <property name="y">0=22</property>
+        <property name="color">0=#a0000000</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0g=0 0 1920 1080 1;17=0 0 1920 1080 0</property>
+        <property name="rotation">0=0;17=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;17=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

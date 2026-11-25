@@ -37,7 +37,10 @@ def table(items, kind):
 
 n_eff, n_comp, n_luma = len(cat["effects"]), len(cat["compositions"]), len(cat["lumas"])
 n_audio = sum(1 for e in cat["effects"] if e.get("audio"))
-n_afx = sum(1 for e in cat["effects"] + cat["compositions"] if e["id"].startswith("ouzfx_afx_"))
+n_afx = sum(1 for e in cat["effects"] + cat["compositions"] if e["id"].startswith("ouzfx_afx_") and not e.get("pair"))
+outs_e = [e for e in cat["effects"] if e.get("pair")]
+outs_c = [e for e in cat["compositions"] if e.get("pair")]
+OUTRES = {r["id"]: r for r in json.load(open(os.path.join(ROOT, "docs", "out-test-results.json")))}
 total = n_eff + n_comp + n_luma
 passed = sum(1 for r in res.values() if r["ok"])
 
@@ -48,6 +51,10 @@ screen-recording zooms, 3D perspective screen share, slide / pop / spin / whip a
 flash frames, film burn, VHS, cinematic bars, text pops, explainer tools (spotlight, split screen, censor box, highlighter),
 {n_audio} voice/audio presets, {len(SFX)} original sound effects (risers, pops, whooshes, impacts) and {n_luma} custom luma wipes.
 
+> **New in v1.2:** Out (exit) versions of every intro that lacked one – {len(outs_e)} effect templates and {len(outs_c)}
+> compositions, incl. **whip-out in all 4 directions** (`AFX_Move_Whip_Slide_Out_*` + the two-clip `AFX_Cam_Whip_Push_Out_*`
+> transitions). See [In/Out pairs](#inout-pairs-v12) and [docs/BLUEPRINT_COVERAGE.md](docs/BLUEPRINT_COVERAGE.md#inout-pairs-v12).
+>
 > **New in v1.1:** {n_afx} `OuzFX AFX_*` presets from the expansion blueprint (only the items that were not already in the
 > pack – see [docs/BLUEPRINT_COVERAGE.md](docs/BLUEPRINT_COVERAGE.md)), {n_audio} audio templates, {len(SFX)} sound effects
 > and a fix that makes static values of v1.0 presets load correctly in Kdenlive. See [CHANGELOG.md](CHANGELOG.md).
@@ -209,7 +216,7 @@ for l in cat["lumas"]:
 for c in ORDER:
     if not c.startswith("AFX_") or c not in by_cat:
         continue
-    g = by_cat[c]
+    g = {k: [i for i in v if not i.get("pair")] for k, v in by_cat[c].items()}
     out.append(f"\n### {AFX_TITLES[c]}\n")
     if c == "AFX_Audio":
         out.append("Built only from audio effects Kdenlive ships and does not hide (FFmpeg `aecho`/`acompressor` are on Kdenlive's "
@@ -219,6 +226,21 @@ for c in ORDER:
         out.append(table(g["effect"], "effect") + "\n")
     if g["comp"]:
         out.append(table(g["comp"], "comp") + "\n")
+
+out.append("\n### In/Out pairs (v1.2)\n\n"
+           "Exit animations for every intro that had none (time-mirrored, ease-in). **Effect templates**: razor N frames "
+           "before the end of the clip and drop the Out template on that last piece – the layer is gone on its last frame "
+           "(Kdenlive anchors template keyframes to the clip start, so this is how an Out template lines up with the clip end). "
+           "**Compositions** (`…_AnyLength`, `Whip_Push_Out_*`, `PiP_Corner_Pop_Out`) always end exactly at the end of the "
+           "composition, whatever its length. Intros that already had an Out (Slide/Pop/Spin/Fade-Scale/Zoom-Through Out, "
+           "Whip-In ↔ Motion-Blur Push, Bars, Dim & Blur, Spotlight, Callout returns) were not rebuilt – full table in "
+           "[docs/BLUEPRINT_COVERAGE.md](docs/BLUEPRINT_COVERAGE.md#inout-pairs-v12).\n")
+out.append("**Whip out, 4 directions:** `AFX_Move_Whip_Slide_Out_Left/Right/Up/Down` (12-frame templates with motion blur, mirror "
+           "of *Slide In*), the fast 6–8 frame tier `Fast · Motion-Blur Push Left` + `AFX_Cam_Whip_Pan_Push_Right/Up/Down`, and "
+           "`AFX_Cam_Whip_Push_Out_*` compositions – the outgoing clip whips out while the next one pushes in (overlap two "
+           "clips on V1/V2 by 6–12 frames).\n")
+out.append(table(outs_e, "effect") + "\n")
+out.append(table(outs_c, "comp") + "\n")
 
 out.append("\n### Sound effects (`sfx/`)\n\nOriginal, synthesized by [`tools/make_sfx.py`](tools/make_sfx.py) (MIT like the rest of the pack – free to use in any video). "
            "48 kHz 16-bit stereo, peak −1 dBFS, click-free fades. Installed to `<data>/ouzfx/sfx/` and `<data>/library/OuzFX SFX/` "
@@ -237,14 +259,15 @@ out.append(f"""
 
 ## Building & testing
 
-Everything is generated from [`tools/presets.py`](tools/presets.py) (v1.0) and [`tools/presets_afx.py`](tools/presets_afx.py) (v1.1 AFX):
+Everything is generated from [`tools/presets.py`](tools/presets.py) (v1.0) and [`tools/presets_afx.py`](tools/presets_afx.py) (v1.1 AFX) and [`tools/presets_out.py`](tools/presets_out.py) (v1.2 Outs):
 
 ```bash
 python3 tools/build.py                    # writes pack/ (3 resolutions), lumas, catalog
 python3 tools/validate.py /usr/share/kdenlive   # schema check vs. Kdenlive's own effect definitions
 python3 tools/render_tests.py             # melt render of every preset + previews + docs/test-results.json
 python3 tools/make_sfx.py && python3 tools/audio_tests.py   # sound effects + audio preset measurements
-python3 tools/blueprint.py                # blueprint coverage audit -> docs/BLUEPRINT_COVERAGE.md
+python3 tools/out_tests.py                # Out presets: continuity with their intro + end state
+python3 tools/blueprint.py                # blueprint coverage + In/Out audit -> docs/BLUEPRINT_COVERAGE.md
 python3 tools/gen_readme.py && tools/package.sh   # README + release archives in dist/
 ```
 
@@ -252,6 +275,10 @@ Validation done for v{VERSION}:
 
 * `xmllint` + `validate.py` against Kdenlive **git master** effect definitions (all ids/params exist) and against Debian's
   Kdenlive 24.12 data (all OK except Drop Shadow, which is 25.04+ – documented above).
+* v1.2 Out presets: `tools/out_tests.py` renders each one as the last piece of a clip – first frame identical to the
+  last frame of its intro, last frame = background only (or back at rest): **{sum(r["ok"] for r in OUTRES.values())}/{len(OUTRES)} passed**
+  (`docs/out-test-results.json`). The Whip Push composition and an Out template were applied in Kdenlive 24.12.3 and the
+  saved project re-checked (expo easing and end keyframe intact).
 * {n_audio} audio templates rendered through melt on a synthetic voice and measured (band attenuation, echo tail, peak);
   all {len(SFX)} sound effects checked for 48 kHz / peak ≤ −1 dBFS / click-free edges – see `docs/audio-test-results.json`.
 * Every visual effect template, composition and luma rendered through MLT 7.30 `melt` at 1920×1080 (filters/transitions parse,

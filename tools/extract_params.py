@@ -15,6 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import presets  # noqa: E402
 import presets_afx  # noqa: E402
+import presets_out  # noqa: E402
 
 ANIMATED = {"simplekeyframe", "keyframe", "animated", "animatedrect", "rect", "animatedfakerect",
             "animatedpoint", "animatedfakepoint", "color", "colorwheel", "roto-spline"}
@@ -22,7 +23,7 @@ ANIMATED = {"simplekeyframe", "keyframe", "animated", "animatedrect", "rect", "a
 
 def main(datadir):
     used = set()
-    for it in presets.effect_templates(presets.P(1920, 1080)) + presets_afx.afx_templates(presets.P(1920, 1080)):
+    for it in presets.effect_templates(presets.P(1920, 1080)) + presets_afx.afx_templates(presets.P(1920, 1080)) + presets_out.out_templates(presets.P(1920, 1080)):
         used.update(e[0] for e in it["effects"])
     best = {}
     for path in glob.glob(os.path.join(datadir, "effects", "**", "*.xml"), recursive=True):
