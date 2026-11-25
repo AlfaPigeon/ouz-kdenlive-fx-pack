@@ -1,0 +1,17 @@
+<kdenlivetitle width="1920" height="1080" out="149">
+ <item z-index="5" type="QGraphicsRectItem">
+  <position x="514.00" y="204.50">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content pencolor="0,0,0,0" rect="0,0,321.00,70.00" penwidth="0" brushcolor="244,244,240,255" cornerRadius="16"/>
+ </item>
+ <item z-index="10" type="QGraphicsTextItem">
+  <position x="514.00" y="213.50">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content font-color="20,22,25,255" font-outline-color="0,0,0,0" font-pixel-size="40" font-italic="0" font-underline="0" font-weight="75" font="JetBrains Mono" font-outline="0" font-spacing="2" letter-spacing="2" alignment="4" box-width="321.00" box-height="54.00" line-spacing="0" tab-width="80" typewriter="0;2;1;0;0">%s</content>
+ </item>
+ <startviewport rect="0,0,1920,1080"/>
+ <endviewport rect="0,0,1920,1080"/>
+ <background color="0,0,0,0"/>
+</kdenlivetitle>

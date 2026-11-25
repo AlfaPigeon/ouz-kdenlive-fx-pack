@@ -1,0 +1,23 @@
+<kdenlivetitle width="3840" height="2160" out="149">
+ <item z-index="1" type="QGraphicsRectItem">
+  <position x="1040.00" y="585.00">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content pencolor="255,90,38,255" rect="0,0,1760.00,990.00" penwidth="24" brushcolor="0,0,0,0" cornerRadius="32"/>
+ </item>
+ <item z-index="5" type="QGraphicsRectItem">
+  <position x="1028.00" y="410.00">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content pencolor="0,0,0,0" rect="0,0,642.00,139.00" penwidth="0" brushcolor="255,90,38,255" cornerRadius="32"/>
+ </item>
+ <item z-index="10" type="QGraphicsTextItem">
+  <position x="1028.00" y="427.00">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content font-color="20,22,25,255" font-outline-color="0,0,0,0" font-pixel-size="80" font-italic="0" font-underline="0" font-weight="75" font="JetBrains Mono" font-outline="0" font-spacing="4" letter-spacing="4" alignment="4" box-width="642.00" box-height="108.00" line-spacing="0" tab-width="80" typewriter="0;2;1;0;0">%s</content>
+ </item>
+ <startviewport rect="0,0,3840,2160"/>
+ <endviewport rect="0,0,3840,2160"/>
+ <background color="0,0,0,0"/>
+</kdenlivetitle>

@@ -1,5 +1,41 @@
 # Changelog
 
+## v1.3.0 – 2026-11-25
+
+Highlights release: animated arrows, boxes, circles and labels for pointing at things on screen, styled with the
+Ouz Labs brand kit (colours, fonts and rules extracted to [docs/BRAND.md](docs/BRAND.md)).
+
+### Added – Highlights (27 assets, 318 alpha clips, 45 title templates)
+* **Overlay clips:** VP9 WebM with alpha, 30 fps, square 1080 px (1080p and vertical) and 2160 px (4K). The point of interest is the clip centre.
+  * Each asset has three parts: `_in` (entrance plus 2 s idle), `_loop` (2 s seamless idle) and `_out` (exit). `click_ripple` is one-shot.
+  * **Arrows:** straight arrows pointing right/left/up/down (draw-on, tip nudge, slide-back exit), plus hand-drawn curved arrows pointing down-right and down-left.
+  * **Boxes:** `box_draw_16x9` / `1x1` / `wide` (stroke draw-on, 16 px radius), `box_pop_16x9` (elastic scale-pop) and `focus_brackets` (corner brackets snap in).
+  * **Circles:** `circle_draw`, `circle_pop`, `ellipse_draw`, and `pulse_ring` (sonar rings).
+  * **Marks:** `scribble_circle` and `underline_swipe` (hand-drawn, with a boil loop), plus `check_draw` and `cross_draw`.
+  * **Pointers:** `ping_dot` and `click_ripple`.
+  * **Badges:** `step_badge_01…05` and the `new_sticker` (Acid Volt sticker with a 5 px Lab Chalk outline).
+  * **Colours:** Signal Tangerine for everything; Acid Volt and Lab Chalk variants for the core arrows, boxes, circles and marks.
+* **Label title templates** (`titles/<profile>/`, 1080p / 4K / vertical). The label is the template text (`%s`): type it in *Add Template Title*, and change it later in Clip Properties ▸ Apply.
+  * Tags: Tangerine, Volt, Cobalt and Slate.
+  * Box + label and box-tag-only versions (Tangerine, Volt and Chalk). The box tag lines up with `box_draw_16x9`.
+  * Circle + label, step badge, NEW sticker (any word), corner "Lab Tag" series label and a callout note panel.
+* **Brand fonts** (all SIL OFL): Bricolage Grotesque, Plus Jakarta Sans and JetBrains Mono, shipped in `fonts/` with their licences.
+* **Generators:** `tools/brand.py`, `tools/make_highlights.py` (cairocffi + Pillow → ffmpeg libvpx-vp9 alpha; `--prores` writes ProRes 4444 fallbacks) and `tools/make_titles.py` (positions text from melt-rendered ink boxes).
+* **Tests:** `tools/highlight_tests.py`:
+  * melt alpha composite of every overlay: 318/318 passed.
+  * In → Loop → Out seam check: 104/104 passed.
+  * All 45 title templates render through melt.
+  * Checked in Kdenlive 24.12.3: Library listing, alpha over V1, Add Template Title, and editing the text via Clip Properties.
+* **Installers:**
+  * `install.sh` copies highlights to `<data>/ouzfx/highlights` and the Library panel (*OuzFX Highlights*), and titles to `<data>/titles`. It also installs the fonts to `~/.local/share/fonts/ouzfx` (skip with `--no-fonts`). `--list` shows highlight and title counts, and `--uninstall` removes all of it.
+  * `install.ps1` does the same on Windows, with a per-user font install.
+* **Release assets:** KDE Store archives for *Kdenlive Title Templates* (`ouzfx-title-templates-<profile>`).
+
+### Notes
+* There are no new effect templates. Animate labels with the existing *Text Pop*, *Word Pop* and other In/Out templates.
+* These were deliberately not duplicated: the highlighter wipe, censor boxes, spotlight and zoom callouts already exist. The new shapes are outline and pointer graphics, not masks or zooms.
+* MLT's kdenlivetitle producer reads `font-weight` on the legacy Qt5 scale (50 = normal, 75 = bold, 81 = extra-bold), so the templates use those values.
+
 ## v1.2.0 – 2026-11-25
 
 In/Out release: every entrance / intro animation in the pack (templates and compositions) was audited for a matching

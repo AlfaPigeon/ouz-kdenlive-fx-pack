@@ -9,6 +9,7 @@ PROFILE="1080p"
 TARGET="auto"
 ACTION="install"
 FLATPAK_ID="org.kde.kdenlive"
+FONTS=1
 
 usage() {
   cat <<USAGE
@@ -20,12 +21,15 @@ Usage: ./install.sh [options]
   --both                        install for both
   --uninstall                   remove everything this pack installed
   --list                        show what would be installed
+  --no-fonts                    don't install the free brand fonts to ~/.local/share/fonts/ouzfx
   -h, --help                    this help
 
 Restart Kdenlive afterwards. Effects appear under Effects ▸ Templates (search "OuzFX" or
 "AFX_"), audio presets under the audio effects' Templates, compositions under Compositions
 (search "OuzFX"), wipes in every Wipe/Luma list, sound effects in the Library panel
-(View ▸ Library ▸ OuzFX SFX) and in <data>/ouzfx/sfx.
+(View ▸ Library ▸ OuzFX SFX) and in <data>/ouzfx/sfx, highlight overlays in the Library
+panel (OuzFX Highlights) and in <data>/ouzfx/highlights, label title templates under
+Project ▸ Add Template Title (ouzfx_*).
 USAGE
 }
 
@@ -38,6 +42,7 @@ while [[ $# -gt 0 ]]; do
     --both) TARGET="both"; shift ;;
     --uninstall|-u) ACTION="uninstall"; shift ;;
     --list) ACTION="list"; shift ;;
+    --no-fonts) FONTS=0; shift ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown option: $1" >&2; usage; exit 1 ;;
   esac
@@ -46,6 +51,8 @@ done
 [[ -d "$PACK/$PROFILE/effect-templates" ]] || { echo "Unknown profile '$PROFILE' (use 1080p, 4k or vertical)" >&2; exit 1; }
 
 NATIVE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/kdenlive"
+FONT_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/fonts/ouzfx"
+case "$PROFILE" in 4k) HL_SIZE=2160 ;; *) HL_SIZE=1080 ;; esac
 FLATPAK_DIR="$HOME/.var/app/$FLATPAK_ID/data/kdenlive"
 
 detect_targets() {
@@ -99,10 +106,41 @@ install_to() {
       done
     done
   fi
+  # highlight overlays (alpha WebM): <data>/ouzfx/highlights/<group>/ + Library ▸ OuzFX Highlights/<group>/
+  if [[ -d "$HERE/highlights/$HL_SIZE" ]]; then
+    rm -rf "$dest/ouzfx/highlights" "$dest/library/OuzFX Highlights"
+    for g in "$HERE/highlights/$HL_SIZE/"*/; do
+      g="$(basename "$g")"
+      mkdir -p "$dest/ouzfx/highlights/$g" "$dest/library/OuzFX Highlights/$g"
+      for f in "$HERE/highlights/$HL_SIZE/$g/"*.webm; do
+        install -m 644 "$f" "$dest/ouzfx/highlights/$g/"; echo "ouzfx/highlights/$g/$(basename "$f")" >> "$manifest.new"
+        install -m 644 "$f" "$dest/library/OuzFX Highlights/$g/"; echo "library/OuzFX Highlights/$g/$(basename "$f")" >> "$manifest.new"
+      done
+    done
+  fi
+  # editable label title templates: <data>/titles (Project ▸ Add Template Title) + <data>/ouzfx/titles
+  if [[ -d "$HERE/titles/$PROFILE" ]]; then
+    mkdir -p "$dest/titles" "$dest/ouzfx/titles"
+    for f in "$HERE/titles/$PROFILE/"*.kdenlivetitle; do
+      install -m 644 "$f" "$dest/titles/"; echo "titles/$(basename "$f")" >> "$manifest.new"
+      install -m 644 "$f" "$dest/ouzfx/titles/"; echo "ouzfx/titles/$(basename "$f")" >> "$manifest.new"
+    done
+  fi
   echo "$PROFILE" > "$dest/ouzfx/profile"
   mv "$manifest.new" "$manifest"
   echo "✔ Installed $(grep -c . "$manifest") files into $dest  (profile: $PROFILE)"
   [[ -d "$dest/ouzfx/sfx" ]] && echo "  Sound effects: $dest/ouzfx/sfx  (also in Kdenlive's Library panel ▸ OuzFX SFX)"
+  [[ -d "$dest/ouzfx/highlights" ]] && echo "  Highlights:    $dest/ouzfx/highlights  (Library panel ▸ OuzFX Highlights, ${HL_SIZE}px square)"
+  [[ -d "$dest/ouzfx/titles" ]] && echo "  Label titles:  $dest/titles/ouzfx_*.kdenlivetitle  (Project ▸ Add Template Title)"
+  return 0
+}
+
+install_fonts() {
+  [[ "$FONTS" == 1 && -d "$HERE/fonts" ]] || return 0
+  mkdir -p "$FONT_DIR"
+  install -m 644 "$HERE/fonts/"*.ttf "$HERE/fonts/"OFL-*.txt "$FONT_DIR/"
+  command -v fc-cache >/dev/null 2>&1 && fc-cache -f "$FONT_DIR" >/dev/null 2>&1 || true
+  echo "✔ Brand fonts (Bricolage Grotesque, Plus Jakarta Sans, JetBrains Mono – OFL) in $FONT_DIR"
 }
 
 uninstall_from() {
@@ -112,7 +150,8 @@ uninstall_from() {
   fi
   # belt and braces: remove anything carrying our prefix
   rm -f "$dest"/effect-templates/ouzfx_*.xml "$dest"/transitions/ouzfx_*.xml
-  rm -rf "$dest/lumas/HD/ouzfx" "$dest/lumas/VERTICAL/ouzfx" "$dest/ouzfx" "$dest/library/OuzFX SFX"
+  rm -rf "$dest/lumas/HD/ouzfx" "$dest/lumas/VERTICAL/ouzfx" "$dest/ouzfx" "$dest/library/OuzFX SFX" "$dest/library/OuzFX Highlights"
+  rm -f "$dest"/titles/ouzfx_*.kdenlivetitle
   echo "✔ Removed OuzFX from $dest"
 }
 
@@ -137,12 +176,20 @@ case "$ACTION" in
       echo "Sound effects: $(find "$HERE/sfx" -name '*.wav' | wc -l)"
       for g in "$HERE/sfx/"*/; do printf '  %-9s %3d\n' "$(basename "$g")" "$(ls "$g"*.wav | wc -l)"; done
     fi
+    if [[ -d "$HERE/highlights/$HL_SIZE" ]]; then
+      echo "Highlight overlays (${HL_SIZE}px square alpha WebM): $(find "$HERE/highlights/$HL_SIZE" -name '*.webm' | wc -l)"
+      for g in "$HERE/highlights/$HL_SIZE/"*/; do printf '  %-9s %3d\n' "$(basename "$g")" "$(ls "$g"*.webm | wc -l)"; done
+    fi
+    [[ -d "$HERE/titles/$PROFILE" ]] && echo "Label title templates: $(ls "$HERE/titles/$PROFILE/"*.kdenlivetitle | wc -l)"
+    [[ -d "$HERE/fonts" && "$FONTS" == 1 ]] && echo "Brand fonts: $(ls "$HERE/fonts/"*.ttf | wc -l) -> $FONT_DIR"
     ;;
   install)
     for d in "${DESTS[@]}"; do install_to "$d"; done
+    install_fonts
     echo "Restart Kdenlive, then search \"OuzFX\" (or \"AFX_\") in the Effects and Compositions panels."
     ;;
   uninstall)
     for d in "${DESTS[@]}"; do uninstall_from "$d"; done
+    [[ -d "$FONT_DIR" ]] && rm -rf "$FONT_DIR" && { command -v fc-cache >/dev/null 2>&1 && fc-cache -f >/dev/null 2>&1 || true; } && echo "✔ Removed brand fonts from $FONT_DIR"
     ;;
 esac

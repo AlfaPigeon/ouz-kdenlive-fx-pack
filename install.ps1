@@ -19,12 +19,17 @@ $Dirs = @{
     "overlays"         = Join-Path $Roaming "ouzfx\overlays"
     "sfx"              = Join-Path $Roaming "ouzfx\sfx"
     "library"          = Join-Path $Roaming "library\OuzFX SFX"
+    "highlights"       = Join-Path $Roaming "ouzfx\highlights"
+    "libraryHL"        = Join-Path $Roaming "library\OuzFX Highlights"
+    "titles"           = Join-Path $Roaming "titles"
 }
+$HlSize = if ($Profile -eq "4k") { "2160" } else { "1080" }
 
 if ($Uninstall) {
     Remove-Item (Join-Path $Dirs["effect-templates"] "ouzfx_*.xml") -ErrorAction SilentlyContinue
     Remove-Item (Join-Path $Dirs["transitions"] "ouzfx_*.xml") -ErrorAction SilentlyContinue
-    Remove-Item $Dirs["lumasHD"], $Dirs["lumasV"], (Join-Path $Roaming "ouzfx"), $Dirs["library"] -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item $Dirs["lumasHD"], $Dirs["lumasV"], (Join-Path $Roaming "ouzfx"), $Dirs["library"], $Dirs["libraryHL"] -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item (Join-Path $Dirs["titles"] "ouzfx_*.kdenlivetitle") -ErrorAction SilentlyContinue
     Write-Host "Removed OuzFX. Restart Kdenlive."
     exit 0
 }
@@ -48,5 +53,34 @@ if (Test-Path (Join-Path $Here "sfx")) {
         }
     }
     Write-Host "Sound effects: $($Dirs["sfx"]) (also in Kdenlive's Library panel > OuzFX SFX)"
+}
+$HlSrc = Join-Path $Here "highlights\$HlSize"
+if (Test-Path $HlSrc) {
+    Get-ChildItem $HlSrc -Directory | ForEach-Object {
+        foreach ($root in @($Dirs["highlights"], $Dirs["libraryHL"])) {
+            $t = Join-Path $root $_.Name
+            New-Item -ItemType Directory -Force -Path $t | Out-Null
+            Copy-Item (Join-Path $_.FullName "*.webm") $t -Force
+        }
+    }
+    Write-Host "Highlights: $($Dirs["highlights"]) (also in Kdenlive's Library panel > OuzFX Highlights)"
+}
+$TiSrc = Join-Path $Here "titles\$Profile"
+if (Test-Path $TiSrc) {
+    Copy-Item (Join-Path $TiSrc "*.kdenlivetitle") $Dirs["titles"] -Force
+    Write-Host "Label title templates: $($Dirs["titles"]) (Project > Add Template Title)"
+}
+# brand fonts (OFL) - per-user install, no admin rights needed
+$FontSrc = Join-Path $Here "fonts"
+if (Test-Path $FontSrc) {
+    $UserFonts = Join-Path $env:LOCALAPPDATA "Microsoft\Windows\Fonts"
+    New-Item -ItemType Directory -Force -Path $UserFonts | Out-Null
+    $Reg = "HKCU:\Software\Microsoft\Windows NT\CurrentVersion\Fonts"
+    Get-ChildItem (Join-Path $FontSrc "*.ttf") | ForEach-Object {
+        $dst = Join-Path $UserFonts $_.Name
+        Copy-Item $_.FullName $dst -Force
+        New-ItemProperty -Path $Reg -Name "$($_.BaseName) (TrueType)" -Value $dst -PropertyType String -Force | Out-Null
+    }
+    Write-Host "Brand fonts installed for the current user (restart Kdenlive to pick them up)."
 }
 Write-Host "Installed OuzFX ($Profile). Restart Kdenlive and search 'OuzFX' in Effects / Compositions."

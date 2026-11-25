@@ -16,6 +16,13 @@ AFX_TITLES = {"AFX_Move": "AFX_Move · object & text movement (v1.1)", "AFX_Cam"
               "AFX_Util": "AFX_Util · focus, callout & explainer utilities (v1.1)",
               "AFX_Style": "AFX_Style · stylistic accents (v1.1)", "AFX_Audio": "AFX_Audio · audio effect templates (v1.1)"}
 SFX = json.load(open(os.path.join(ROOT, "sfx", "sfx.json")))
+import sys
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import make_highlights as MH  # noqa: E402
+HLRES = json.load(open(os.path.join(ROOT, "docs", "highlight-test-results.json")))
+TITLES = json.load(open(os.path.join(ROOT, "titles", "index.json")))
+N_HL = {sz: sum(1 for k in HLRES["overlays"] if k.startswith(sz + "/")) for sz in ("1080", "2160")}
+N_HL_ASSETS = len(MH.ASSETS)
 
 
 def dur(f):
@@ -51,6 +58,12 @@ screen-recording zooms, 3D perspective screen share, slide / pop / spin / whip a
 flash frames, film burn, VHS, cinematic bars, text pops, explainer tools (spotlight, split screen, censor box, highlighter),
 {n_audio} voice/audio presets, {len(SFX)} original sound effects (risers, pops, whooshes, impacts) and {n_luma} custom luma wipes.
 
+> **New in v1.3 – Highlights:** {N_HL_ASSETS} animated highlight overlays in the Ouz Labs brand colours (arrows from 4
+> directions + hand-drawn curved arrows, outline boxes, focus brackets, circles, pulse rings, scribble circles, underline
+> swipes, check / cross marks, ping dots, click ripples, step badges, a NEW sticker). Each comes as In / Loop / Out
+> alpha WebM clips ({N_HL["1080"]} at 1080 px + {N_HL["2160"]} at 4K). There are also {len(TITLES)} editable label title templates in the brand fonts.
+> See [Highlights](#highlights--arrows-boxes-circles--labels-v13) and [docs/BRAND.md](docs/BRAND.md).
+>
 > **New in v1.2:** Out (exit) versions of every intro that lacked one – {len(outs_e)} effect templates and {len(outs_c)}
 > compositions, incl. **whip-out in all 4 directions** (`AFX_Move_Whip_Slide_Out_*` + the two-clip `AFX_Cam_Whip_Push_Out_*`
 > transitions). See [In/Out pairs](#inout-pairs-v12) and [docs/BLUEPRINT_COVERAGE.md](docs/BLUEPRINT_COVERAGE.md#inout-pairs-v12).
@@ -67,6 +80,8 @@ Kdenlive add-on: plain XML + images dropped into Kdenlive's own data folders.
 * **{n_luma} luma wipes** (HD + vertical) – appear in every Wipe / Luma composition and same-track mix
   ({n_audio} of them are **audio** templates: telephone, walkie-talkie, underwater, hall echo, voice-over polish)
 * **{len(SFX)} sound effects** (48 kHz WAV) – appear in Kdenlive's **Library** panel under *OuzFX SFX*
+* **{N_HL_ASSETS} highlight animations** (arrows, boxes, circles, marks, badges – In/Loop/Out alpha WebM) in Kdenlive's
+  **Library** panel under *OuzFX Highlights*, + **{len(TITLES)} label title templates** (Project ▸ Add Template Title)
 * 2 royalty-free overlay clips (light leak, film burn) for Screen/Add blending
 * Every visual preset is test-rendered with MLT `melt` ({passed}/{len(res)} passed) – the previews below are those renders – and the
   pack was loaded and applied inside a real Kdenlive (24.12.3) session.
@@ -98,7 +113,8 @@ curl -L https://github.com/{REPO}/archive/refs/heads/main.tar.gz | tar xz && kde
 | Flatpak (`org.kde.kdenlive`) | `~/.var/app/org.kde.kdenlive/data/kdenlive/` |
 
 Options: `--profile 1080p|4k|vertical` (match your project resolution, default 1080p), `--native`, `--flatpak`, `--both`,
-`--list`, `--uninstall`. **Restart Kdenlive** after installing.
+`--list`, `--uninstall`, `--no-fonts`. **Restart Kdenlive** after installing. The installer also puts the three free brand
+fonts (OFL) in `~/.local/share/fonts/ouzfx` so the label titles render correctly (`--no-fonts` skips that).
 
 ```bash
 ./install.sh --profile 4k        # 3840×2160 projects
@@ -126,6 +142,9 @@ Manual copy: `pack\\<profile>\\effect-templates\\*.xml` → `%AppData%\\kdenlive
 | Effect templates | `pack/<profile>/effect-templates/*.xml` | `<data>/effect-templates/` |
 | Compositions | `pack/<profile>/transitions/*.xml` (replace `@LUMADIR@` with `<data>/lumas`) | `<data>/transitions/` |
 | Luma wipes | `pack/lumas/HD/ouzfx/`, `pack/lumas/VERTICAL/ouzfx/` | `<data>/lumas/HD/ouzfx/`, `<data>/lumas/VERTICAL/ouzfx/` |
+| Highlight overlays | `highlights/1080/` (1080p & vertical) or `highlights/2160/` (4K) | `<data>/library/OuzFX Highlights/` (and/or anywhere) |
+| Label title templates | `titles/<profile>/*.kdenlivetitle` | `<data>/titles/` |
+| Brand fonts | `fonts/*.ttf` | `~/.local/share/fonts/` (Windows: double-click ▸ Install) |
 
 ### KDE Store / "Download New Effects"
 
@@ -186,6 +205,67 @@ Rules of thumb from the sources: land every move on the beat, keep hits to a few
 per video, default to the hard cut, and remember retention comes from new information, not effects alone.
 
 """]
+
+HL_GROUPS = [("arrows", "Arrows"), ("boxes", "Boxes & brackets"), ("circles", "Circles & rings"),
+             ("marks", "Marks"), ("pointers", "Pointers"), ("badges", "Badges & stickers")]
+hl = [f"""## Highlights · arrows, boxes, circles & labels (v1.3)
+
+Animated highlights to point at things on screen, styled with the Ouz Labs brand kit ([docs/BRAND.md](docs/BRAND.md)):
+**Signal Tangerine `#FF5A26`** by default, plus **Acid Volt `#C8FF2E`** and **Lab Chalk `#F4F4F0`** variants of the core shapes.
+The style follows the kit: 12 px strokes, 16 px rounded frames, sticker badges with a 5 px Lab Chalk outline, and "elastic pops
+meet mechanical clicks" timing. A soft Carbon Slate shadow keeps them readable on bright footage.
+
+* **Pre-rendered alpha clips** (VP9 WebM with alpha, 30 fps) are generated by [`tools/make_highlights.py`](tools/make_highlights.py).
+  They are **square** (1080×1080, or 2160×2160 for 4K), so the same file works in 16:9 and 9:16 projects. The **arrow tip / shape
+  centre is the centre of the clip**.
+* Every shape has three parts that cut together seamlessly:
+  * `_in` – the entrance plus a 2 s idle.
+  * `_loop` – a 2 s seamless idle (nudge, breathe, hand-drawn boil). Repeat it to hold the shape longer.
+  * `_out` – the exit.
+  * `click_ripple` is a single one-shot clip.
+* **Label templates** use the brand fonts: JetBrains Mono tags, Plus Jakarta Sans callout text and a Bricolage Grotesque sticker.
+  You type the label text, so there's nothing to re-render.
+
+**How to use**
+
+1. **Library panel** (View ▸ Library) ▸ *OuzFX Highlights* ▸ group ▸ drag `…_in_tangerine.webm` onto a track **above** your footage.
+   Kdenlive composites tracks automatically, and the transparent parts show the footage underneath.
+2. Select the clip ▸ add **Transform** (Effects ▸ search "Transform") and move / scale it so the **centre** sits on the object.
+   For arrows, the **tip** is the centre.
+3. Need it longer? Put `…_loop_…` right after the `_in` clip and repeat it as often as you need, then end with `…_out_…`.
+   To drop a shape early, cut the `_in` clip anywhere and put the `_out` clip after it.
+4. **Labels:** Project ▸ **Add Template Title…** ▸ pick an `ouzfx_*` template ▸ type the text in the *Text* box ▸ OK.
+   To change it later, open **Clip Properties** ▸ first tab, edit the text and click **Apply**. To animate it, drop *Text Pop*,
+   *Word Pop* or any OuzFX In/Out template on it. Pair `ouzfx_box_tag_*` with `box_draw_16x9`: they line up 1:1 in 1080p/vertical
+   projects.
+
+<img src="docs/screenshots/highlights-library.png" width="300"> <img src="docs/screenshots/highlights-template-title.png" width="420">
+
+Tags fit about 10 characters, the corner lab tag about 22, and the sticker 3–5. For longer text, double-click the title clip
+to open Kdenlive's Title editor and drag the pill wider. The default label colours are Carbon Slate text on Tangerine and Volt,
+and Lab Chalk text on Cobalt and Slate.
+
+At **25 fps** the clips keep their real-time speed (Kdenlive drops frames to match), so timing and seams stay the same.
+At 50/60 fps they play at 30 fps motion. If a Kdenlive build ever shows a black square instead of transparency, run
+`python3 tools/make_highlights.py --prores` for ProRes 4444 `.mov` fallbacks in `highlights-prores/`.
+"""]
+for g, title in HL_GROUPS:
+    assets = [A for A in MH.ASSETS if A.group == g]
+    if not assets:
+        continue
+    hl.append(f"### {title}\n")
+    if os.path.exists(os.path.join(ROOT, "docs", "previews", f"highlights_{g}.gif")):
+        hl.append(f'<img src="docs/previews/highlights_{g}.gif" width="600">\n')
+    hl.append("| Asset | Colours | Clips | Motion |\n|---|---|---|---|")
+    for A in assets:
+        clips = "one-shot, 20 f" if A.single else f"in {A.intro} f + 60 f idle · loop 60 f · out {A.out} f"
+        hl.append(f"| `{A.name}` | {', '.join(A.colors)} | {clips} | {A.desc} |")
+    hl.append("")
+hl.append('### Label title templates (`titles/<profile>/`, installed to `<data>/titles/`)\n\n'
+          '<img src="docs/previews/highlights_titles.jpg" width="720">\n\n| Template | What it is |\n|---|---|')
+for k, v in TITLES.items():
+    hl.append(f"| `{k}` | {v} |")
+out.append("\n".join(hl) + "\n")
 
 by_cat = {}
 for it in cat["effects"]:
@@ -268,6 +348,9 @@ python3 tools/render_tests.py             # melt render of every preset + previe
 python3 tools/make_sfx.py && python3 tools/audio_tests.py   # sound effects + audio preset measurements
 python3 tools/out_tests.py                # Out presets: continuity with their intro + end state
 python3 tools/blueprint.py                # blueprint coverage + In/Out audit -> docs/BLUEPRINT_COVERAGE.md
+python3 tools/make_highlights.py          # v1.3 highlight overlays (needs cairocffi, numpy, Pillow, ffmpeg+libvpx)
+python3 tools/make_titles.py              # v1.3 label title templates (needs melt + the brand fonts)
+python3 tools/highlight_tests.py && python3 tools/highlight_previews.py   # alpha/seam/title tests + README previews
 python3 tools/gen_readme.py && tools/package.sh   # README + release archives in dist/
 ```
 
@@ -275,6 +358,14 @@ Validation done for v{VERSION}:
 
 * `xmllint` + `validate.py` against Kdenlive **git master** effect definitions (all ids/params exist) and against Debian's
   Kdenlive 24.12 data (all OK except Drop Shadow, which is 25.04+ – documented above).
+* v1.3 Highlights: `tools/highlight_tests.py` composites every 1080 overlay in melt over a test still. It checks that the
+  corners stay untouched (real transparency), the shape is visible and every clip decodes as VP9 with alpha at 30 fps with the right size:
+  **{HLRES["summary"]["overlays_ok"]}/{HLRES["summary"]["overlays"]} clips passed**. It also checks the seams: _in end → _loop start → _out start, and the loop wrap,
+  must be no bigger than one frame step of the loop itself (**{HLRES["summary"]["seams_ok"]}/{HLRES["summary"]["seams"]} passed**). All
+  {HLRES["summary"]["titles"]} title templates (3 profiles) render through melt's `kdenlivetitle` producer with the brand fonts. In Kdenlive 24.12.3,
+  the clips appear in the Library panel and composite with alpha over V1. *Add Template Title* lists the templates, the
+  typed text appears in the tag, and Clip Properties ▸ *Apply* changes it
+  ([screenshot](docs/screenshots/highlights-template-text-edit.png)).
 * v1.2 Out presets: `tools/out_tests.py` renders each one as the last piece of a clip – first frame identical to the
   last frame of its intro, last frame = background only (or back at rest): **{sum(r["ok"] for r in OUTRES.values())}/{len(OUTRES)} passed**
   (`docs/out-test-results.json`). The Whip Push composition and an Out template were applied in Kdenlive 24.12.3 and the

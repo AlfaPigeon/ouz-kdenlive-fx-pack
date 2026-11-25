@@ -1,0 +1,29 @@
+<kdenlivetitle width="3840" height="2160" out="149">
+ <item z-index="1" type="QGraphicsRectItem">
+  <position x="1100.00" y="890.00">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content pencolor="0,0,0,0" rect="0,0,1640.00,380.00" penwidth="0" brushcolor="20,22,25,255" cornerRadius="32"/>
+ </item>
+ <item z-index="2" type="QGraphicsRectItem">
+  <position x="1152.00" y="950.00">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content pencolor="0,0,0,0" rect="0,0,20.00,260.00" penwidth="0" brushcolor="255,90,38,255" cornerRadius="10"/>
+ </item>
+ <item z-index="10" type="QGraphicsTextItem">
+  <position x="1229.00" y="971.00">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content font-color="255,90,38,255" font-outline-color="0,0,0,0" font-pixel-size="52" font-italic="0" font-underline="0" font-weight="75" font="JetBrains Mono" font-outline="0" font-spacing="4" letter-spacing="4" alignment="1" line-spacing="0" tab-width="80" typewriter="0;2;1;0;0">NOTE</content>
+ </item>
+ <item z-index="10" type="QGraphicsTextItem">
+  <position x="1232.00" y="1072.00">
+   <transform rotation="0" zoom="100">1.000000,0.000000,0,-0.000000,1.000000,0,0,0,1</transform>
+  </position>
+  <content font-color="244,244,240,255" font-outline-color="0,0,0,0" font-pixel-size="92" font-italic="0" font-underline="0" font-weight="63" font="Plus Jakarta Sans" font-outline="0" font-spacing="0" letter-spacing="0" alignment="1" box-width="1440.00" box-height="124.20" line-spacing="0" tab-width="80" typewriter="0;2;1;0;0">%s</content>
+ </item>
+ <startviewport rect="0,0,3840,2160"/>
+ <endviewport rect="0,0,3840,2160"/>
+ <background color="0,0,0,0"/>
+</kdenlivetitle>
