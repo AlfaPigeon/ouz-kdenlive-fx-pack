@@ -1,20 +1,28 @@
 # OuzFX · Kdenlive Effects & Transitions Pack
 
-**102 free, Kdenlive-native presets for fast-paced YouTube / Shorts editing:** camera shake, punch-in & boom zooms,
+**165 free, Kdenlive-native presets for fast-paced YouTube / Shorts editing:** camera shake, punch-in & boom zooms,
 screen-recording zooms, 3D perspective screen share, slide / pop / spin / whip animations, glitch & RGB-split hits,
-flash frames, film burn, VHS, cinematic bars, text pops and 16 custom luma wipes.
+flash frames, film burn, VHS, cinematic bars, text pops, explainer tools (spotlight, split screen, censor box, highlighter),
+5 voice/audio presets, 16 original sound effects (risers, pops, whooshes, impacts) and 16 custom luma wipes.
+
+> **New in v1.1:** 63 `OuzFX AFX_*` presets from the expansion blueprint (only the items that were not already in the
+> pack – see [docs/BLUEPRINT_COVERAGE.md](docs/BLUEPRINT_COVERAGE.md)), 5 audio templates, 16 sound effects
+> and a fix that makes static values of v1.0 presets load correctly in Kdenlive. See [CHANGELOG.md](CHANGELOG.md).
 
 Made for the Ouz Labs YouTube channel. MIT licensed, works with stock Kdenlive (nothing to compile) and installs like any
 Kdenlive add-on: plain XML + images dropped into Kdenlive's own data folders.
 
-* **61 effect templates** – Kdenlive "effect groups", show up under **Effects ▸ Templates**
-* **25 compositions** – show up in the **Compositions** panel, keyframes stretch to the composition length
+* **121 effect templates** – Kdenlive "effect groups", show up under **Effects ▸ Templates**
+* **28 compositions** – show up in the **Compositions** panel, keyframes stretch to the composition length
 * **16 luma wipes** (HD + vertical) – appear in every Wipe / Luma composition and same-track mix
+  (5 of them are **audio** templates: telephone, walkie-talkie, underwater, hall echo, voice-over polish)
+* **16 sound effects** (48 kHz WAV) – appear in Kdenlive's **Library** panel under *OuzFX SFX*
 * 2 royalty-free overlay clips (light leak, film burn) for Screen/Add blending
-* Every preset is test-rendered with MLT `melt` (102/102 passed) – the previews below are those renders – and the
+* Every visual preset is test-rendered with MLT `melt` (160/160 passed) – the previews below are those renders – and the
   pack was loaded and applied inside a real Kdenlive (24.12.3) session.
 
-Everything is prefixed **OuzFX** – type `OuzFX` in the Effects or Compositions search box to see the whole pack.
+Everything is prefixed **OuzFX** – type `OuzFX` in the Effects or Compositions search box to see the whole pack, or
+`AFX_` for the v1.1 additions (`AFX_Move_`, `AFX_Cam_`, `AFX_Util_`, `AFX_Style_`, `AFX_Audio_`).
 
 <img src="docs/screenshots/effects-panel.png" width="360"> <img src="docs/screenshots/compositions-panel.png" width="360">
 
@@ -78,11 +86,12 @@ Kdenlive via **Effects ▸ Download New Effects** / the Wipe method **Download**
 ## Requirements
 
 * **Kdenlive 24.08 or newer** (easing keyframe types such as back/elastic/bounce). Kdenlive 25.04+ recommended.
-* **Kdenlive 25.04+** for the *Perspective Screen* presets (they use the Drop Shadow effect added in 25.04;
-  older Kdenlive silently hides those six templates).
+* **Kdenlive 25.04+** for the *Perspective Screen* presets and `AFX_Util_Drop_Shadow_Polish` (they use the Drop Shadow
+  effect added in 25.04; older Kdenlive silently hides those templates).
 * Uses only effects that ship with Kdenlive: Transform (qtblend), Box Blur, Directional Blur, Gaussian Blur, Brightness,
   Crop/Rounded corners (qtcrop), Corners (frei0r), Drop Shadow, RGB Shift, Chroma Shift, Glitch0r, Scanlines, Grain,
-  Dust, Colorize, Glow, Saturation, Greyscale, Vignette. frei0r-based presets need the **frei0r-plugins** package, which
+  Dust, Colorize, Glow, Saturation, Greyscale, Vignette, Contrast, Pixelize, Alpha shapes (mask), and for audio: Low/High
+  pass, Equalizer, Bitcrusher, Compensation Delay, Dynamic Loudness, Limiter. frei0r-based presets need the **frei0r-plugins** package, which
   Kdenlive depends on in Arch (`frei0r-plugins`), Debian/Ubuntu, Flatpak and the AppImage/Windows builds.
 
 ## How to use
@@ -94,6 +103,9 @@ Kdenlive via **Effects ▸ Download New Effects** / the Wipe method **Download**
 * **Compositions** (Compositions panel, search `OuzFX`): put the clip on V2 above the clip it should reveal, then drag the
   composition onto the overlap. Their keyframes use `0=` / `-1=` so they always span the whole composition – make it
   6–12 frames for whips and zoom-throughs, seconds for Ken Burns.
+* **Audio templates** (`AFX_Audio_`): Effects ▸ Templates, drag onto an audio clip (or the audio part of an A/V clip).
+* **Sound effects**: open the **Library** panel (View ▸ Library) ▸ *OuzFX SFX* ▸ risers / pops / whooshes / impacts and
+  drag a file onto an audio track, or Project Bin ▸ **Add Clip** ▸ `<data>/ouzfx/sfx/`.
 * **Luma wipes**: any Wipe composition or same-track mix (select two adjacent clips ▸ `U`) ▸ *Wipe Method* ▸ `ouzfx_*`.
 * **Resolution**: Kdenlive's Transform widget only round-trips pixel rectangles (percentage rects are mis-read by the UI),
   so effect templates and compositions are generated per resolution – install the profile matching your project
@@ -127,6 +139,8 @@ per video, default to the hard cut, and remember retention comes from new inform
 ## The presets
 
 ⚡ = part of the fast-paced kit
+
+The v1.0 categories come first, the v1.1 `AFX_*` additions after the luma table.
 
 ### Fast-Paced
 
@@ -299,6 +313,129 @@ per video, default to the hard cut, and remember retention comes from new inform
 | <img src="docs/previews/ouzfx_pixel_dissolve.gif" width="200"> | `ouzfx_pixel_dissolve.png` | Pixel dissolve (32px cells) |
 | <img src="docs/previews/ouzfx_swipe_up_soft.gif" width="200"> | `ouzfx_swipe_up_soft.png` | Soft swipe upwards |
 
+### AFX_Move · object & text movement (v1.1)
+
+| Preview | Name (search in Kdenlive) | What it does | Length |
+|---|---|---|---|
+| <img src="docs/previews/ouzfx_afx_move_overshoot_slide_in_left.gif" width="200"> | **OuzFX AFX_Move_Overshoot_Slide_In_Left** ⚡<br><sub>`ouzfx_afx_move_overshoot_slide_in_left` · effect template</sub> | Slides in from the left edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak. | 14 f |
+| <img src="docs/previews/ouzfx_afx_move_overshoot_slide_in_right.gif" width="200"> | **OuzFX AFX_Move_Overshoot_Slide_In_Right** ⚡<br><sub>`ouzfx_afx_move_overshoot_slide_in_right` · effect template</sub> | Slides in from the right edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak. | 14 f |
+| <img src="docs/previews/ouzfx_afx_move_overshoot_slide_in_top.gif" width="200"> | **OuzFX AFX_Move_Overshoot_Slide_In_Top** ⚡<br><sub>`ouzfx_afx_move_overshoot_slide_in_top` · effect template</sub> | Slides in from the top edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak. | 14 f |
+| <img src="docs/previews/ouzfx_afx_move_overshoot_slide_in_bottom.gif" width="200"> | **OuzFX AFX_Move_Overshoot_Slide_In_Bottom** ⚡<br><sub>`ouzfx_afx_move_overshoot_slide_in_bottom` · effect template</sub> | Slides in from the bottom edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak. | 14 f |
+| <img src="docs/previews/ouzfx_afx_move_masked_edge_reveal_up.gif" width="200"> | **OuzFX AFX_Move_Masked_Edge_Reveal_Up**<br><sub>`ouzfx_afx_move_masked_edge_reveal_up` · effect template</sub> | Emerges up out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the upper half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere. | 15 f |
+| <img src="docs/previews/ouzfx_afx_move_masked_edge_reveal_down.gif" width="200"> | **OuzFX AFX_Move_Masked_Edge_Reveal_Down**<br><sub>`ouzfx_afx_move_masked_edge_reveal_down` · effect template</sub> | Emerges down out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the lower half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere. | 15 f |
+| <img src="docs/previews/ouzfx_afx_move_masked_edge_reveal_left.gif" width="200"> | **OuzFX AFX_Move_Masked_Edge_Reveal_Left**<br><sub>`ouzfx_afx_move_masked_edge_reveal_left` · effect template</sub> | Emerges left out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the left half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere. | 15 f |
+| <img src="docs/previews/ouzfx_afx_move_masked_edge_reveal_right.gif" width="200"> | **OuzFX AFX_Move_Masked_Edge_Reveal_Right**<br><sub>`ouzfx_afx_move_masked_edge_reveal_right` · effect template</sub> | Emerges right out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the right half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere. | 15 f |
+| <img src="docs/previews/ouzfx_afx_move_idle_float_gentle.gif" width="200"> | **OuzFX AFX_Move_Idle_Float_Gentle**<br><sub>`ouzfx_afx_move_idle_float_gentle` · effect template</sub> | Continuous hover for static PNGs/screenshots: ±1% vertical bob with ±1.2° sway (sine, 200 frames ≈ 8 s, loops seamlessly – extend by copying keyframes). | 200 f |
+| <img src="docs/previews/ouzfx_afx_move_idle_float_strong.gif" width="200"> | **OuzFX AFX_Move_Idle_Float_Strong**<br><sub>`ouzfx_afx_move_idle_float_strong` · effect template</sub> | Continuous hover for static PNGs/screenshots: ±2% vertical bob with ±2° sway (sine, 160 frames ≈ 6.4 s, loops seamlessly – extend by copying keyframes). | 160 f |
+| <img src="docs/previews/ouzfx_afx_move_card_3d_swing_in_left.gif" width="200"> | **OuzFX AFX_Move_Card_3D_Swing_In_Left**<br><sub>`ouzfx_afx_move_card_3d_swing_in_left` · effect template</sub> | Tweet / document / card swings in from the left in 3D perspective and flattens to face the viewer (18 frames, cubic ease-out). Uses the Corners effect; works without Drop Shadow (any 24.08+). | 18 f |
+| <img src="docs/previews/ouzfx_afx_move_card_3d_swing_in_right.gif" width="200"> | **OuzFX AFX_Move_Card_3D_Swing_In_Right**<br><sub>`ouzfx_afx_move_card_3d_swing_in_right` · effect template</sub> | Tweet / document / card swings in from the right in 3D perspective and flattens to face the viewer (18 frames, cubic ease-out). Uses the Corners effect; works without Drop Shadow (any 24.08+). | 18 f |
+| <img src="docs/previews/ouzfx_afx_move_hinge_swing_in_top_left.gif" width="200"> | **OuzFX AFX_Move_Hinge_Swing_In_Top_Left**<br><sub>`ouzfx_afx_move_hinge_swing_in_top_left` · effect template</sub> | Swings down into frame around its top-left corner like a sign on a hinge, then settles with a small decaying swing (24 frames). | 24 f |
+| <img src="docs/previews/ouzfx_afx_move_hinge_swing_in_top_right.gif" width="200"> | **OuzFX AFX_Move_Hinge_Swing_In_Top_Right**<br><sub>`ouzfx_afx_move_hinge_swing_in_top_right` · effect template</sub> | Mirror of Hinge Swing-In Top-Left – pivots around the top-right corner. | 24 f |
+| <img src="docs/previews/ouzfx_afx_move_pendulum_swing_settle.gif" width="200"> | **OuzFX AFX_Move_Pendulum_Swing_Settle**<br><sub>`ouzfx_afx_move_pendulum_swing_settle` · effect template</sub> | Hangs from the top-centre and swings like a pendulum (±25°, decaying over 36 frames) – hanging signs, price tags, name cards. | 36 f |
+| <img src="docs/previews/ouzfx_afx_move_pip_snap_top_left.gif" width="200"> | **OuzFX AFX_Move_PiP_Snap_Top_Left**<br><sub>`ouzfx_afx_move_pip_snap_top_left` · effect template</sub> | Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the top-left corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it. | 12 f |
+| <img src="docs/previews/ouzfx_afx_move_pip_snap_top_right.gif" width="200"> | **OuzFX AFX_Move_PiP_Snap_Top_Right**<br><sub>`ouzfx_afx_move_pip_snap_top_right` · effect template</sub> | Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the top-right corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it. | 12 f |
+| <img src="docs/previews/ouzfx_afx_move_pip_snap_bottom_left.gif" width="200"> | **OuzFX AFX_Move_PiP_Snap_Bottom_Left**<br><sub>`ouzfx_afx_move_pip_snap_bottom_left` · effect template</sub> | Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the bottom-left corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it. | 12 f |
+| <img src="docs/previews/ouzfx_afx_move_pip_snap_bottom_right.gif" width="200"> | **OuzFX AFX_Move_PiP_Snap_Bottom_Right**<br><sub>`ouzfx_afx_move_pip_snap_bottom_right` · effect template</sub> | Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the bottom-right corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it. | 12 f |
+| <img src="docs/previews/ouzfx_afx_move_text_word_pop_shorts.gif" width="200"> | **OuzFX AFX_Move_Text_Word_Pop_Shorts** ⚡<br><sub>`ouzfx_afx_move_text_word_pop_shorts` · effect template</sub> | TikTok/Reels/Shorts caption pop: 85% → 105% → 100% in 4 frames. Faster and subtler than 'Text · Text Pop' – drop it on every caption clip. | 4 f |
+| <img src="docs/previews/ouzfx_afx_move_text_typewriter_wipe_fast.gif" width="200"> | **OuzFX AFX_Move_Text_Typewriter_Wipe_Fast**<br><sub>`ouzfx_afx_move_text_typewriter_wipe_fast` · effect template</sub> | Linear left-to-right crop reveal that uncovers a line of text over 25 frames (1 s @25 fps). Put it on a title clip; drag the last keyframe to change the speed. | 25 f |
+| <img src="docs/previews/ouzfx_afx_move_text_typewriter_wipe_slow.gif" width="200"> | **OuzFX AFX_Move_Text_Typewriter_Wipe_Slow**<br><sub>`ouzfx_afx_move_text_typewriter_wipe_slow` · effect template</sub> | Linear left-to-right crop reveal that uncovers a line of text over 50 frames (2 s @25 fps). Put it on a title clip; drag the last keyframe to change the speed. | 50 f |
+| <img src="docs/previews/ouzfx_afx_move_text_glitch_in.gif" width="200"> | **OuzFX AFX_Move_Text_Glitch_In** ⚡<br><sub>`ouzfx_afx_move_text_glitch_in` · effect template</sub> | Title flickers on: erratic opacity drops, tiny horizontal jitter and RGB tearing over the first 6 frames, then locks steady. | 6 f |
+
+
+### AFX_Cam · camera & framing (v1.1)
+
+| Preview | Name (search in Kdenlive) | What it does | Length |
+|---|---|---|---|
+| <img src="docs/previews/ouzfx_afx_cam_impact_shake_light.gif" width="200"> | **OuzFX AFX_Cam_Impact_Shake_Light** ⚡<br><sub>`ouzfx_afx_cam_impact_shake_light` · effect template</sub> | Light decaying X/Y + rotational jitter (10 frames) for bass hits, desk slams and small impacts. Heavy tier = 'Shake · Heavy Impact'. | 10 f |
+| <img src="docs/previews/ouzfx_afx_cam_impact_shake_medium.gif" width="200"> | **OuzFX AFX_Cam_Impact_Shake_Medium** ⚡<br><sub>`ouzfx_afx_cam_impact_shake_medium` · effect template</sub> | Medium decaying X/Y + rotational jitter (15 frames) for bass hits, desk slams and small impacts. Heavy tier = 'Shake · Heavy Impact'. | 15 f |
+| <img src="docs/previews/ouzfx_afx_cam_whip_pan_push_right.gif" width="200"> | **OuzFX AFX_Cam_Whip_Pan_Push_Right** ⚡<br><sub>`ouzfx_afx_cam_whip_pan_push_right` · effect template</sub> | Last 8 frames of a clip: whips the picture out right with heavy directional blur. Razor 8 frames before the cut and drop it on the right-hand piece (left version = 'Fast · Motion-Blur Push Left'). | 8 f |
+| <img src="docs/previews/ouzfx_afx_cam_whip_pan_push_up.gif" width="200"> | **OuzFX AFX_Cam_Whip_Pan_Push_Up** ⚡<br><sub>`ouzfx_afx_cam_whip_pan_push_up` · effect template</sub> | Last 8 frames of a clip: whips the picture out up with heavy directional blur. Razor 8 frames before the cut and drop it on the right-hand piece (left version = 'Fast · Motion-Blur Push Left'). | 8 f |
+| <img src="docs/previews/ouzfx_afx_cam_whip_pan_push_down.gif" width="200"> | **OuzFX AFX_Cam_Whip_Pan_Push_Down** ⚡<br><sub>`ouzfx_afx_cam_whip_pan_push_down` · effect template</sub> | Last 8 frames of a clip: whips the picture out down with heavy directional blur. Razor 8 frames before the cut and drop it on the right-hand piece (left version = 'Fast · Motion-Blur Push Left'). | 8 f |
+| <img src="docs/previews/ouzfx_afx_cam_heartbeat_pulse.gif" width="200"> | **OuzFX AFX_Cam_Heartbeat_Pulse**<br><sub>`ouzfx_afx_cam_heartbeat_pulse` · effect template</sub> | Two 'lub-dub' heartbeats (≈ 70 BPM, 72 frames): a small 103.5% swell, a bigger 105% one, with a matching darkening throb. Builds tension; copy keyframes to extend. | 72 f |
+| <img src="docs/previews/ouzfx_afx_cam_dutch_angle_subtle_8deg.gif" width="200"> | **OuzFX AFX_Cam_Dutch_Angle_Subtle_8deg**<br><sub>`ouzfx_afx_cam_dutch_angle_subtle_8deg` · effect template</sub> | Eases the horizon to a 8° Dutch angle over 20 frames and holds, auto-zooming just enough (124%) that no black corners show. Suspense / confusion / surreal beats. | 20 f |
+| <img src="docs/previews/ouzfx_afx_cam_dutch_angle_strong_15deg.gif" width="200"> | **OuzFX AFX_Cam_Dutch_Angle_Strong_15deg**<br><sub>`ouzfx_afx_cam_dutch_angle_strong_15deg` · effect template</sub> | Eases the horizon to a 15° Dutch angle over 20 frames and holds, auto-zooming just enough (143%) that no black corners show. Suspense / confusion / surreal beats. | 20 f |
+| <img src="docs/previews/ouzfx_afx_cam_zoom_callout_return_top_left.gif" width="200"> | **OuzFX AFX_Cam_Zoom_Callout_Return_Top_Left**<br><sub>`ouzfx_afx_cam_zoom_callout_return_top_left` · effect template</sub> | Return half of the callout: from the 180% top-left zoom (Screen Zoom · Zoom to Top-Left) smoothly back to 100% in 15 frames. Razor where the callout ends. | 15 f |
+| <img src="docs/previews/ouzfx_afx_cam_zoom_callout_return_top_right.gif" width="200"> | **OuzFX AFX_Cam_Zoom_Callout_Return_Top_Right**<br><sub>`ouzfx_afx_cam_zoom_callout_return_top_right` · effect template</sub> | Return half of the callout: from the 180% top-right zoom (Screen Zoom · Zoom to Top-Right) smoothly back to 100% in 15 frames. Razor where the callout ends. | 15 f |
+| <img src="docs/previews/ouzfx_afx_cam_zoom_callout_return_bottom_left.gif" width="200"> | **OuzFX AFX_Cam_Zoom_Callout_Return_Bottom_Left**<br><sub>`ouzfx_afx_cam_zoom_callout_return_bottom_left` · effect template</sub> | Return half of the callout: from the 180% bottom-left zoom (Screen Zoom · Zoom to Bottom-Left) smoothly back to 100% in 15 frames. Razor where the callout ends. | 15 f |
+| <img src="docs/previews/ouzfx_afx_cam_zoom_callout_return_bottom_right.gif" width="200"> | **OuzFX AFX_Cam_Zoom_Callout_Return_Bottom_Right**<br><sub>`ouzfx_afx_cam_zoom_callout_return_bottom_right` · effect template</sub> | Return half of the callout: from the 180% bottom-right zoom (Screen Zoom · Zoom to Bottom-Right) smoothly back to 100% in 15 frames. Razor where the callout ends. | 15 f |
+| <img src="docs/previews/ouzfx_afx_cam_cinematic_bars_slide_out.gif" width="200"> | **OuzFX AFX_Cam_Cinematic_Bars_Slide_Out**<br><sub>`ouzfx_afx_cam_cinematic_bars_slide_out` · effect template</sub> | Out half of the letterbox: 2.39:1 bars retract over 15 frames, leaving 'movie mode'. Pair with 'Look · Cinematic Bars Slide-In'. | 15 f |
+
+| Preview | Name (search in Kdenlive) | What it does | Length |
+|---|---|---|---|
+| <img src="docs/previews/ouzfx_afx_cam_ken_burns_pan_right_to_left.gif" width="200"> | **OuzFX AFX_Cam_Ken_Burns_Pan_Right_to_Left**<br><sub>`ouzfx_afx_cam_ken_burns_pan_right_to_left` · composition</sub> | Pans across a 120% image from right to left over the whole composition length (companion of Pan L→R). | stretches |
+| <img src="docs/previews/ouzfx_afx_cam_ken_burns_pan_up.gif" width="200"> | **OuzFX AFX_Cam_Ken_Burns_Pan_Up**<br><sub>`ouzfx_afx_cam_ken_burns_pan_up` · composition</sub> | Tilts up across a 120% image (bottom → top) over the composition length – tall photos, buildings. | stretches |
+| <img src="docs/previews/ouzfx_afx_cam_ken_burns_pan_down.gif" width="200"> | **OuzFX AFX_Cam_Ken_Burns_Pan_Down**<br><sub>`ouzfx_afx_cam_ken_burns_pan_down` · composition</sub> | Tilts down across a 120% image (top → bottom) over the composition length. | stretches |
+
+
+### AFX_Util · focus, callout & explainer utilities (v1.1)
+
+| Preview | Name (search in Kdenlive) | What it does | Length |
+|---|---|---|---|
+| <img src="docs/previews/ouzfx_afx_util_bg_dim_blur_in.gif" width="200"> | **OuzFX AFX_Util_BG_Dim_Blur_In**<br><sub>`ouzfx_afx_util_bg_dim_blur_in` · effect template</sub> | Background layer: dims to 55% and blurs over 12 frames so text / overlays on the track above become legible. | 12 f |
+| <img src="docs/previews/ouzfx_afx_util_bg_dim_blur_out.gif" width="200"> | **OuzFX AFX_Util_BG_Dim_Blur_Out**<br><sub>`ouzfx_afx_util_bg_dim_blur_out` · effect template</sub> | Brings a dimmed + blurred background back to normal over 12 frames (pair with Dim_Blur_In). | 12 f |
+| <img src="docs/previews/ouzfx_afx_util_spotlight_focus_in.gif" width="200"> | **OuzFX AFX_Util_Spotlight_Focus_In**<br><sub>`ouzfx_afx_util_spotlight_focus_in` · effect template</sub> | Animated spotlight: everything outside a soft ellipse darkens to 42% over 15 frames, pulling the eye to the subject. Move/resize the ellipse in the Alpha shapes effect. | 15 f |
+| <img src="docs/previews/ouzfx_afx_util_spotlight_focus_out.gif" width="200"> | **OuzFX AFX_Util_Spotlight_Focus_Out**<br><sub>`ouzfx_afx_util_spotlight_focus_out` · effect template</sub> | Releases the spotlight: the darkened edges brighten back to normal over 15 frames. | 15 f |
+| <img src="docs/previews/ouzfx_afx_util_highlighter_wipe.gif" width="200"> | **OuzFX AFX_Util_Highlighter_Wipe**<br><sub>`ouzfx_afx_util_highlighter_wipe` · effect template</sub> | Put it on a yellow Color clip above an article/PDF shot: a 45%-opacity marker band wipes on left-to-right in 12 frames. Move/resize the Transform rectangle over the line you want to highlight. | 12 f |
+| <img src="docs/previews/ouzfx_afx_util_split_screen_left.png" width="200"> | **OuzFX AFX_Util_Split_Screen_Left**<br><sub>`ouzfx_afx_util_split_screen_left` · effect template</sub> | Crops the centre of the clip and places it in the left half. Put the partner clip on another track with Split_Screen_Right.  | static |
+| <img src="docs/previews/ouzfx_afx_util_split_screen_left_slide_in.gif" width="200"> | **OuzFX AFX_Util_Split_Screen_Left_Slide_In**<br><sub>`ouzfx_afx_util_split_screen_left_slide_in` · effect template</sub> | Same as Split_Screen_Left, but the half slides in from the left edge (15 frames, cubic ease-out). | 15 f |
+| <img src="docs/previews/ouzfx_afx_util_split_screen_right.png" width="200"> | **OuzFX AFX_Util_Split_Screen_Right**<br><sub>`ouzfx_afx_util_split_screen_right` · effect template</sub> | Crops the centre of the clip and places it in the right half. Put the partner clip on another track with Split_Screen_Left.  | static |
+| <img src="docs/previews/ouzfx_afx_util_split_screen_right_slide_in.gif" width="200"> | **OuzFX AFX_Util_Split_Screen_Right_Slide_In**<br><sub>`ouzfx_afx_util_split_screen_right_slide_in` · effect template</sub> | Same as Split_Screen_Right, but the half slides in from the right edge (15 frames, cubic ease-out). | 15 f |
+| <img src="docs/previews/ouzfx_afx_util_split_screen_top.png" width="200"> | **OuzFX AFX_Util_Split_Screen_Top**<br><sub>`ouzfx_afx_util_split_screen_top` · effect template</sub> | Crops the centre of the clip and places it in the top half. Put the partner clip on another track with Split_Screen_Bottom. Top/Bottom = stacked layout for vertical Shorts/Reels. | static |
+| <img src="docs/previews/ouzfx_afx_util_split_screen_top_slide_in.gif" width="200"> | **OuzFX AFX_Util_Split_Screen_Top_Slide_In**<br><sub>`ouzfx_afx_util_split_screen_top_slide_in` · effect template</sub> | Same as Split_Screen_Top, but the half slides in from the top edge (15 frames, cubic ease-out). | 15 f |
+| <img src="docs/previews/ouzfx_afx_util_split_screen_bottom.png" width="200"> | **OuzFX AFX_Util_Split_Screen_Bottom**<br><sub>`ouzfx_afx_util_split_screen_bottom` · effect template</sub> | Crops the centre of the clip and places it in the bottom half. Put the partner clip on another track with Split_Screen_Top. Top/Bottom = stacked layout for vertical Shorts/Reels. | static |
+| <img src="docs/previews/ouzfx_afx_util_split_screen_bottom_slide_in.gif" width="200"> | **OuzFX AFX_Util_Split_Screen_Bottom_Slide_In**<br><sub>`ouzfx_afx_util_split_screen_bottom_slide_in` · effect template</sub> | Same as Split_Screen_Bottom, but the half slides in from the bottom edge (15 frames, cubic ease-out). | 15 f |
+| <img src="docs/previews/ouzfx_afx_util_censor_pixelate_box.png" width="200"> | **OuzFX AFX_Util_Censor_Pixelate_Box**<br><sub>`ouzfx_afx_util_censor_pixelate_box` · effect template</sub> | Mosaic-pixelates a rectangle in the middle of the frame. Move/resize/keyframe it in the Alpha shapes effect (Position/Size) to cover faces, usernames or private data. | static |
+| <img src="docs/previews/ouzfx_afx_util_censor_blur_box.png" width="200"> | **OuzFX AFX_Util_Censor_Blur_Box**<br><sub>`ouzfx_afx_util_censor_blur_box` · effect template</sub> | Heavy Gaussian blur inside a soft-edged rectangle – a less blocky redaction. Move/resize it in the Alpha shapes effect. | static |
+| <img src="docs/previews/ouzfx_afx_util_drop_shadow_polish.png" width="200"> | **OuzFX AFX_Util_Drop_Shadow_Polish**<br><sub>`ouzfx_afx_util_drop_shadow_polish` · effect template</sub> | Static two-layer shadow for text / PNG cut-outs: a crisp, slightly offset contact shadow plus a soft ambient one. No keyframes, so it never fights your animation. Needs Kdenlive 25.04+. | static |
+
+
+### AFX_Style · stylistic accents (v1.1)
+
+| Preview | Name (search in Kdenlive) | What it does | Length |
+|---|---|---|---|
+| <img src="docs/previews/ouzfx_afx_style_record_scratch_freeze.gif" width="200"> | **OuzFX AFX_Style_Record_Scratch_Freeze**<br><sub>`ouzfx_afx_style_record_scratch_freeze` · effect template</sub> | Instant high-contrast black & white with a slow 100→110% push over 3 s – the 'yep, that's me' record-scratch moment. Combine with a freeze frame (Timeline ▸ Insert Freeze Frame). | 75 f |
+| <img src="docs/previews/ouzfx_afx_style_glitch_flicker.gif" width="200"> | **OuzFX AFX_Style_Glitch_Flicker** ⚡<br><sub>`ouzfx_afx_style_glitch_flicker` · effect template</sub> | 12 frames of erratic opacity drops with horizontal displacement and light block distortion – a signal-dropout flicker (use on footage over a background). | 12 f |
+| <img src="docs/previews/ouzfx_afx_style_damage_pulse_red.gif" width="200"> | **OuzFX AFX_Style_Damage_Pulse_Red** ⚡<br><sub>`ouzfx_afx_style_damage_pulse_red` · effect template</sub> | Gaming 'taking damage' / warning: the screen edges pulse red three times (36 frames) while the centre stays clean. Edge ellipse is adjustable in the Alpha shapes effect. | 36 f |
+
+
+### AFX_Audio · audio effect templates (v1.1)
+
+Built only from audio effects Kdenlive ships and does not hide (FFmpeg `aecho`/`acompressor` are on Kdenlive's exclusion list, so the echo uses Compensation Delay taps and the leveler uses Dynamic Loudness + Limiter). Each one is checked by `tools/audio_tests.py` (band energy / echo tail / peak level).
+
+| Preview | Name (search in Kdenlive) | What it does | Length |
+|---|---|---|---|
+| 🔊 audio | **OuzFX AFX_Audio_Underwater_Muffled**<br><sub>`ouzfx_afx_audio_underwater_muffled` · effect template</sub> | Steep 24 dB/oct low-pass at 450 Hz (two stacked filters) with a little low-end warmth – audio behind a closed door, under water or in the next room. | static |
+| 🔊 audio | **OuzFX AFX_Audio_Telephone_Voice**<br><sub>`ouzfx_afx_audio_telephone_voice` · effect template</sub> | Clean phone line: 400–3200 Hz band-pass (24 dB/oct top), a presence bump and limiter-squash compression. | static |
+| 🔊 audio | **OuzFX AFX_Audio_Walkie_Talkie_Radio**<br><sub>`ouzfx_afx_audio_walkie_talkie_radio` · effect template</sub> | Narrow 500–2600 Hz radio band with light bit-crush overdrive and hard limiter compression – walkie-talkie / police radio callouts. | static |
+| 🔊 audio | **OuzFX AFX_Audio_Hall_Echo_Reverb**<br><sub>`ouzfx_afx_audio_hall_echo_reverb` · effect template</sub> | Spacious multi-tap hall echo: three cascaded delays (≈60, 260 and 295 ms → taps up to ~0.6 s) with a safety limiter. Ominous moments, inner monologue, punchlines. Lower the 'wet' values for a subtler room. | static |
+| 🔊 audio | **OuzFX AFX_Audio_Voiceover_Quick_Polish**<br><sub>`ouzfx_afx_audio_voiceover_quick_polish` · effect template</sub> | Starter vocal chain: 80 Hz high-pass (mic rumble), gentle loudness leveling towards -18 LUFS (Kdenlive's Dynamic Loudness, ±6 dB) and a -1 dBFS safety limiter. | static |
+
+
+### Sound effects (`sfx/`)
+
+Original, synthesized by [`tools/make_sfx.py`](tools/make_sfx.py) (MIT like the rest of the pack – free to use in any video). 48 kHz 16-bit stereo, peak −1 dBFS, click-free fades. Installed to `<data>/ouzfx/sfx/` and `<data>/library/OuzFX SFX/` (Kdenlive **Library** panel).
+
+<img src="docs/screenshots/library-sfx.png" width="360">
+
+| Group | File | Length | Sound |
+|---|---|---|---|
+| risers | `ouzfx_riser_short_2s.wav` | 2.00 s | Short riser (2 s): filtered noise + detuned saw sweep that builds into a cut. |
+| risers | `ouzfx_riser_long_4s.wav` | 4.00 s | Long build-up riser (4 s) with accelerating tremolo – intros, reveals. |
+| risers | `ouzfx_riser_reverse_cymbal_2s.wav` | 2.00 s | Reverse-cymbal swell (2 s) that sucks into the cut. |
+| risers | `ouzfx_riser_tension_3s.wav` | 3.00 s | Tension riser (3 s): rising detuned synth with speeding tremolo. |
+| risers | `ouzfx_downlifter_2s.wav` | 2.00 s | Downlifter (2 s): the riser in reverse – falls away after a drop. |
+| pops | `ouzfx_pop_soft.wav` | 0.09 s | Soft pop (90 ms) – captions, stickers, gentle UI pops. |
+| pops | `ouzfx_pop_hard.wav` | 0.08 s | Hard pop (80 ms) with a click transient – punchy text slams. |
+| pops | `ouzfx_pop_bubble.wav` | 0.12 s | Bubble 'bloop' (120 ms) with an upward pitch – emojis, notifications. |
+| pops | `ouzfx_pop_click_ui.wav` | 0.03 s | Tiny UI click (30 ms) – cursor clicks, checkmarks, counters. |
+| whooshes | `ouzfx_whoosh_fast.wav` | 0.40 s | Fast whoosh (0.4 s, panned L→R) – slides and quick transitions. |
+| whooshes | `ouzfx_whoosh_slow.wav` | 1.20 s | Slow airy whoosh (1.2 s) – Ken Burns, fades, soft reveals. |
+| whooshes | `ouzfx_whoosh_heavy.wav` | 0.80 s | Heavy whoosh (0.8 s) with a sub sweep – zoom-throughs, big moves. |
+| whooshes | `ouzfx_swoosh_whip.wav` | 0.25 s | Whip swoosh (0.25 s), bright and snappy – whip pans, Whip-In. |
+| whooshes | `ouzfx_whoosh_reverse_suck.wav` | 0.60 s | Reverse 'suck' whoosh (0.6 s) that ends on the cut. |
+| impacts | `ouzfx_impact_boom.wav` | 1.60 s | Cinematic boom (1.6 s): sub kick + crack + rumble – Boom Zoom, Impact Hit. |
+| impacts | `ouzfx_impact_punch.wav` | 0.50 s | Short punchy hit (0.5 s) – shakes, smash cuts, text slams. |
+
 
 ### Overlay clips (`overlays/`, installed to `<data>/ouzfx/overlays/`)
 
@@ -309,24 +446,31 @@ per video, default to the hard cut, and remember retention comes from new inform
 
 ## Building & testing
 
-Everything is generated from [`tools/presets.py`](tools/presets.py):
+Everything is generated from [`tools/presets.py`](tools/presets.py) (v1.0) and [`tools/presets_afx.py`](tools/presets_afx.py) (v1.1 AFX):
 
 ```bash
 python3 tools/build.py                    # writes pack/ (3 resolutions), lumas, catalog
 python3 tools/validate.py /usr/share/kdenlive   # schema check vs. Kdenlive's own effect definitions
 python3 tools/render_tests.py             # melt render of every preset + previews + docs/test-results.json
+python3 tools/make_sfx.py && python3 tools/audio_tests.py   # sound effects + audio preset measurements
+python3 tools/blueprint.py                # blueprint coverage audit -> docs/BLUEPRINT_COVERAGE.md
 python3 tools/gen_readme.py && tools/package.sh   # README + release archives in dist/
 ```
 
-Validation done for v1.0.0:
+Validation done for v1.1.0:
 
 * `xmllint` + `validate.py` against Kdenlive **git master** effect definitions (all ids/params exist) and against Debian's
   Kdenlive 24.12 data (all OK except Drop Shadow, which is 25.04+ – documented above).
-* Every effect template, composition and luma rendered through MLT 7.30 `melt` at 1920×1080 (filters/transitions parse,
-  no errors, and the picture measurably changes): **102/102 passed** – see `docs/test-results.json`.
+* 5 audio templates rendered through melt on a synthetic voice and measured (band attenuation, echo tail, peak);
+  all 16 sound effects checked for 48 kHz / peak ≤ −1 dBFS / click-free edges – see `docs/audio-test-results.json`.
+* Every visual effect template, composition and luma rendered through MLT 7.30 `melt` at 1920×1080 (filters/transitions parse,
+  no errors, and the picture measurably changes): **160/160 passed** – see `docs/test-results.json`.
 * Loaded in a real **Kdenlive 24.12.3** session (Xvfb): all templates appear under *Effects ▸ Templates*, all compositions
   in the *Compositions* panel; applied *Anim · Slide In from Left* to a trimmed clip and *Zoom · Ken Burns Push-In* as a
   composition and checked keyframes/monitor output ([screenshot](docs/screenshots/slide-in-mid-frame.png)).
+  v1.1: the `AFX_*` templates (incl. all 5 audio ones – [screenshot](docs/screenshots/audio-templates.png)) list in
+  the same session, the SFX show in the Library panel, and applied templates were saved to a project and re-checked
+  for intact keyframe values.
 * Keyframe/offset behaviour checked against Kdenlive's source (`EffectStackModel::fromXml`,
   `KeyframeModel::getAnimationStringWithOffset`, `KeyframeModelList::checkConsistency`, `EffectsRepository::parseCustomAssetFile`):
   all animated parameters of an effect share the same keyframe positions, so Kdenlive never has to "repair" them.

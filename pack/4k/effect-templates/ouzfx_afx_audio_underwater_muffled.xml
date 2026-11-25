@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_audio_underwater_muffled" parentIn="0" type="customAudio">
+    <name>OuzFX AFX_Audio_Underwater_Muffled</name>
+    <description>Steep 24 dB/oct low-pass at 450 Hz (two stacked filters) with a little low-end warmth – audio behind a closed door, under water or in the next room.</description>
+    <effect id="avfilter.lowpass">
+        <property name="av.f">0=450</property>
+        <property name="av.t">q</property>
+        <property name="av.w">0=0.707</property>
+        <property name="av.p">2</property>
+        <property name="av.m">0=1</property>
+    </effect>
+    <effect id="avfilter.lowpass">
+        <property name="av.f">0=450</property>
+        <property name="av.t">q</property>
+        <property name="av.w">0=0.707</property>
+        <property name="av.p">2</property>
+        <property name="av.m">0=1</property>
+    </effect>
+    <effect id="avfilter.equalizer">
+        <property name="av.f">120</property>
+        <property name="av.t">q</property>
+        <property name="av.w">1.0</property>
+        <property name="av.g">3</property>
+        <property name="av.m">1</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_cam_dutch_angle_strong_15deg" parentIn="0">
+    <name>OuzFX AFX_Cam_Dutch_Angle_Strong_15deg</name>
+    <description>Eases the horizon to a 15° Dutch angle over 20 frames and holds, auto-zooming just enough (143%) that no black corners show. Suspense / confusion / surreal beats.</description>
+    <effect id="qtblend">
+        <property name="rect">0=-3 -5 1085 1930 1;2=-9 -16 1098 1952 1;4=-27 -47 1133 2015 1;6=-54 -96 1188 2112 1;8=-88 -156 1255 2232 1;10=-124 -220 1328 2361 1;12=-159 -283 1399 2486 1;14=-190 -338 1460 2596 1;16=-214 -380 1508 2680 1;18=-229 -407 1538 2734 1;20=-234 -416 1548 2752 1</property>
+        <property name="rotation">0=0.00;2=0.37;4=1.43;6=3.09;8=5.18;10=7.50;12=9.82;14=11.91;16=13.57;18=14.63;20=15.00</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;2=0.5 0.5 0 0;4=0.5 0.5 0 0;6=0.5 0.5 0 0;8=0.5 0.5 0 0;10=0.5 0.5 0 0;12=0.5 0.5 0 0;14=0.5 0.5 0 0;16=0.5 0.5 0 0;18=0.5 0.5 0 0;20=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

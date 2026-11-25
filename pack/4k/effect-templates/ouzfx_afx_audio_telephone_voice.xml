@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_audio_telephone_voice" parentIn="0" type="customAudio">
+    <name>OuzFX AFX_Audio_Telephone_Voice</name>
+    <description>Clean phone line: 400–3200 Hz band-pass (24 dB/oct top), a presence bump and limiter-squash compression.</description>
+    <effect id="avfilter.highpass">
+        <property name="av.f">400</property>
+        <property name="av.t">q</property>
+        <property name="av.w">0.707</property>
+        <property name="av.p">2</property>
+        <property name="av.m">1</property>
+    </effect>
+    <effect id="avfilter.lowpass">
+        <property name="av.f">0=3200</property>
+        <property name="av.t">q</property>
+        <property name="av.w">0=0.707</property>
+        <property name="av.p">2</property>
+        <property name="av.m">0=1</property>
+    </effect>
+    <effect id="avfilter.lowpass">
+        <property name="av.f">0=3200</property>
+        <property name="av.t">q</property>
+        <property name="av.w">0=0.707</property>
+        <property name="av.p">2</property>
+        <property name="av.m">0=1</property>
+    </effect>
+    <effect id="avfilter.equalizer">
+        <property name="av.f">1500</property>
+        <property name="av.t">q</property>
+        <property name="av.w">0.8</property>
+        <property name="av.g">5</property>
+        <property name="av.m">1</property>
+    </effect>
+    <effect id="avfilter.alimiter">
+        <property name="av.level_in">2.5</property>
+        <property name="av.level_out">1</property>
+        <property name="av.limit">0.6</property>
+        <property name="av.attack">2</property>
+        <property name="av.release">40</property>
+        <property name="av.asc">0</property>
+        <property name="av.level">0</property>
+    </effect>
+</effectgroup>

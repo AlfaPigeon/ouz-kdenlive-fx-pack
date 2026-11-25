@@ -17,12 +17,14 @@ $Dirs = @{
     "lumasHD"          = Join-Path $Local "lumas\HD\ouzfx"
     "lumasV"           = Join-Path $Local "lumas\VERTICAL\ouzfx"
     "overlays"         = Join-Path $Roaming "ouzfx\overlays"
+    "sfx"              = Join-Path $Roaming "ouzfx\sfx"
+    "library"          = Join-Path $Roaming "library\OuzFX SFX"
 }
 
 if ($Uninstall) {
     Remove-Item (Join-Path $Dirs["effect-templates"] "ouzfx_*.xml") -ErrorAction SilentlyContinue
     Remove-Item (Join-Path $Dirs["transitions"] "ouzfx_*.xml") -ErrorAction SilentlyContinue
-    Remove-Item $Dirs["lumasHD"], $Dirs["lumasV"], (Join-Path $Roaming "ouzfx") -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item $Dirs["lumasHD"], $Dirs["lumasV"], (Join-Path $Roaming "ouzfx"), $Dirs["library"] -Recurse -Force -ErrorAction SilentlyContinue
     Write-Host "Removed OuzFX. Restart Kdenlive."
     exit 0
 }
@@ -37,4 +39,14 @@ Get-ChildItem (Join-Path $Pack "$Profile\transitions\*.xml") | ForEach-Object {
 Copy-Item (Join-Path $Pack "lumas\HD\ouzfx\*.png") $Dirs["lumasHD"] -Force
 Copy-Item (Join-Path $Pack "lumas\VERTICAL\ouzfx\*.png") $Dirs["lumasV"] -Force
 if (Test-Path (Join-Path $Here "overlays")) { Copy-Item (Join-Path $Here "overlays\*") $Dirs["overlays"] -Force }
+if (Test-Path (Join-Path $Here "sfx")) {
+    Get-ChildItem (Join-Path $Here "sfx") -Directory | ForEach-Object {
+        foreach ($root in @($Dirs["sfx"], $Dirs["library"])) {
+            $t = Join-Path $root $_.Name
+            New-Item -ItemType Directory -Force -Path $t | Out-Null
+            Copy-Item (Join-Path $_.FullName "*.wav") $t -Force
+        }
+    }
+    Write-Host "Sound effects: $($Dirs["sfx"]) (also in Kdenlive's Library panel > OuzFX SFX)"
+}
 Write-Host "Installed OuzFX ($Profile). Restart Kdenlive and search 'OuzFX' in Effects / Compositions."

@@ -1,4 +1,128 @@
 {
+ "avfilter.acrusher": [
+  {
+   "name": "av.level_in",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.level_out",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.limit",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.bits",
+   "type": "constant",
+   "default": "8",
+   "animated": false
+  },
+  {
+   "name": "av.mix",
+   "type": "constant",
+   "default": "0.5",
+   "animated": false
+  },
+  {
+   "name": "av.mode",
+   "type": "list",
+   "default": "lin",
+   "animated": false
+  },
+  {
+   "name": "av.dc",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.aa",
+   "type": "constant",
+   "default": "0.5",
+   "animated": false
+  },
+  {
+   "name": "av.samples",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.lfo",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.lforange",
+   "type": "constant",
+   "default": "20",
+   "animated": false
+  },
+  {
+   "name": "av.lforate",
+   "type": "constant",
+   "default": "0.3",
+   "animated": false
+  }
+ ],
+ "avfilter.alimiter": [
+  {
+   "name": "av.level_in",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.level_out",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.limit",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.attack",
+   "type": "constant",
+   "default": "5",
+   "animated": false
+  },
+  {
+   "name": "av.release",
+   "type": "constant",
+   "default": "50",
+   "animated": false
+  },
+  {
+   "name": "av.asc",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.asc_level",
+   "type": "constant",
+   "default": "0.5",
+   "animated": false
+  },
+  {
+   "name": "av.level",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  }
+ ],
  "avfilter.chromashift": [
   {
    "name": "av.cbh",
@@ -31,6 +155,44 @@
    "animated": false
   }
  ],
+ "avfilter.compensationdelay": [
+  {
+   "name": "av.mm",
+   "type": "constant",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.cm",
+   "type": "constant",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.m",
+   "type": "constant",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.dry",
+   "type": "constant",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.wet",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.temp",
+   "type": "constant",
+   "default": "20",
+   "animated": false
+  }
+ ],
  "avfilter.dblur": [
   {
    "name": "av.angle",
@@ -48,6 +210,56 @@
    "name": "av.planes",
    "type": "list",
    "default": "7",
+   "animated": false
+  }
+ ],
+ "avfilter.equalizer": [
+  {
+   "name": "av.f",
+   "type": "constant",
+   "default": "500",
+   "animated": false
+  },
+  {
+   "name": "av.t",
+   "type": "list",
+   "default": "q",
+   "animated": false
+  },
+  {
+   "name": "av.w",
+   "type": "constant",
+   "default": "100",
+   "animated": false
+  },
+  {
+   "name": "av.g",
+   "type": "constant",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.m",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.n",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.a",
+   "type": "list",
+   "default": "di",
+   "animated": false
+  },
+  {
+   "name": "av.r",
+   "type": "list",
+   "default": "auto",
    "animated": false
   }
  ],
@@ -75,6 +287,106 @@
    "type": "animated",
    "default": "10",
    "animated": true
+  }
+ ],
+ "avfilter.highpass": [
+  {
+   "name": "av.f",
+   "type": "constant",
+   "default": "3000",
+   "animated": false
+  },
+  {
+   "name": "av.t",
+   "type": "list",
+   "default": "h",
+   "animated": false
+  },
+  {
+   "name": "av.w",
+   "type": "constant",
+   "default": "707",
+   "animated": false
+  },
+  {
+   "name": "av.p",
+   "type": "list",
+   "default": "2",
+   "animated": false
+  },
+  {
+   "name": "av.m",
+   "type": "constant",
+   "default": "1",
+   "animated": false
+  },
+  {
+   "name": "av.n",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.a",
+   "type": "list",
+   "default": "di",
+   "animated": false
+  },
+  {
+   "name": "av.r",
+   "type": "list",
+   "default": "auto",
+   "animated": false
+  }
+ ],
+ "avfilter.lowpass": [
+  {
+   "name": "av.f",
+   "type": "animated",
+   "default": "500",
+   "animated": true
+  },
+  {
+   "name": "av.t",
+   "type": "list",
+   "default": "h",
+   "animated": false
+  },
+  {
+   "name": "av.w",
+   "type": "animated",
+   "default": "0.707",
+   "animated": true
+  },
+  {
+   "name": "av.p",
+   "type": "list",
+   "default": "2",
+   "animated": false
+  },
+  {
+   "name": "av.m",
+   "type": "animated",
+   "default": "1",
+   "animated": true
+  },
+  {
+   "name": "av.n",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "av.a",
+   "type": "list",
+   "default": "di",
+   "animated": false
+  },
+  {
+   "name": "av.r",
+   "type": "list",
+   "default": "auto",
+   "animated": false
   }
  ],
  "avfilter.rgbashift": [
@@ -201,6 +513,38 @@
    "animated": true
   }
  ],
+ "dynamic_loudness": [
+  {
+   "name": "target_loudness",
+   "type": "double",
+   "default": "-23.00",
+   "animated": false
+  },
+  {
+   "name": "window",
+   "type": "constant",
+   "default": "3",
+   "animated": false
+  },
+  {
+   "name": "max_gain",
+   "type": "constant",
+   "default": "15",
+   "animated": false
+  },
+  {
+   "name": "min_gain",
+   "type": "constant",
+   "default": "-15",
+   "animated": false
+  },
+  {
+   "name": "max_rate",
+   "type": "constant",
+   "default": "3",
+   "animated": false
+  }
+ ],
  "frei0r.c0rners": [
   {
    "name": "0",
@@ -313,6 +657,14 @@
    "animated": true
   }
  ],
+ "frei0r.contrast0r": [
+  {
+   "name": "Contrast",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  }
+ ],
  "frei0r.glitch0r": [
   {
    "name": "0",
@@ -347,6 +699,26 @@
    "animated": true
   }
  ],
+ "frei0r.pixeliz0r": [
+  {
+   "name": "0",
+   "type": "animated",
+   "default": "0.07",
+   "animated": true
+  },
+  {
+   "name": "1",
+   "type": "animated",
+   "default": "0.1",
+   "animated": true
+  },
+  {
+   "name": "2",
+   "type": "bool",
+   "default": "0",
+   "animated": false
+  }
+ ],
  "frei0r.saturat0r": [
   {
    "name": "Saturation",
@@ -377,6 +749,76 @@
   }
  ],
  "greyscale": [],
+ "mask_apply": [
+  {
+   "name": "transition",
+   "type": "fixed",
+   "default": "qtblend",
+   "animated": false
+  }
+ ],
+ "mask_start-frei0r.alphaspot": [
+  {
+   "name": "filter.Shape",
+   "type": "list",
+   "default": "0",
+   "animated": false
+  },
+  {
+   "name": "filter.Position X",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "filter.Position Y",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "filter.Size X",
+   "type": "animated",
+   "default": "0.1",
+   "animated": true
+  },
+  {
+   "name": "filter.Size Y",
+   "type": "animated",
+   "default": "0.1",
+   "animated": true
+  },
+  {
+   "name": "filter.Tilt",
+   "type": "animated",
+   "default": "0.5",
+   "animated": true
+  },
+  {
+   "name": "filter.Transition width",
+   "type": "animated",
+   "default": "0.2",
+   "animated": true
+  },
+  {
+   "name": "filter.Min",
+   "type": "animated",
+   "default": "0",
+   "animated": true
+  },
+  {
+   "name": "filter.Max",
+   "type": "animated",
+   "default": "1",
+   "animated": true
+  },
+  {
+   "name": "filter.Operation",
+   "type": "list",
+   "default": "0",
+   "animated": false
+  }
+ ],
  "qtblend": [
   {
    "name": "compositing",

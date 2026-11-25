@@ -22,8 +22,10 @@ Usage: ./install.sh [options]
   --list                        show what would be installed
   -h, --help                    this help
 
-Restart Kdenlive afterwards. Effects appear under Effects ▸ Templates (search "OuzFX"),
-compositions under Compositions (search "OuzFX"), wipes in every Wipe/Luma list.
+Restart Kdenlive afterwards. Effects appear under Effects ▸ Templates (search "OuzFX" or
+"AFX_"), audio presets under the audio effects' Templates, compositions under Compositions
+(search "OuzFX"), wipes in every Wipe/Luma list, sound effects in the Library panel
+(View ▸ Library ▸ OuzFX SFX) and in <data>/ouzfx/sfx.
 USAGE
 }
 
@@ -82,11 +84,25 @@ install_to() {
   done
   if [[ -d "$HERE/overlays" ]]; then
     mkdir -p "$dest/ouzfx/overlays"
-    cp -f "$HERE/overlays/"* "$dest/ouzfx/overlays/" 2>/dev/null || true
+    for f in "$HERE/overlays/"*; do
+      install -m 644 "$f" "$dest/ouzfx/overlays/"; echo "ouzfx/overlays/$(basename "$f")" >> "$manifest.new"
+    done
+  fi
+  # sound effects: <data>/ouzfx/sfx/<group>/*.wav, plus the same folder in Kdenlive's Library panel
+  if [[ -d "$HERE/sfx" ]]; then
+    for g in "$HERE/sfx/"*/; do
+      g="$(basename "$g")"
+      mkdir -p "$dest/ouzfx/sfx/$g" "$dest/library/OuzFX SFX/$g"
+      for f in "$HERE/sfx/$g/"*.wav; do
+        install -m 644 "$f" "$dest/ouzfx/sfx/$g/"; echo "ouzfx/sfx/$g/$(basename "$f")" >> "$manifest.new"
+        install -m 644 "$f" "$dest/library/OuzFX SFX/$g/"; echo "library/OuzFX SFX/$g/$(basename "$f")" >> "$manifest.new"
+      done
+    done
   fi
   echo "$PROFILE" > "$dest/ouzfx/profile"
   mv "$manifest.new" "$manifest"
   echo "✔ Installed $(grep -c . "$manifest") files into $dest  (profile: $PROFILE)"
+  [[ -d "$dest/ouzfx/sfx" ]] && echo "  Sound effects: $dest/ouzfx/sfx  (also in Kdenlive's Library panel ▸ OuzFX SFX)"
 }
 
 uninstall_from() {
@@ -96,7 +112,7 @@ uninstall_from() {
   fi
   # belt and braces: remove anything carrying our prefix
   rm -f "$dest"/effect-templates/ouzfx_*.xml "$dest"/transitions/ouzfx_*.xml
-  rm -rf "$dest/lumas/HD/ouzfx" "$dest/lumas/VERTICAL/ouzfx" "$dest/ouzfx"
+  rm -rf "$dest/lumas/HD/ouzfx" "$dest/lumas/VERTICAL/ouzfx" "$dest/ouzfx" "$dest/library/OuzFX SFX"
   echo "✔ Removed OuzFX from $dest"
 }
 
@@ -104,13 +120,24 @@ mapfile -t DESTS < <(detect_targets)
 case "$ACTION" in
   list)
     echo "Targets: ${DESTS[*]}"
-    echo "Effect templates ($PROFILE): $(ls "$PACK/$PROFILE/effect-templates" | wc -l)"
-    echo "Compositions ($PROFILE): $(ls "$PACK/$PROFILE/transitions" | wc -l)"
+    ET="$PACK/$PROFILE/effect-templates"
+    echo "Profile: $PROFILE"
+    echo "Effect templates: $(ls "$ET" | wc -l)"
+    echo "  v1.0 categories (Shake/Zoom/Anim/Screen 3D/Stylize/Look/Fast/Text): $(ls "$ET" | grep -vc '^ouzfx_afx_')"
+    for c in move cam util style audio; do
+      printf '  AFX_%-6s %3d\n' "${c^}" "$(ls "$ET" | grep -c "^ouzfx_afx_${c}_")"
+    done
+    echo "Compositions: $(ls "$PACK/$PROFILE/transitions" | wc -l)"
     echo "Luma wipes: $(ls "$PACK/lumas/HD/ouzfx" | wc -l) (HD) + $(ls "$PACK/lumas/VERTICAL/ouzfx" | wc -l) (vertical)"
+    [[ -d "$HERE/overlays" ]] && echo "Overlay clips: $(ls "$HERE/overlays" | wc -l)"
+    if [[ -d "$HERE/sfx" ]]; then
+      echo "Sound effects: $(find "$HERE/sfx" -name '*.wav' | wc -l)"
+      for g in "$HERE/sfx/"*/; do printf '  %-9s %3d\n' "$(basename "$g")" "$(ls "$g"*.wav | wc -l)"; done
+    fi
     ;;
   install)
     for d in "${DESTS[@]}"; do install_to "$d"; done
-    echo "Restart Kdenlive, then search \"OuzFX\" in the Effects and Compositions panels."
+    echo "Restart Kdenlive, then search \"OuzFX\" (or \"AFX_\") in the Effects and Compositions panels."
     ;;
   uninstall)
     for d in "${DESTS[@]}"; do uninstall_from "$d"; done

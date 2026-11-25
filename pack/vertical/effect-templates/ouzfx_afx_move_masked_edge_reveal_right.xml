@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_masked_edge_reveal_right" parentIn="0">
+    <name>OuzFX AFX_Move_Masked_Edge_Reveal_Right</name>
+    <description>Emerges right out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the right half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere.</description>
+    <effect id="qtblend">
+        <property name="rect">0q=-540 0 1080 1920 1;15=0 0 1080 1920 1</property>
+        <property name="rotation">0=0;15=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;15=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="qtcrop">
+        <property name="rect">0=540 0 540 1920</property>
+        <property name="radius">0=0</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000</property>
+    </effect>
+</effectgroup>

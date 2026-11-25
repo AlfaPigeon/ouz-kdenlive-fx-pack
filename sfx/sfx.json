@@ -1,0 +1,114 @@
+[
+ {
+  "group": "risers",
+  "file": "sfx/risers/ouzfx_riser_short_2s.wav",
+  "name": "riser_short_2s",
+  "desc": "Short riser (2 s): filtered noise + detuned saw sweep that builds into a cut.",
+  "seconds": 2.0
+ },
+ {
+  "group": "risers",
+  "file": "sfx/risers/ouzfx_riser_long_4s.wav",
+  "name": "riser_long_4s",
+  "desc": "Long build-up riser (4 s) with accelerating tremolo \u2013 intros, reveals.",
+  "seconds": 4.0
+ },
+ {
+  "group": "risers",
+  "file": "sfx/risers/ouzfx_riser_reverse_cymbal_2s.wav",
+  "name": "riser_reverse_cymbal_2s",
+  "desc": "Reverse-cymbal swell (2 s) that sucks into the cut.",
+  "seconds": 2.0
+ },
+ {
+  "group": "risers",
+  "file": "sfx/risers/ouzfx_riser_tension_3s.wav",
+  "name": "riser_tension_3s",
+  "desc": "Tension riser (3 s): rising detuned synth with speeding tremolo.",
+  "seconds": 3.0
+ },
+ {
+  "group": "risers",
+  "file": "sfx/risers/ouzfx_downlifter_2s.wav",
+  "name": "downlifter_2s",
+  "desc": "Downlifter (2 s): the riser in reverse \u2013 falls away after a drop.",
+  "seconds": 2.0
+ },
+ {
+  "group": "pops",
+  "file": "sfx/pops/ouzfx_pop_soft.wav",
+  "name": "pop_soft",
+  "desc": "Soft pop (90 ms) \u2013 captions, stickers, gentle UI pops.",
+  "seconds": 0.09
+ },
+ {
+  "group": "pops",
+  "file": "sfx/pops/ouzfx_pop_hard.wav",
+  "name": "pop_hard",
+  "desc": "Hard pop (80 ms) with a click transient \u2013 punchy text slams.",
+  "seconds": 0.08
+ },
+ {
+  "group": "pops",
+  "file": "sfx/pops/ouzfx_pop_bubble.wav",
+  "name": "pop_bubble",
+  "desc": "Bubble 'bloop' (120 ms) with an upward pitch \u2013 emojis, notifications.",
+  "seconds": 0.12
+ },
+ {
+  "group": "pops",
+  "file": "sfx/pops/ouzfx_pop_click_ui.wav",
+  "name": "pop_click_ui",
+  "desc": "Tiny UI click (30 ms) \u2013 cursor clicks, checkmarks, counters.",
+  "seconds": 0.03
+ },
+ {
+  "group": "whooshes",
+  "file": "sfx/whooshes/ouzfx_whoosh_fast.wav",
+  "name": "whoosh_fast",
+  "desc": "Fast whoosh (0.4 s, panned L\u2192R) \u2013 slides and quick transitions.",
+  "seconds": 0.4
+ },
+ {
+  "group": "whooshes",
+  "file": "sfx/whooshes/ouzfx_whoosh_slow.wav",
+  "name": "whoosh_slow",
+  "desc": "Slow airy whoosh (1.2 s) \u2013 Ken Burns, fades, soft reveals.",
+  "seconds": 1.2
+ },
+ {
+  "group": "whooshes",
+  "file": "sfx/whooshes/ouzfx_whoosh_heavy.wav",
+  "name": "whoosh_heavy",
+  "desc": "Heavy whoosh (0.8 s) with a sub sweep \u2013 zoom-throughs, big moves.",
+  "seconds": 0.8
+ },
+ {
+  "group": "whooshes",
+  "file": "sfx/whooshes/ouzfx_swoosh_whip.wav",
+  "name": "swoosh_whip",
+  "desc": "Whip swoosh (0.25 s), bright and snappy \u2013 whip pans, Whip-In.",
+  "seconds": 0.25
+ },
+ {
+  "group": "whooshes",
+  "file": "sfx/whooshes/ouzfx_whoosh_reverse_suck.wav",
+  "name": "whoosh_reverse_suck",
+  "desc": "Reverse 'suck' whoosh (0.6 s) that ends on the cut.",
+  "seconds": 0.6
+ },
+ {
+  "group": "impacts",
+  "file": "sfx/impacts/ouzfx_impact_boom.wav",
+  "name": "impact_boom",
+  "desc": "Cinematic boom (1.6 s): sub kick + crack + rumble \u2013 Boom Zoom, Impact Hit.",
+  "seconds": 1.6
+ },
+ {
+  "group": "impacts",
+  "file": "sfx/impacts/ouzfx_impact_punch.wav",
+  "name": "impact_punch",
+  "desc": "Short punchy hit (0.5 s) \u2013 shakes, smash cuts, text slams.",
+  "seconds": 0.5
+ }
+]

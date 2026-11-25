@@ -9,9 +9,9 @@
         <property name="brightness">90</property>
     </effect>
     <effect id="vignette">
-        <property name="radius">0.75</property>
-        <property name="smooth">0.6</property>
-        <property name="opacity">0.6</property>
+        <property name="radius">0=0.75</property>
+        <property name="smooth">0=0.6</property>
+        <property name="opacity">0=0.6</property>
         <property name="mode">0</property>
     </effect>
 </effectgroup>

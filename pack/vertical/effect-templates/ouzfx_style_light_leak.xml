@@ -3,11 +3,11 @@
     <name>OuzFX Stylize · Warm Light Leak Look</name>
     <description>Soft warm glow and lifted highlights (static look). For moving leaks, also drop overlays/ouzfx_light_leak.mp4 on a track above with Screen blend.</description>
     <effect id="frei0r.glow">
-        <property name="Blur">0.12</property>
+        <property name="Blur">0=0.12</property>
     </effect>
     <effect id="frei0r.colorize">
-        <property name="hue">0.08</property>
-        <property name="saturation">0.35</property>
-        <property name="lightness">0.56</property>
+        <property name="hue">0=0.08</property>
+        <property name="saturation">0=0.35</property>
+        <property name="lightness">0=0.56</property>
     </effect>
 </effectgroup>

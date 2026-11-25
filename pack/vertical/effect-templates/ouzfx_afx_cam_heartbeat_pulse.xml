@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_cam_heartbeat_pulse" parentIn="0">
+    <name>OuzFX AFX_Cam_Heartbeat_Pulse</name>
+    <description>Two 'lub-dub' heartbeats (≈ 70 BPM, 72 frames): a small 103.5% swell, a bigger 105% one, with a matching darkening throb. Builds tension; copy keyframes to extend.</description>
+    <effect id="qtblend">
+        <property name="rect">0f=0 0 1080 1920 1;3e=-19 -34 1118 1987 1;7f=0 0 1080 1920 1;10e=-27 -48 1134 2016 1;16=0 0 1080 1920 1;36f=0 0 1080 1920 1;39e=-19 -34 1118 1987 1;43f=0 0 1080 1920 1;46e=-27 -48 1134 2016 1;52=0 0 1080 1920 1;72=0 0 1080 1920 1</property>
+        <property name="rotation">0=0;3=0;7=0;10=0;16=0;36=0;39=0;43=0;46=0;52=0;72=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;3=0.5 0.5 0 0;7=0.5 0.5 0 0;10=0.5 0.5 0 0;16=0.5 0.5 0 0;36=0.5 0.5 0 0;39=0.5 0.5 0 0;43=0.5 0.5 0 0;46=0.5 0.5 0 0;52=0.5 0.5 0 0;72=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="brightness">
+        <property name="level">0f=1;3e=0.94;7f=1;10e=0.9;16=1;36f=1;39e=0.94;43f=1;46e=0.9;52=1;72=1</property>
+    </effect>
+</effectgroup>

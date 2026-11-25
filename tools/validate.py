@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Static validation of the pack against a Kdenlive data directory.
 
-Checks: XML well-formed; effect-template root/ids; every effect id used inside a
+Checks: XML well-formed; effects Kdenlive excludes (excluded_effects.txt) count as unknown; effect-template root/ids; every effect id used inside a
 group exists in Kdenlive's effect definitions; every property is a declared
 parameter of that effect; >1 effect per group (Kdenlive treats single-effect
 groups differently); composition tags exist; luma files referenced exist.
@@ -37,6 +37,14 @@ def load_defs(datadir):
                     for n in (p.get("name") or "").split("\n"):
                         params.add(n)
             defs.setdefault(eid, set()).update(params)
+    # Kdenlive refuses effects listed in data/excluded_effects.txt even when an XML exists
+    # (e.g. avfilter.acompressor / avfilter.aecho) – a group using one is hidden entirely.
+    excl = os.path.join(datadir, "excluded_effects.txt")
+    if os.path.exists(excl):
+        for line in open(excl):
+            line = line.strip()
+            if line and not line.startswith("#"):
+                defs.pop(line, None)
     return defs
 
 

@@ -1,0 +1,138 @@
+[
+ {
+  "kind": "audio-template",
+  "id": "ouzfx_afx_audio_hall_echo_reverb",
+  "ok": true,
+  "check": "audible echo tail (> -40 dB re. signal) in the 1.5 s of silence after the signal",
+  "detail": "echo tail -10.3 dB re. signal (dry tail -120 dB)",
+  "warnings": []
+ },
+ {
+  "kind": "audio-template",
+  "id": "ouzfx_afx_audio_telephone_voice",
+  "ok": true,
+  "check": "<150 Hz and >5 kHz each at least 15 dB quieter",
+  "detail": "20-150 Hz down 22.3 dB (need 15); 5000-12000 Hz down 25.6 dB (need 15)",
+  "warnings": []
+ },
+ {
+  "kind": "audio-template",
+  "id": "ouzfx_afx_audio_underwater_muffled",
+  "ok": true,
+  "check": "high band (2-8 kHz) at least 20 dB quieter",
+  "detail": "2000-8000 Hz down 55.9 dB (need 20)",
+  "warnings": []
+ },
+ {
+  "kind": "audio-template",
+  "id": "ouzfx_afx_audio_voiceover_quick_polish",
+  "ok": true,
+  "check": "35 Hz rumble at least 10 dB quieter and peak <= -0.8 dBFS",
+  "detail": "25-45 Hz down 14.5 dB (need 10); peak -1.01 dBFS",
+  "warnings": []
+ },
+ {
+  "kind": "audio-template",
+  "id": "ouzfx_afx_audio_walkie_talkie_radio",
+  "ok": true,
+  "check": "<150 Hz and >5 kHz each at least 15 dB quieter",
+  "detail": "20-150 Hz down 23.0 dB (need 15); 5000-12000 Hz down 28.6 dB (need 15)",
+  "warnings": []
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/impacts/ouzfx_impact_boom.wav",
+  "ok": true,
+  "detail": "48000 Hz, 1.60 s, peak -1.00 dBFS, edge 0.0030"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/impacts/ouzfx_impact_punch.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.50 s, peak -1.00 dBFS, edge 0.0016"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/pops/ouzfx_pop_bubble.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.12 s, peak -1.00 dBFS, edge 0.0018"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/pops/ouzfx_pop_click_ui.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.03 s, peak -1.00 dBFS, edge 0.0040"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/pops/ouzfx_pop_hard.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.08 s, peak -1.00 dBFS, edge 0.0019"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/pops/ouzfx_pop_soft.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.09 s, peak -1.00 dBFS, edge 0.0016"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/risers/ouzfx_downlifter_2s.wav",
+  "ok": true,
+  "detail": "48000 Hz, 2.00 s, peak -1.00 dBFS, edge 0.0015"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/risers/ouzfx_riser_long_4s.wav",
+  "ok": true,
+  "detail": "48000 Hz, 4.00 s, peak -1.00 dBFS, edge 0.0000"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/risers/ouzfx_riser_reverse_cymbal_2s.wav",
+  "ok": true,
+  "detail": "48000 Hz, 2.00 s, peak -1.00 dBFS, edge 0.0000"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/risers/ouzfx_riser_short_2s.wav",
+  "ok": true,
+  "detail": "48000 Hz, 2.00 s, peak -1.00 dBFS, edge 0.0000"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/risers/ouzfx_riser_tension_3s.wav",
+  "ok": true,
+  "detail": "48000 Hz, 3.00 s, peak -1.00 dBFS, edge 0.0000"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/whooshes/ouzfx_swoosh_whip.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.25 s, peak -1.00 dBFS, edge 0.0000"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/whooshes/ouzfx_whoosh_fast.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.40 s, peak -1.00 dBFS, edge 0.0000"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/whooshes/ouzfx_whoosh_heavy.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.80 s, peak -1.00 dBFS, edge 0.0000"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/whooshes/ouzfx_whoosh_reverse_suck.wav",
+  "ok": true,
+  "detail": "48000 Hz, 0.60 s, peak -1.00 dBFS, edge 0.0000"
+ },
+ {
+  "kind": "sfx",
+  "id": "sfx/whooshes/ouzfx_whoosh_slow.wav",
+  "ok": true,
+  "detail": "48000 Hz, 1.20 s, peak -1.00 dBFS, edge 0.0000"
+ }
+]

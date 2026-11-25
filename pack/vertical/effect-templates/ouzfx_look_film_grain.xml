@@ -8,7 +8,7 @@
         <property name="brightness">100</property>
     </effect>
     <effect id="dust">
-        <property name="maxdiameter">2</property>
-        <property name="maxcount">4</property>
+        <property name="maxdiameter">0=2</property>
+        <property name="maxcount">0=4</property>
     </effect>
 </effectgroup>

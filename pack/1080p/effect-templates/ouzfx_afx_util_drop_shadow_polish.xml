@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_util_drop_shadow_polish" parentIn="0">
+    <name>OuzFX AFX_Util_Drop_Shadow_Polish</name>
+    <description>Static two-layer shadow for text / PNG cut-outs: a crisp, slightly offset contact shadow plus a soft ambient one. No keyframes, so it never fights your animation. Needs Kdenlive 25.04+.</description>
+    <effect id="dropshadow">
+        <property name="radius">0=3</property>
+        <property name="x">0=5</property>
+        <property name="y">0=6</property>
+        <property name="color">0=#c8000000</property>
+    </effect>
+    <effect id="dropshadow">
+        <property name="radius">0=18</property>
+        <property name="x">0=0</property>
+        <property name="y">0=16</property>
+        <property name="color">0=#80000000</property>
+    </effect>
+</effectgroup>

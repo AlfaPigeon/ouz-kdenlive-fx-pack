@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_style_damage_pulse_red" parentIn="0">
+    <name>OuzFX AFX_Style_Damage_Pulse_Red</name>
+    <description>Gaming 'taking damage' / warning: the screen edges pulse red three times (36 frames) while the centre stays clean. Edge ellipse is adjustable in the Alpha shapes effect.</description>
+    <effect id="mask_start-frei0r.alphaspot">
+        <property name="filter.Shape">0.38</property>
+        <property name="filter.Position X">0=0.5;3=0.5;12=0.5;15=0.5;24=0.5;27=0.5;36=0.5</property>
+        <property name="filter.Position Y">0=0.5;3=0.5;12=0.5;15=0.5;24=0.5;27=0.5;36=0.5</property>
+        <property name="filter.Size X">0e=1.98;3f=0.378;12e=1.98;15f=0.378;24e=1.98;27f=0.378;36=1.98</property>
+        <property name="filter.Size Y">0e=2.2;3f=0.42;12e=2.2;15f=0.42;24e=2.2;27f=0.42;36=2.2</property>
+        <property name="filter.Tilt">0=0.5;3=0.5;12=0.5;15=0.5;24=0.5;27=0.5;36=0.5</property>
+        <property name="filter.Transition width">0=0.35;3=0.35;12=0.35;15=0.35;24=0.35;27=0.35;36=0.35</property>
+        <property name="filter.Min">0=0;3=0;12=0;15=0;24=0;27=0;36=0</property>
+        <property name="filter.Max">0=1;3=1;12=1;15=1;24=1;27=1;36=1</property>
+        <property name="filter.Operation">1</property>
+    </effect>
+    <effect id="frei0r.colorize">
+        <property name="hue">0=0.0</property>
+        <property name="saturation">0=0.95</property>
+        <property name="lightness">0=0.42</property>
+    </effect>
+    <effect id="mask_apply"/>
+</effectgroup>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_util_spotlight_focus_in" parentIn="0">
+    <name>OuzFX AFX_Util_Spotlight_Focus_In</name>
+    <description>Animated spotlight: everything outside a soft ellipse darkens to 42% over 15 frames, pulling the eye to the subject. Move/resize the ellipse in the Alpha shapes effect.</description>
+    <effect id="mask_start-frei0r.alphaspot">
+        <property name="filter.Shape">0.38</property>
+        <property name="filter.Position X">0=0.5</property>
+        <property name="filter.Position Y">0=0.5</property>
+        <property name="filter.Size X">0=0.3</property>
+        <property name="filter.Size Y">0=0.42</property>
+        <property name="filter.Tilt">0=0.5</property>
+        <property name="filter.Transition width">0=0.35</property>
+        <property name="filter.Min">0=0</property>
+        <property name="filter.Max">0=1</property>
+        <property name="filter.Operation">1</property>
+    </effect>
+    <effect id="brightness">
+        <property name="level">0h=1;15=0.42</property>
+    </effect>
+    <effect id="mask_apply"/>
+</effectgroup>

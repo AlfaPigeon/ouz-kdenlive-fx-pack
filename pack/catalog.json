@@ -919,6 +919,1013 @@
    "tags": [],
    "id": "ouzfx_text_typewriter_flash",
    "display": "OuzFX Text · Highlight Flash"
+  },
+  {
+   "slug": "afx_move_overshoot_slide_in_left",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_In_Left",
+   "desc": "Slides in from the left edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "1.2 Overshoot / Bounce Slide",
+   "audio": false,
+   "id": "ouzfx_afx_move_overshoot_slide_in_left",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_In_Left"
+  },
+  {
+   "slug": "afx_move_overshoot_slide_in_right",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_In_Right",
+   "desc": "Slides in from the right edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "1.2 Overshoot / Bounce Slide",
+   "audio": false,
+   "id": "ouzfx_afx_move_overshoot_slide_in_right",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_In_Right"
+  },
+  {
+   "slug": "afx_move_overshoot_slide_in_top",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_In_Top",
+   "desc": "Slides in from the top edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "1.2 Overshoot / Bounce Slide",
+   "audio": false,
+   "id": "ouzfx_afx_move_overshoot_slide_in_top",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_In_Top"
+  },
+  {
+   "slug": "afx_move_overshoot_slide_in_bottom",
+   "category": "AFX_Move",
+   "name": "Overshoot_Slide_In_Bottom",
+   "desc": "Slides in from the bottom edge, overshoots its resting spot by ~8% and settles back (14 frames, back ease-out) with a short motion-blur peak.",
+   "frames": 14,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "1.2 Overshoot / Bounce Slide",
+   "audio": false,
+   "id": "ouzfx_afx_move_overshoot_slide_in_bottom",
+   "display": "OuzFX AFX_Move_Overshoot_Slide_In_Bottom"
+  },
+  {
+   "slug": "afx_move_masked_edge_reveal_up",
+   "category": "AFX_Move",
+   "name": "Masked_Edge_Reveal_Up",
+   "desc": "Emerges up out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the upper half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "qtcrop"
+   ],
+   "tags": [],
+   "bp": "1.4 Masked Edge Reveal",
+   "audio": false,
+   "id": "ouzfx_afx_move_masked_edge_reveal_up",
+   "display": "OuzFX AFX_Move_Masked_Edge_Reveal_Up"
+  },
+  {
+   "slug": "afx_move_masked_edge_reveal_down",
+   "category": "AFX_Move",
+   "name": "Masked_Edge_Reveal_Down",
+   "desc": "Emerges down out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the lower half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "qtcrop"
+   ],
+   "tags": [],
+   "bp": "1.4 Masked Edge Reveal",
+   "audio": false,
+   "id": "ouzfx_afx_move_masked_edge_reveal_down",
+   "display": "OuzFX AFX_Move_Masked_Edge_Reveal_Down"
+  },
+  {
+   "slug": "afx_move_masked_edge_reveal_left",
+   "category": "AFX_Move",
+   "name": "Masked_Edge_Reveal_Left",
+   "desc": "Emerges left out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the left half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "qtcrop"
+   ],
+   "tags": [],
+   "bp": "1.4 Masked Edge Reveal",
+   "audio": false,
+   "id": "ouzfx_afx_move_masked_edge_reveal_left",
+   "display": "OuzFX AFX_Move_Masked_Edge_Reveal_Left"
+  },
+  {
+   "slug": "afx_move_masked_edge_reveal_right",
+   "category": "AFX_Move",
+   "name": "Masked_Edge_Reveal_Right",
+   "desc": "Emerges right out of an invisible line through the middle of the frame: the layer slides while a static crop keeps only the right half visible (15 frames, expo ease-out). Made for split graphics / callout cards – move the Crop rectangle to put the line anywhere.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "qtcrop"
+   ],
+   "tags": [],
+   "bp": "1.4 Masked Edge Reveal",
+   "audio": false,
+   "id": "ouzfx_afx_move_masked_edge_reveal_right",
+   "display": "OuzFX AFX_Move_Masked_Edge_Reveal_Right"
+  },
+  {
+   "slug": "afx_move_idle_float_gentle",
+   "category": "AFX_Move",
+   "name": "Idle_Float_Gentle",
+   "desc": "Continuous hover for static PNGs/screenshots: ±1% vertical bob with ±1.2° sway (sine, 200 frames ≈ 8 s, loops seamlessly – extend by copying keyframes).",
+   "frames": 200,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "loop"
+   ],
+   "bp": "1.7 Idle Float / Gentle Hover",
+   "audio": false,
+   "id": "ouzfx_afx_move_idle_float_gentle",
+   "display": "OuzFX AFX_Move_Idle_Float_Gentle"
+  },
+  {
+   "slug": "afx_move_idle_float_strong",
+   "category": "AFX_Move",
+   "name": "Idle_Float_Strong",
+   "desc": "Continuous hover for static PNGs/screenshots: ±2% vertical bob with ±2° sway (sine, 160 frames ≈ 6.4 s, loops seamlessly – extend by copying keyframes).",
+   "frames": 160,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "loop"
+   ],
+   "bp": "1.7 Idle Float / Gentle Hover",
+   "audio": false,
+   "id": "ouzfx_afx_move_idle_float_strong",
+   "display": "OuzFX AFX_Move_Idle_Float_Strong"
+  },
+  {
+   "slug": "afx_move_card_3d_swing_in_left",
+   "category": "AFX_Move",
+   "name": "Card_3D_Swing_In_Left",
+   "desc": "Tweet / document / card swings in from the left in 3D perspective and flattens to face the viewer (18 frames, cubic ease-out). Uses the Corners effect; works without Drop Shadow (any 24.08+).",
+   "frames": 18,
+   "effects": [
+    "frei0r.c0rners",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "1.8 Perspective Card Tilt / 3D Swing-In",
+   "audio": false,
+   "id": "ouzfx_afx_move_card_3d_swing_in_left",
+   "display": "OuzFX AFX_Move_Card_3D_Swing_In_Left"
+  },
+  {
+   "slug": "afx_move_card_3d_swing_in_right",
+   "category": "AFX_Move",
+   "name": "Card_3D_Swing_In_Right",
+   "desc": "Tweet / document / card swings in from the right in 3D perspective and flattens to face the viewer (18 frames, cubic ease-out). Uses the Corners effect; works without Drop Shadow (any 24.08+).",
+   "frames": 18,
+   "effects": [
+    "frei0r.c0rners",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "1.8 Perspective Card Tilt / 3D Swing-In",
+   "audio": false,
+   "id": "ouzfx_afx_move_card_3d_swing_in_right",
+   "display": "OuzFX AFX_Move_Card_3D_Swing_In_Right"
+  },
+  {
+   "slug": "afx_move_hinge_swing_in_top_left",
+   "category": "AFX_Move",
+   "name": "Hinge_Swing_In_Top_Left",
+   "desc": "Swings down into frame around its top-left corner like a sign on a hinge, then settles with a small decaying swing (24 frames).",
+   "frames": 24,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "1.9 Hinge / Pendulum Swing-In",
+   "audio": false,
+   "id": "ouzfx_afx_move_hinge_swing_in_top_left",
+   "display": "OuzFX AFX_Move_Hinge_Swing_In_Top_Left"
+  },
+  {
+   "slug": "afx_move_hinge_swing_in_top_right",
+   "category": "AFX_Move",
+   "name": "Hinge_Swing_In_Top_Right",
+   "desc": "Mirror of Hinge Swing-In Top-Left – pivots around the top-right corner.",
+   "frames": 24,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "1.9 Hinge / Pendulum Swing-In",
+   "audio": false,
+   "id": "ouzfx_afx_move_hinge_swing_in_top_right",
+   "display": "OuzFX AFX_Move_Hinge_Swing_In_Top_Right"
+  },
+  {
+   "slug": "afx_move_pendulum_swing_settle",
+   "category": "AFX_Move",
+   "name": "Pendulum_Swing_Settle",
+   "desc": "Hangs from the top-centre and swings like a pendulum (±25°, decaying over 36 frames) – hanging signs, price tags, name cards.",
+   "frames": 36,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "1.9 Hinge / Pendulum Swing-In",
+   "audio": false,
+   "id": "ouzfx_afx_move_pendulum_swing_settle",
+   "display": "OuzFX AFX_Move_Pendulum_Swing_Settle"
+  },
+  {
+   "slug": "afx_move_pip_snap_top_left",
+   "category": "AFX_Move",
+   "name": "PiP_Snap_Top_Left",
+   "desc": "Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the top-left corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it.",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "1.10 Corner PiP Snap",
+   "audio": false,
+   "id": "ouzfx_afx_move_pip_snap_top_left",
+   "display": "OuzFX AFX_Move_PiP_Snap_Top_Left"
+  },
+  {
+   "slug": "afx_move_pip_snap_top_right",
+   "category": "AFX_Move",
+   "name": "PiP_Snap_Top_Right",
+   "desc": "Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the top-right corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it.",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "1.10 Corner PiP Snap",
+   "audio": false,
+   "id": "ouzfx_afx_move_pip_snap_top_right",
+   "display": "OuzFX AFX_Move_PiP_Snap_Top_Right"
+  },
+  {
+   "slug": "afx_move_pip_snap_bottom_left",
+   "category": "AFX_Move",
+   "name": "PiP_Snap_Bottom_Left",
+   "desc": "Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the bottom-left corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it.",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "1.10 Corner PiP Snap",
+   "audio": false,
+   "id": "ouzfx_afx_move_pip_snap_bottom_left",
+   "display": "OuzFX AFX_Move_PiP_Snap_Bottom_Left"
+  },
+  {
+   "slug": "afx_move_pip_snap_bottom_right",
+   "category": "AFX_Move",
+   "name": "PiP_Snap_Bottom_Right",
+   "desc": "Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the bottom-right corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it.",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "1.10 Corner PiP Snap",
+   "audio": false,
+   "id": "ouzfx_afx_move_pip_snap_bottom_right",
+   "display": "OuzFX AFX_Move_PiP_Snap_Bottom_Right"
+  },
+  {
+   "slug": "afx_move_text_word_pop_shorts",
+   "category": "AFX_Move",
+   "name": "Text_Word_Pop_Shorts",
+   "desc": "TikTok/Reels/Shorts caption pop: 85% → 105% → 100% in 4 frames. Faster and subtler than 'Text · Text Pop' – drop it on every caption clip.",
+   "frames": 4,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "5.1 Short-Form Word Pop",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_word_pop_shorts",
+   "display": "OuzFX AFX_Move_Text_Word_Pop_Shorts"
+  },
+  {
+   "slug": "afx_move_text_typewriter_wipe_fast",
+   "category": "AFX_Move",
+   "name": "Text_Typewriter_Wipe_Fast",
+   "desc": "Linear left-to-right crop reveal that uncovers a line of text over 25 frames (1 s @25 fps). Put it on a title clip; drag the last keyframe to change the speed.",
+   "frames": 25,
+   "effects": [
+    "qtcrop",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "5.3 Typewriter Line Wipe",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_typewriter_wipe_fast",
+   "display": "OuzFX AFX_Move_Text_Typewriter_Wipe_Fast"
+  },
+  {
+   "slug": "afx_move_text_typewriter_wipe_slow",
+   "category": "AFX_Move",
+   "name": "Text_Typewriter_Wipe_Slow",
+   "desc": "Linear left-to-right crop reveal that uncovers a line of text over 50 frames (2 s @25 fps). Put it on a title clip; drag the last keyframe to change the speed.",
+   "frames": 50,
+   "effects": [
+    "qtcrop",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "5.3 Typewriter Line Wipe",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_typewriter_wipe_slow",
+   "display": "OuzFX AFX_Move_Text_Typewriter_Wipe_Slow"
+  },
+  {
+   "slug": "afx_move_text_glitch_in",
+   "category": "AFX_Move",
+   "name": "Text_Glitch_In",
+   "desc": "Title flickers on: erratic opacity drops, tiny horizontal jitter and RGB tearing over the first 6 frames, then locks steady.",
+   "frames": 6,
+   "effects": [
+    "qtblend",
+    "avfilter.rgbashift"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "5.4 Glitch-In Title",
+   "audio": false,
+   "id": "ouzfx_afx_move_text_glitch_in",
+   "display": "OuzFX AFX_Move_Text_Glitch_In"
+  },
+  {
+   "slug": "afx_cam_impact_shake_light",
+   "category": "AFX_Cam",
+   "name": "Impact_Shake_Light",
+   "desc": "Light decaying X/Y + rotational jitter (10 frames) for bass hits, desk slams and small impacts. Heavy tier = 'Shake · Heavy Impact'.",
+   "frames": 10,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "2.4 Impact Shake (Light / Medium / Heavy)",
+   "audio": false,
+   "id": "ouzfx_afx_cam_impact_shake_light",
+   "display": "OuzFX AFX_Cam_Impact_Shake_Light"
+  },
+  {
+   "slug": "afx_cam_impact_shake_medium",
+   "category": "AFX_Cam",
+   "name": "Impact_Shake_Medium",
+   "desc": "Medium decaying X/Y + rotational jitter (15 frames) for bass hits, desk slams and small impacts. Heavy tier = 'Shake · Heavy Impact'.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "2.4 Impact Shake (Light / Medium / Heavy)",
+   "audio": false,
+   "id": "ouzfx_afx_cam_impact_shake_medium",
+   "display": "OuzFX AFX_Cam_Impact_Shake_Medium"
+  },
+  {
+   "slug": "afx_cam_whip_pan_push_right",
+   "category": "AFX_Cam",
+   "name": "Whip_Pan_Push_Right",
+   "desc": "Last 8 frames of a clip: whips the picture out right with heavy directional blur. Razor 8 frames before the cut and drop it on the right-hand piece (left version = 'Fast · Motion-Blur Push Left').",
+   "frames": 8,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "2.5 Whip Pan Push (4 Directions)",
+   "audio": false,
+   "id": "ouzfx_afx_cam_whip_pan_push_right",
+   "display": "OuzFX AFX_Cam_Whip_Pan_Push_Right"
+  },
+  {
+   "slug": "afx_cam_whip_pan_push_up",
+   "category": "AFX_Cam",
+   "name": "Whip_Pan_Push_Up",
+   "desc": "Last 8 frames of a clip: whips the picture out up with heavy directional blur. Razor 8 frames before the cut and drop it on the right-hand piece (left version = 'Fast · Motion-Blur Push Left').",
+   "frames": 8,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "2.5 Whip Pan Push (4 Directions)",
+   "audio": false,
+   "id": "ouzfx_afx_cam_whip_pan_push_up",
+   "display": "OuzFX AFX_Cam_Whip_Pan_Push_Up"
+  },
+  {
+   "slug": "afx_cam_whip_pan_push_down",
+   "category": "AFX_Cam",
+   "name": "Whip_Pan_Push_Down",
+   "desc": "Last 8 frames of a clip: whips the picture out down with heavy directional blur. Razor 8 frames before the cut and drop it on the right-hand piece (left version = 'Fast · Motion-Blur Push Left').",
+   "frames": 8,
+   "effects": [
+    "qtblend",
+    "avfilter.dblur"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "2.5 Whip Pan Push (4 Directions)",
+   "audio": false,
+   "id": "ouzfx_afx_cam_whip_pan_push_down",
+   "display": "OuzFX AFX_Cam_Whip_Pan_Push_Down"
+  },
+  {
+   "slug": "afx_cam_heartbeat_pulse",
+   "category": "AFX_Cam",
+   "name": "Heartbeat_Pulse",
+   "desc": "Two 'lub-dub' heartbeats (≈ 70 BPM, 72 frames): a small 103.5% swell, a bigger 105% one, with a matching darkening throb. Builds tension; copy keyframes to extend.",
+   "frames": 72,
+   "effects": [
+    "qtblend",
+    "brightness"
+   ],
+   "tags": [],
+   "bp": "2.6 Heartbeat Pulse",
+   "audio": false,
+   "id": "ouzfx_afx_cam_heartbeat_pulse",
+   "display": "OuzFX AFX_Cam_Heartbeat_Pulse"
+  },
+  {
+   "slug": "afx_cam_dutch_angle_subtle_8deg",
+   "category": "AFX_Cam",
+   "name": "Dutch_Angle_Subtle_8deg",
+   "desc": "Eases the horizon to a 8° Dutch angle over 20 frames and holds, auto-zooming just enough (124%) that no black corners show. Suspense / confusion / surreal beats.",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "2.7 Dutch Angle Tilt",
+   "audio": false,
+   "id": "ouzfx_afx_cam_dutch_angle_subtle_8deg",
+   "display": "OuzFX AFX_Cam_Dutch_Angle_Subtle_8deg"
+  },
+  {
+   "slug": "afx_cam_dutch_angle_strong_15deg",
+   "category": "AFX_Cam",
+   "name": "Dutch_Angle_Strong_15deg",
+   "desc": "Eases the horizon to a 15° Dutch angle over 20 frames and holds, auto-zooming just enough (143%) that no black corners show. Suspense / confusion / surreal beats.",
+   "frames": 20,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "2.7 Dutch Angle Tilt",
+   "audio": false,
+   "id": "ouzfx_afx_cam_dutch_angle_strong_15deg",
+   "display": "OuzFX AFX_Cam_Dutch_Angle_Strong_15deg"
+  },
+  {
+   "slug": "afx_cam_zoom_callout_return_top_left",
+   "category": "AFX_Cam",
+   "name": "Zoom_Callout_Return_Top_Left",
+   "desc": "Return half of the callout: from the 180% top-left zoom (Screen Zoom · Zoom to Top-Left) smoothly back to 100% in 15 frames. Razor where the callout ends.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "3.6 Magnifying Zoom Callout",
+   "audio": false,
+   "id": "ouzfx_afx_cam_zoom_callout_return_top_left",
+   "display": "OuzFX AFX_Cam_Zoom_Callout_Return_Top_Left"
+  },
+  {
+   "slug": "afx_cam_zoom_callout_return_top_right",
+   "category": "AFX_Cam",
+   "name": "Zoom_Callout_Return_Top_Right",
+   "desc": "Return half of the callout: from the 180% top-right zoom (Screen Zoom · Zoom to Top-Right) smoothly back to 100% in 15 frames. Razor where the callout ends.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "3.6 Magnifying Zoom Callout",
+   "audio": false,
+   "id": "ouzfx_afx_cam_zoom_callout_return_top_right",
+   "display": "OuzFX AFX_Cam_Zoom_Callout_Return_Top_Right"
+  },
+  {
+   "slug": "afx_cam_zoom_callout_return_bottom_left",
+   "category": "AFX_Cam",
+   "name": "Zoom_Callout_Return_Bottom_Left",
+   "desc": "Return half of the callout: from the 180% bottom-left zoom (Screen Zoom · Zoom to Bottom-Left) smoothly back to 100% in 15 frames. Razor where the callout ends.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "3.6 Magnifying Zoom Callout",
+   "audio": false,
+   "id": "ouzfx_afx_cam_zoom_callout_return_bottom_left",
+   "display": "OuzFX AFX_Cam_Zoom_Callout_Return_Bottom_Left"
+  },
+  {
+   "slug": "afx_cam_zoom_callout_return_bottom_right",
+   "category": "AFX_Cam",
+   "name": "Zoom_Callout_Return_Bottom_Right",
+   "desc": "Return half of the callout: from the 180% bottom-right zoom (Screen Zoom · Zoom to Bottom-Right) smoothly back to 100% in 15 frames. Razor where the callout ends.",
+   "frames": 15,
+   "effects": [
+    "qtblend",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "3.6 Magnifying Zoom Callout",
+   "audio": false,
+   "id": "ouzfx_afx_cam_zoom_callout_return_bottom_right",
+   "display": "OuzFX AFX_Cam_Zoom_Callout_Return_Bottom_Right"
+  },
+  {
+   "slug": "afx_cam_cinematic_bars_slide_out",
+   "category": "AFX_Cam",
+   "name": "Cinematic_Bars_Slide_Out",
+   "desc": "Out half of the letterbox: 2.39:1 bars retract over 15 frames, leaving 'movie mode'. Pair with 'Look · Cinematic Bars Slide-In'.",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "boxblur"
+   ],
+   "tags": [],
+   "bp": "2.8 Cinematic Letterbox Reveal",
+   "audio": false,
+   "id": "ouzfx_afx_cam_cinematic_bars_slide_out",
+   "display": "OuzFX AFX_Cam_Cinematic_Bars_Slide_Out"
+  },
+  {
+   "slug": "afx_util_bg_dim_blur_in",
+   "category": "AFX_Util",
+   "name": "BG_Dim_Blur_In",
+   "desc": "Background layer: dims to 55% and blurs over 12 frames so text / overlays on the track above become legible.",
+   "frames": 12,
+   "effects": [
+    "brightness",
+    "avfilter.gblur"
+   ],
+   "tags": [],
+   "bp": "3.1 Background Dim & Blur",
+   "audio": false,
+   "id": "ouzfx_afx_util_bg_dim_blur_in",
+   "display": "OuzFX AFX_Util_BG_Dim_Blur_In"
+  },
+  {
+   "slug": "afx_util_bg_dim_blur_out",
+   "category": "AFX_Util",
+   "name": "BG_Dim_Blur_Out",
+   "desc": "Brings a dimmed + blurred background back to normal over 12 frames (pair with Dim_Blur_In).",
+   "frames": 12,
+   "effects": [
+    "brightness",
+    "avfilter.gblur"
+   ],
+   "tags": [],
+   "bp": "3.1 Background Dim & Blur",
+   "audio": false,
+   "id": "ouzfx_afx_util_bg_dim_blur_out",
+   "display": "OuzFX AFX_Util_BG_Dim_Blur_Out"
+  },
+  {
+   "slug": "afx_util_spotlight_focus_in",
+   "category": "AFX_Util",
+   "name": "Spotlight_Focus_In",
+   "desc": "Animated spotlight: everything outside a soft ellipse darkens to 42% over 15 frames, pulling the eye to the subject. Move/resize the ellipse in the Alpha shapes effect.",
+   "frames": 15,
+   "effects": [
+    "mask_start-frei0r.alphaspot",
+    "brightness",
+    "mask_apply"
+   ],
+   "tags": [],
+   "bp": "3.2 Spotlight Vignette Focus",
+   "audio": false,
+   "id": "ouzfx_afx_util_spotlight_focus_in",
+   "display": "OuzFX AFX_Util_Spotlight_Focus_In"
+  },
+  {
+   "slug": "afx_util_spotlight_focus_out",
+   "category": "AFX_Util",
+   "name": "Spotlight_Focus_Out",
+   "desc": "Releases the spotlight: the darkened edges brighten back to normal over 15 frames.",
+   "frames": 15,
+   "effects": [
+    "mask_start-frei0r.alphaspot",
+    "brightness",
+    "mask_apply"
+   ],
+   "tags": [],
+   "bp": "3.2 Spotlight Vignette Focus",
+   "audio": false,
+   "id": "ouzfx_afx_util_spotlight_focus_out",
+   "display": "OuzFX AFX_Util_Spotlight_Focus_Out"
+  },
+  {
+   "slug": "afx_util_highlighter_wipe",
+   "category": "AFX_Util",
+   "name": "Highlighter_Wipe",
+   "desc": "Put it on a yellow Color clip above an article/PDF shot: a 45%-opacity marker band wipes on left-to-right in 12 frames. Move/resize the Transform rectangle over the line you want to highlight.",
+   "frames": 12,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.3 Highlighter Wipe",
+   "audio": false,
+   "id": "ouzfx_afx_util_highlighter_wipe",
+   "display": "OuzFX AFX_Util_Highlighter_Wipe"
+  },
+  {
+   "slug": "afx_util_split_screen_left",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Left",
+   "desc": "Crops the centre of the clip and places it in the left half. Put the partner clip on another track with Split_Screen_Right. ",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.4 Split-Screen Presets",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_left",
+   "display": "OuzFX AFX_Util_Split_Screen_Left"
+  },
+  {
+   "slug": "afx_util_split_screen_left_slide_in",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Left_Slide_In",
+   "desc": "Same as Split_Screen_Left, but the half slides in from the left edge (15 frames, cubic ease-out).",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.4 Split-Screen Presets",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_left_slide_in",
+   "display": "OuzFX AFX_Util_Split_Screen_Left_Slide_In"
+  },
+  {
+   "slug": "afx_util_split_screen_right",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Right",
+   "desc": "Crops the centre of the clip and places it in the right half. Put the partner clip on another track with Split_Screen_Left. ",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.4 Split-Screen Presets",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_right",
+   "display": "OuzFX AFX_Util_Split_Screen_Right"
+  },
+  {
+   "slug": "afx_util_split_screen_right_slide_in",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Right_Slide_In",
+   "desc": "Same as Split_Screen_Right, but the half slides in from the right edge (15 frames, cubic ease-out).",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.4 Split-Screen Presets",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_right_slide_in",
+   "display": "OuzFX AFX_Util_Split_Screen_Right_Slide_In"
+  },
+  {
+   "slug": "afx_util_split_screen_top",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Top",
+   "desc": "Crops the centre of the clip and places it in the top half. Put the partner clip on another track with Split_Screen_Bottom. Top/Bottom = stacked layout for vertical Shorts/Reels.",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.4 Split-Screen Presets",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_top",
+   "display": "OuzFX AFX_Util_Split_Screen_Top"
+  },
+  {
+   "slug": "afx_util_split_screen_top_slide_in",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Top_Slide_In",
+   "desc": "Same as Split_Screen_Top, but the half slides in from the top edge (15 frames, cubic ease-out).",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.4 Split-Screen Presets",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_top_slide_in",
+   "display": "OuzFX AFX_Util_Split_Screen_Top_Slide_In"
+  },
+  {
+   "slug": "afx_util_split_screen_bottom",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Bottom",
+   "desc": "Crops the centre of the clip and places it in the bottom half. Put the partner clip on another track with Split_Screen_Top. Top/Bottom = stacked layout for vertical Shorts/Reels.",
+   "frames": 0,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.4 Split-Screen Presets",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_bottom",
+   "display": "OuzFX AFX_Util_Split_Screen_Bottom"
+  },
+  {
+   "slug": "afx_util_split_screen_bottom_slide_in",
+   "category": "AFX_Util",
+   "name": "Split_Screen_Bottom_Slide_In",
+   "desc": "Same as Split_Screen_Bottom, but the half slides in from the bottom edge (15 frames, cubic ease-out).",
+   "frames": 15,
+   "effects": [
+    "qtcrop",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "3.4 Split-Screen Presets",
+   "audio": false,
+   "id": "ouzfx_afx_util_split_screen_bottom_slide_in",
+   "display": "OuzFX AFX_Util_Split_Screen_Bottom_Slide_In"
+  },
+  {
+   "slug": "afx_util_censor_pixelate_box",
+   "category": "AFX_Util",
+   "name": "Censor_Pixelate_Box",
+   "desc": "Mosaic-pixelates a rectangle in the middle of the frame. Move/resize/keyframe it in the Alpha shapes effect (Position/Size) to cover faces, usernames or private data.",
+   "frames": 0,
+   "effects": [
+    "mask_start-frei0r.alphaspot",
+    "frei0r.pixeliz0r",
+    "mask_apply"
+   ],
+   "tags": [],
+   "bp": "3.5 Censor / Redact Blur Box",
+   "audio": false,
+   "id": "ouzfx_afx_util_censor_pixelate_box",
+   "display": "OuzFX AFX_Util_Censor_Pixelate_Box"
+  },
+  {
+   "slug": "afx_util_censor_blur_box",
+   "category": "AFX_Util",
+   "name": "Censor_Blur_Box",
+   "desc": "Heavy Gaussian blur inside a soft-edged rectangle – a less blocky redaction. Move/resize it in the Alpha shapes effect.",
+   "frames": 0,
+   "effects": [
+    "mask_start-frei0r.alphaspot",
+    "avfilter.gblur",
+    "mask_apply"
+   ],
+   "tags": [],
+   "bp": "3.5 Censor / Redact Blur Box",
+   "audio": false,
+   "id": "ouzfx_afx_util_censor_blur_box",
+   "display": "OuzFX AFX_Util_Censor_Blur_Box"
+  },
+  {
+   "slug": "afx_util_drop_shadow_polish",
+   "category": "AFX_Util",
+   "name": "Drop_Shadow_Polish",
+   "desc": "Static two-layer shadow for text / PNG cut-outs: a crisp, slightly offset contact shadow plus a soft ambient one. No keyframes, so it never fights your animation. Needs Kdenlive 25.04+.",
+   "frames": 0,
+   "effects": [
+    "dropshadow",
+    "dropshadow"
+   ],
+   "tags": [],
+   "bp": "5.5 Drop Shadow Polish",
+   "audio": false,
+   "id": "ouzfx_afx_util_drop_shadow_polish",
+   "display": "OuzFX AFX_Util_Drop_Shadow_Polish"
+  },
+  {
+   "slug": "afx_style_record_scratch_freeze",
+   "category": "AFX_Style",
+   "name": "Record_Scratch_Freeze",
+   "desc": "Instant high-contrast black & white with a slow 100→110% push over 3 s – the 'yep, that's me' record-scratch moment. Combine with a freeze frame (Timeline ▸ Insert Freeze Frame).",
+   "frames": 75,
+   "effects": [
+    "greyscale",
+    "frei0r.contrast0r",
+    "qtblend"
+   ],
+   "tags": [],
+   "bp": "4.3 Dramatic Desaturate ('Record Scratch' Freeze)",
+   "audio": false,
+   "id": "ouzfx_afx_style_record_scratch_freeze",
+   "display": "OuzFX AFX_Style_Record_Scratch_Freeze"
+  },
+  {
+   "slug": "afx_style_glitch_flicker",
+   "category": "AFX_Style",
+   "name": "Glitch_Flicker",
+   "desc": "12 frames of erratic opacity drops with horizontal displacement and light block distortion – a signal-dropout flicker (use on footage over a background).",
+   "frames": 12,
+   "effects": [
+    "qtblend",
+    "frei0r.glitch0r"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "4.6 Glitch Flicker",
+   "audio": false,
+   "id": "ouzfx_afx_style_glitch_flicker",
+   "display": "OuzFX AFX_Style_Glitch_Flicker"
+  },
+  {
+   "slug": "afx_style_damage_pulse_red",
+   "category": "AFX_Style",
+   "name": "Damage_Pulse_Red",
+   "desc": "Gaming 'taking damage' / warning: the screen edges pulse red three times (36 frames) while the centre stays clean. Edge ellipse is adjustable in the Alpha shapes effect.",
+   "frames": 36,
+   "effects": [
+    "mask_start-frei0r.alphaspot",
+    "frei0r.colorize",
+    "mask_apply"
+   ],
+   "tags": [
+    "fast"
+   ],
+   "bp": "4.7 Red Alert / Damage Pulse",
+   "audio": false,
+   "id": "ouzfx_afx_style_damage_pulse_red",
+   "display": "OuzFX AFX_Style_Damage_Pulse_Red"
+  },
+  {
+   "slug": "afx_audio_underwater_muffled",
+   "category": "AFX_Audio",
+   "name": "Underwater_Muffled",
+   "desc": "Steep 24 dB/oct low-pass at 450 Hz (two stacked filters) with a little low-end warmth – audio behind a closed door, under water or in the next room.",
+   "frames": 0,
+   "effects": [
+    "avfilter.lowpass",
+    "avfilter.lowpass",
+    "avfilter.equalizer"
+   ],
+   "tags": [],
+   "bp": "6.1 Underwater / Muffled Room",
+   "audio": true,
+   "id": "ouzfx_afx_audio_underwater_muffled",
+   "display": "OuzFX AFX_Audio_Underwater_Muffled"
+  },
+  {
+   "slug": "afx_audio_telephone_voice",
+   "category": "AFX_Audio",
+   "name": "Telephone_Voice",
+   "desc": "Clean phone line: 400–3200 Hz band-pass (24 dB/oct top), a presence bump and limiter-squash compression.",
+   "frames": 0,
+   "effects": [
+    "avfilter.highpass",
+    "avfilter.lowpass",
+    "avfilter.lowpass",
+    "avfilter.equalizer",
+    "avfilter.alimiter"
+   ],
+   "tags": [],
+   "bp": "6.2 Walkie-Talkie / Telephone Voice",
+   "audio": true,
+   "id": "ouzfx_afx_audio_telephone_voice",
+   "display": "OuzFX AFX_Audio_Telephone_Voice"
+  },
+  {
+   "slug": "afx_audio_walkie_talkie_radio",
+   "category": "AFX_Audio",
+   "name": "Walkie_Talkie_Radio",
+   "desc": "Narrow 500–2600 Hz radio band with light bit-crush overdrive and hard limiter compression – walkie-talkie / police radio callouts.",
+   "frames": 0,
+   "effects": [
+    "avfilter.highpass",
+    "avfilter.lowpass",
+    "avfilter.lowpass",
+    "avfilter.acrusher",
+    "avfilter.alimiter"
+   ],
+   "tags": [],
+   "bp": "6.2 Walkie-Talkie / Telephone Voice",
+   "audio": true,
+   "id": "ouzfx_afx_audio_walkie_talkie_radio",
+   "display": "OuzFX AFX_Audio_Walkie_Talkie_Radio"
+  },
+  {
+   "slug": "afx_audio_hall_echo_reverb",
+   "category": "AFX_Audio",
+   "name": "Hall_Echo_Reverb",
+   "desc": "Spacious multi-tap hall echo: three cascaded delays (≈60, 260 and 295 ms → taps up to ~0.6 s) with a safety limiter. Ominous moments, inner monologue, punchlines. Lower the 'wet' values for a subtler room.",
+   "frames": 0,
+   "effects": [
+    "avfilter.compensationdelay",
+    "avfilter.compensationdelay",
+    "avfilter.compensationdelay",
+    "avfilter.lowpass",
+    "avfilter.alimiter"
+   ],
+   "tags": [],
+   "bp": "6.3 Dramatic Echo / Hall Reverb",
+   "audio": true,
+   "id": "ouzfx_afx_audio_hall_echo_reverb",
+   "display": "OuzFX AFX_Audio_Hall_Echo_Reverb"
+  },
+  {
+   "slug": "afx_audio_voiceover_quick_polish",
+   "category": "AFX_Audio",
+   "name": "Voiceover_Quick_Polish",
+   "desc": "Starter vocal chain: 80 Hz high-pass (mic rumble), gentle loudness leveling towards -18 LUFS (Kdenlive's Dynamic Loudness, ±6 dB) and a -1 dBFS safety limiter.",
+   "frames": 0,
+   "effects": [
+    "avfilter.highpass",
+    "dynamic_loudness",
+    "avfilter.alimiter"
+   ],
+   "tags": [],
+   "bp": "6.4 Voiceover Quick Polish",
+   "audio": true,
+   "id": "ouzfx_afx_audio_voiceover_quick_polish",
+   "display": "OuzFX AFX_Audio_Voiceover_Quick_Polish"
   }
  ],
  "compositions": [
@@ -1350,6 +2357,57 @@
    "values_1080p": {
     "resource": "@LUMADIR@/HD/ouzfx/ouzfx_radial.png",
     "softness": "0.1"
+   }
+  },
+  {
+   "slug": "afx_cam_ken_burns_pan_right_to_left",
+   "category": "AFX_Cam",
+   "name": "Ken_Burns_Pan_Right_to_Left",
+   "desc": "Pans across a 120% image from right to left over the whole composition length (companion of Pan L→R).",
+   "tag": "affine",
+   "values": {
+    "rect": "0c=-20% -10% 120% 120% 100%;-1=0% -10% 120% 120% 100%"
+   },
+   "tags": [],
+   "bp": "2.2 Smooth Ken Burns Drift",
+   "id": "ouzfx_afx_cam_ken_burns_pan_right_to_left",
+   "display": "OuzFX AFX_Cam_Ken_Burns_Pan_Right_to_Left",
+   "values_1080p": {
+    "rect": "0c=-384 -108 2304 1296 1;-1=0 -108 2304 1296 1"
+   }
+  },
+  {
+   "slug": "afx_cam_ken_burns_pan_up",
+   "category": "AFX_Cam",
+   "name": "Ken_Burns_Pan_Up",
+   "desc": "Tilts up across a 120% image (bottom → top) over the composition length – tall photos, buildings.",
+   "tag": "affine",
+   "values": {
+    "rect": "0c=-10% -20% 120% 120% 100%;-1=-10% 0% 120% 120% 100%"
+   },
+   "tags": [],
+   "bp": "2.2 Smooth Ken Burns Drift",
+   "id": "ouzfx_afx_cam_ken_burns_pan_up",
+   "display": "OuzFX AFX_Cam_Ken_Burns_Pan_Up",
+   "values_1080p": {
+    "rect": "0c=-192 -216 2304 1296 1;-1=-192 0 2304 1296 1"
+   }
+  },
+  {
+   "slug": "afx_cam_ken_burns_pan_down",
+   "category": "AFX_Cam",
+   "name": "Ken_Burns_Pan_Down",
+   "desc": "Tilts down across a 120% image (top → bottom) over the composition length.",
+   "tag": "affine",
+   "values": {
+    "rect": "0c=-10% 0% 120% 120% 100%;-1=-10% -20% 120% 120% 100%"
+   },
+   "tags": [],
+   "bp": "2.2 Smooth Ken Burns Drift",
+   "id": "ouzfx_afx_cam_ken_burns_pan_down",
+   "display": "OuzFX AFX_Cam_Ken_Burns_Pan_Down",
+   "values_1080p": {
+    "rect": "0c=-192 0 2304 1296 1;-1=-192 -216 2304 1296 1"
    }
   }
  ],

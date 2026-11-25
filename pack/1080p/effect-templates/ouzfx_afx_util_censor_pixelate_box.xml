@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_util_censor_pixelate_box" parentIn="0">
+    <name>OuzFX AFX_Util_Censor_Pixelate_Box</name>
+    <description>Mosaic-pixelates a rectangle in the middle of the frame. Move/resize/keyframe it in the Alpha shapes effect (Position/Size) to cover faces, usernames or private data.</description>
+    <effect id="mask_start-frei0r.alphaspot">
+        <property name="filter.Shape">0</property>
+        <property name="filter.Position X">0=0.5</property>
+        <property name="filter.Position Y">0=0.5</property>
+        <property name="filter.Size X">0=0.22</property>
+        <property name="filter.Size Y">0=0.25</property>
+        <property name="filter.Tilt">0=0.5</property>
+        <property name="filter.Transition width">0=0</property>
+        <property name="filter.Min">0=0</property>
+        <property name="filter.Max">0=1</property>
+        <property name="filter.Operation">0</property>
+    </effect>
+    <effect id="frei0r.pixeliz0r">
+        <property name="0">0=0.025</property>
+        <property name="1">0=0.045</property>
+        <property name="2">0</property>
+        <property name="BlockSizeX">0=0.025</property>
+        <property name="BlockSizeY">0=0.045</property>
+    </effect>
+    <effect id="mask_apply"/>
+</effectgroup>

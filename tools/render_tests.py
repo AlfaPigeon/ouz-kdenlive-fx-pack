@@ -37,13 +37,19 @@ def props(d):
     return "".join(f'<property name="{escape(k)}">{escape(str(v))}</property>' for k, v in d.items())
 
 
-def mlt_for_group(xmlpath, length, fg):
+def mlt_for_group(xmlpath, length, fg, bg=MEDIA + "/bg.png"):
     root = ET.parse(xmlpath).getroot()
     filters = ""
     for e in root.findall("effect"):
         d = {p.get("name"): (p.text or "") for p in e.findall("property")}
-        filters += f'<filter><property name="mlt_service">{e.get("id")}</property>{props(d)}</filter>'
-    return (f'<mlt>{PROFILE}{producer("bg", MEDIA + "/bg.png", length)}</producer>'
+        if e.get("id") == "qtblend":
+            d.setdefault("rotate_center", "1")  # Kdenlive default (rotate around the rect centre)
+        if e.get("id") == "mask_apply":
+            d.setdefault("transition", "qtblend")  # fixed parameter Kdenlive adds
+        if e.get("id", "").startswith("mask_start-"):
+            d["filter"] = e.get("id").split("-", 1)[1]
+        filters += f'<filter><property name="mlt_service">{e.get("id").split("-")[0]}</property>{props(d)}</filter>'
+    return (f'<mlt>{PROFILE}{producer("bg", bg, length)}</producer>'
             f'{producer("fg", fg, length)}{filters}</producer>'
             f'<tractor id="t" in="0" out="{length - 1}"><multitrack><track producer="bg"/><track producer="fg"/></multitrack>'
             f'<transition><property name="mlt_service">qtblend</property><property name="a_track">0</property>'
@@ -90,8 +96,15 @@ def main(argv):
     # baseline for "did anything change" checks
     with tempfile.TemporaryDirectory() as td:
         base = {}
-        for name, img in [("a", MEDIA + "/a.png"), ("screen", MEDIA + "/screen.png")]:
-            xml = (f'<mlt>{PROFILE}{producer("bg", MEDIA + "/bg.png", 1)}</producer>{producer("fg", img, 1)}</producer>'
+        light = MEDIA + "/light.png"
+        if not os.path.exists(light):
+            Image.new("RGB", (W, H), (208, 208, 212)).save(light)
+        for name in ("a", "screen", "sticker", "title", "yellow", "sticker_light"):
+            img = MEDIA + f"/{name.replace('_light', '')}.png"
+            bgimg = light if name.endswith("_light") else MEDIA + "/bg.png"
+            if name == "yellow" and not os.path.exists(img):
+                Image.new("RGB", (W, H), (255, 214, 0)).save(img)
+            xml = (f'<mlt>{PROFILE}{producer("bg", bgimg, 1)}</producer>{producer("fg", img, 1)}</producer>'
                    f'<tractor id="t" in="0" out="0"><multitrack><track producer="bg"/><track producer="fg"/></multitrack>'
                    f'<transition><property name="mlt_service">qtblend</property><property name="a_track">0</property>'
                    f'<property name="b_track">1</property><property name="always_active">1</property></transition></tractor></mlt>')
@@ -126,12 +139,24 @@ def main(argv):
     for item in cat["effects"]:
         if only and item["slug"] not in only and item["id"] not in only:
             continue
+        if item.get("audio"):
+            continue  # tested by tools/audio_tests.py
         frames = item["frames"]
         length = 1 if frames == 0 else min(max(frames + 12, 30), 90)
-        fg = MEDIA + ("/screen.png" if item["category"] == "Perspective Screen" else "/a.png")
+        fg = MEDIA + ("/screen.png" if item["category"] == "Perspective Screen" or "Callout" in item["name"] else "/a.png")
+        if item["category"] == "Text & Titles" or item["name"].startswith("Text_"):
+            fg = MEDIA + "/title.png"
+        if any(k in item["name"] for k in ("Idle_Float", "Hinge", "Pendulum", "Drop_Shadow", "Card_3D", "Overshoot")):
+            fg = MEDIA + "/sticker.png"
+        if "Highlighter" in item["name"]:
+            fg = MEDIA + "/yellow.png"
+            if not os.path.exists(fg):
+                Image.new("RGB", (W, H), (255, 214, 0)).save(fg)
         xmlpath = os.path.join(ROOT, "pack", "1080p", "effect-templates", item["id"] + ".xml")
-        check("effect", item, mlt_for_group(xmlpath, length, fg), length,
-              "screen" if "screen" in fg else "a")
+        if "Drop_Shadow" in item["name"]:  # a shadow is only visible on a light background
+            check("effect", item, mlt_for_group(xmlpath, length, fg, MEDIA + "/light.png"), length, "sticker_light")
+        else:
+            check("effect", item, mlt_for_group(xmlpath, length, fg), length, os.path.basename(fg)[:-4])
     for item in cat["compositions"]:
         if only and item["slug"] not in only and item["id"] not in only:
             continue

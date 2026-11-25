@@ -3,7 +3,7 @@
     <name>OuzFX Fast · Freeze-Frame Pop</name>
     <description>Pair with Kdenlive's freeze (Timeline ▸ Insert Freeze Frame / Freeze effect): saturation boost, slight zoom and white flash so the still frame 'pops'.</description>
     <effect id="frei0r.saturat0r">
-        <property name="Saturation">0.25</property>
+        <property name="Saturation">0=0.25</property>
     </effect>
     <effect id="brightness">
         <property name="level">0=2.4;6e=1.05</property>

@@ -3,10 +3,10 @@
     <name>OuzFX Screen 3D · Swing to Front</name>
     <description>Starts tilted left and swings to a flat, centred panel in 25 frames – nice opener for a demo.</description>
     <effect id="qtcrop">
-        <property name="rect">0 0 3840 2160</property>
-        <property name="radius">0.035</property>
+        <property name="rect">0=0 0 3840 2160</property>
+        <property name="radius">0=0.035</property>
         <property name="circle">0</property>
-        <property name="color">0x00000000</property>
+        <property name="color">0=0x00000000</property>
     </effect>
     <effect id="frei0r.c0rners">
         <property name="0">0i=0.3533;25=0.3633</property>
@@ -26,9 +26,9 @@
         <property name="14">0</property>
     </effect>
     <effect id="dropshadow">
-        <property name="radius">25</property>
-        <property name="x">14</property>
-        <property name="y">22</property>
-        <property name="color">#a0000000</property>
+        <property name="radius">0=25</property>
+        <property name="x">0=14</property>
+        <property name="y">0=22</property>
+        <property name="color">0=#a0000000</property>
     </effect>
 </effectgroup>

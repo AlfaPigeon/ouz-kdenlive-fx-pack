@@ -10,7 +10,12 @@ res = {r["id"]: r for r in json.load(open(os.path.join(ROOT, "docs", "test-resul
 VERSION = open(os.path.join(ROOT, "VERSION")).read().strip()
 
 ORDER = ["Fast-Paced", "Camera Shake", "Dynamic Zoom", "Screen Zoom", "Animations", "Perspective Screen",
-         "Transitions", "Glitch & Stylize", "Text & Titles", "Overlays", "Luma Wipes"]
+         "Transitions", "Glitch & Stylize", "Text & Titles", "Overlays", "Luma Wipes",
+         "AFX_Move", "AFX_Cam", "AFX_Util", "AFX_Style", "AFX_Audio"]
+AFX_TITLES = {"AFX_Move": "AFX_Move · object & text movement (v1.1)", "AFX_Cam": "AFX_Cam · camera & framing (v1.1)",
+              "AFX_Util": "AFX_Util · focus, callout & explainer utilities (v1.1)",
+              "AFX_Style": "AFX_Style · stylistic accents (v1.1)", "AFX_Audio": "AFX_Audio · audio effect templates (v1.1)"}
+SFX = json.load(open(os.path.join(ROOT, "sfx", "sfx.json")))
 
 
 def dur(f):
@@ -24,11 +29,15 @@ def table(items, kind):
         prev = f'<img src="docs/previews/{r["preview"]}" width="200">' if r.get("preview") else ""
         flag = " ⚡" if "fast" in it.get("tags", []) else ""
         length = dur(it["frames"]) if kind == "effect" else "stretches"
+        if it.get("audio"):
+            prev, length = "🔊 audio", "static"
         rows.append(f'| {prev} | **{it["display"]}**{flag}<br><sub>`{it["id"]}` · {"effect template" if kind == "effect" else "composition"}</sub> | {it["desc"]} | {length} |')
     return "\n".join(rows)
 
 
 n_eff, n_comp, n_luma = len(cat["effects"]), len(cat["compositions"]), len(cat["lumas"])
+n_audio = sum(1 for e in cat["effects"] if e.get("audio"))
+n_afx = sum(1 for e in cat["effects"] + cat["compositions"] if e["id"].startswith("ouzfx_afx_"))
 total = n_eff + n_comp + n_luma
 passed = sum(1 for r in res.values() if r["ok"])
 
@@ -36,7 +45,12 @@ out = [f"""# OuzFX · Kdenlive Effects & Transitions Pack
 
 **{total} free, Kdenlive-native presets for fast-paced YouTube / Shorts editing:** camera shake, punch-in & boom zooms,
 screen-recording zooms, 3D perspective screen share, slide / pop / spin / whip animations, glitch & RGB-split hits,
-flash frames, film burn, VHS, cinematic bars, text pops and {n_luma} custom luma wipes.
+flash frames, film burn, VHS, cinematic bars, text pops, explainer tools (spotlight, split screen, censor box, highlighter),
+{n_audio} voice/audio presets, {len(SFX)} original sound effects (risers, pops, whooshes, impacts) and {n_luma} custom luma wipes.
+
+> **New in v1.1:** {n_afx} `OuzFX AFX_*` presets from the expansion blueprint (only the items that were not already in the
+> pack – see [docs/BLUEPRINT_COVERAGE.md](docs/BLUEPRINT_COVERAGE.md)), {n_audio} audio templates, {len(SFX)} sound effects
+> and a fix that makes static values of v1.0 presets load correctly in Kdenlive. See [CHANGELOG.md](CHANGELOG.md).
 
 Made for the Ouz Labs YouTube channel. MIT licensed, works with stock Kdenlive (nothing to compile) and installs like any
 Kdenlive add-on: plain XML + images dropped into Kdenlive's own data folders.
@@ -44,11 +58,14 @@ Kdenlive add-on: plain XML + images dropped into Kdenlive's own data folders.
 * **{n_eff} effect templates** – Kdenlive "effect groups", show up under **Effects ▸ Templates**
 * **{n_comp} compositions** – show up in the **Compositions** panel, keyframes stretch to the composition length
 * **{n_luma} luma wipes** (HD + vertical) – appear in every Wipe / Luma composition and same-track mix
+  ({n_audio} of them are **audio** templates: telephone, walkie-talkie, underwater, hall echo, voice-over polish)
+* **{len(SFX)} sound effects** (48 kHz WAV) – appear in Kdenlive's **Library** panel under *OuzFX SFX*
 * 2 royalty-free overlay clips (light leak, film burn) for Screen/Add blending
-* Every preset is test-rendered with MLT `melt` ({passed}/{len(res)} passed) – the previews below are those renders – and the
+* Every visual preset is test-rendered with MLT `melt` ({passed}/{len(res)} passed) – the previews below are those renders – and the
   pack was loaded and applied inside a real Kdenlive (24.12.3) session.
 
-Everything is prefixed **OuzFX** – type `OuzFX` in the Effects or Compositions search box to see the whole pack.
+Everything is prefixed **OuzFX** – type `OuzFX` in the Effects or Compositions search box to see the whole pack, or
+`AFX_` for the v1.1 additions (`AFX_Move_`, `AFX_Cam_`, `AFX_Util_`, `AFX_Style_`, `AFX_Audio_`).
 
 <img src="docs/screenshots/effects-panel.png" width="360"> <img src="docs/screenshots/compositions-panel.png" width="360">
 
@@ -112,11 +129,12 @@ Kdenlive via **Effects ▸ Download New Effects** / the Wipe method **Download**
 ## Requirements
 
 * **Kdenlive 24.08 or newer** (easing keyframe types such as back/elastic/bounce). Kdenlive 25.04+ recommended.
-* **Kdenlive 25.04+** for the *Perspective Screen* presets (they use the Drop Shadow effect added in 25.04;
-  older Kdenlive silently hides those six templates).
+* **Kdenlive 25.04+** for the *Perspective Screen* presets and `AFX_Util_Drop_Shadow_Polish` (they use the Drop Shadow
+  effect added in 25.04; older Kdenlive silently hides those templates).
 * Uses only effects that ship with Kdenlive: Transform (qtblend), Box Blur, Directional Blur, Gaussian Blur, Brightness,
   Crop/Rounded corners (qtcrop), Corners (frei0r), Drop Shadow, RGB Shift, Chroma Shift, Glitch0r, Scanlines, Grain,
-  Dust, Colorize, Glow, Saturation, Greyscale, Vignette. frei0r-based presets need the **frei0r-plugins** package, which
+  Dust, Colorize, Glow, Saturation, Greyscale, Vignette, Contrast, Pixelize, Alpha shapes (mask), and for audio: Low/High
+  pass, Equalizer, Bitcrusher, Compensation Delay, Dynamic Loudness, Limiter. frei0r-based presets need the **frei0r-plugins** package, which
   Kdenlive depends on in Arch (`frei0r-plugins`), Debian/Ubuntu, Flatpak and the AppImage/Windows builds.
 
 ## How to use
@@ -128,6 +146,9 @@ Kdenlive via **Effects ▸ Download New Effects** / the Wipe method **Download**
 * **Compositions** (Compositions panel, search `OuzFX`): put the clip on V2 above the clip it should reveal, then drag the
   composition onto the overlap. Their keyframes use `0=` / `-1=` so they always span the whole composition – make it
   6–12 frames for whips and zoom-throughs, seconds for Ken Burns.
+* **Audio templates** (`AFX_Audio_`): Effects ▸ Templates, drag onto an audio clip (or the audio part of an A/V clip).
+* **Sound effects**: open the **Library** panel (View ▸ Library) ▸ *OuzFX SFX* ▸ risers / pops / whooshes / impacts and
+  drag a file onto an audio track, or Project Bin ▸ **Add Clip** ▸ `<data>/ouzfx/sfx/`.
 * **Luma wipes**: any Wipe composition or same-track mix (select two adjacent clips ▸ `U`) ▸ *Wipe Method* ▸ `ouzfx_*`.
 * **Resolution**: Kdenlive's Transform widget only round-trips pixel rectangles (percentage rects are mis-read by the UI),
   so effect templates and compositions are generated per resolution – install the profile matching your project
@@ -166,8 +187,11 @@ for it in cat["compositions"]:
     by_cat.setdefault(it["category"], {"effect": [], "comp": []})["comp"].append(it)
 
 out.append("## The presets\n\n⚡ = part of the fast-paced kit\n")
+out.append("The v1.0 categories come first, the v1.1 `AFX_*` additions after the luma table.\n")
 for c in ORDER:
     if c not in by_cat:
+        continue
+    if c.startswith("AFX_"):
         continue
     g = by_cat[c]
     out.append(f"### {c}\n")
@@ -182,6 +206,26 @@ for l in cat["lumas"]:
     prev = f'<img src="docs/previews/{r["preview"]}" width="200">' if r.get("preview") else ""
     out.append(f"| {prev} | `{l['name']}.png` | {l['desc']} |")
 
+for c in ORDER:
+    if not c.startswith("AFX_") or c not in by_cat:
+        continue
+    g = by_cat[c]
+    out.append(f"\n### {AFX_TITLES[c]}\n")
+    if c == "AFX_Audio":
+        out.append("Built only from audio effects Kdenlive ships and does not hide (FFmpeg `aecho`/`acompressor` are on Kdenlive's "
+                   "exclusion list, so the echo uses Compensation Delay taps and the leveler uses Dynamic Loudness + Limiter). "
+                   "Each one is checked by `tools/audio_tests.py` (band energy / echo tail / peak level).\n")
+    if g["effect"]:
+        out.append(table(g["effect"], "effect") + "\n")
+    if g["comp"]:
+        out.append(table(g["comp"], "comp") + "\n")
+
+out.append("\n### Sound effects (`sfx/`)\n\nOriginal, synthesized by [`tools/make_sfx.py`](tools/make_sfx.py) (MIT like the rest of the pack – free to use in any video). "
+           "48 kHz 16-bit stereo, peak −1 dBFS, click-free fades. Installed to `<data>/ouzfx/sfx/` and `<data>/library/OuzFX SFX/` "
+           "(Kdenlive **Library** panel).\n\n<img src=\"docs/screenshots/library-sfx.png\" width=\"360\">\n\n| Group | File | Length | Sound |\n|---|---|---|---|")
+for x in SFX:
+    out.append(f"| {x['group']} | `{os.path.basename(x['file'])}` | {x['seconds']:.2f} s | {x['desc']} |")
+
 out.append(f"""
 
 ### Overlay clips (`overlays/`, installed to `<data>/ouzfx/overlays/`)
@@ -193,12 +237,14 @@ out.append(f"""
 
 ## Building & testing
 
-Everything is generated from [`tools/presets.py`](tools/presets.py):
+Everything is generated from [`tools/presets.py`](tools/presets.py) (v1.0) and [`tools/presets_afx.py`](tools/presets_afx.py) (v1.1 AFX):
 
 ```bash
 python3 tools/build.py                    # writes pack/ (3 resolutions), lumas, catalog
 python3 tools/validate.py /usr/share/kdenlive   # schema check vs. Kdenlive's own effect definitions
 python3 tools/render_tests.py             # melt render of every preset + previews + docs/test-results.json
+python3 tools/make_sfx.py && python3 tools/audio_tests.py   # sound effects + audio preset measurements
+python3 tools/blueprint.py                # blueprint coverage audit -> docs/BLUEPRINT_COVERAGE.md
 python3 tools/gen_readme.py && tools/package.sh   # README + release archives in dist/
 ```
 
@@ -206,11 +252,16 @@ Validation done for v{VERSION}:
 
 * `xmllint` + `validate.py` against Kdenlive **git master** effect definitions (all ids/params exist) and against Debian's
   Kdenlive 24.12 data (all OK except Drop Shadow, which is 25.04+ – documented above).
-* Every effect template, composition and luma rendered through MLT 7.30 `melt` at 1920×1080 (filters/transitions parse,
+* {n_audio} audio templates rendered through melt on a synthetic voice and measured (band attenuation, echo tail, peak);
+  all {len(SFX)} sound effects checked for 48 kHz / peak ≤ −1 dBFS / click-free edges – see `docs/audio-test-results.json`.
+* Every visual effect template, composition and luma rendered through MLT 7.30 `melt` at 1920×1080 (filters/transitions parse,
   no errors, and the picture measurably changes): **{passed}/{len(res)} passed** – see `docs/test-results.json`.
 * Loaded in a real **Kdenlive 24.12.3** session (Xvfb): all templates appear under *Effects ▸ Templates*, all compositions
   in the *Compositions* panel; applied *Anim · Slide In from Left* to a trimmed clip and *Zoom · Ken Burns Push-In* as a
   composition and checked keyframes/monitor output ([screenshot](docs/screenshots/slide-in-mid-frame.png)).
+  v1.1: the `AFX_*` templates (incl. all {n_audio} audio ones – [screenshot](docs/screenshots/audio-templates.png)) list in
+  the same session, the SFX show in the Library panel, and applied templates were saved to a project and re-checked
+  for intact keyframe values.
 * Keyframe/offset behaviour checked against Kdenlive's source (`EffectStackModel::fromXml`,
   `KeyframeModel::getAnimationStringWithOffset`, `KeyframeModelList::checkConsistency`, `EffectsRepository::parseCustomAssetFile`):
   all animated parameters of an effect share the same keyframe positions, so Kdenlive never has to "repair" them.

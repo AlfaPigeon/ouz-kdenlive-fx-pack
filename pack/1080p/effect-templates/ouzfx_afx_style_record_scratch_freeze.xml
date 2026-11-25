@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_style_record_scratch_freeze" parentIn="0">
+    <name>OuzFX AFX_Style_Record_Scratch_Freeze</name>
+    <description>Instant high-contrast black &amp; white with a slow 100→110% push over 3 s – the 'yep, that's me' record-scratch moment. Combine with a freeze frame (Timeline ▸ Insert Freeze Frame).</description>
+    <effect id="greyscale"/>
+    <effect id="frei0r.contrast0r">
+        <property name="Contrast">0=0.72</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0c=0 0 1920 1080 1;75=-96 -54 2112 1188 1</property>
+        <property name="rotation">0=0;75=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;75=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

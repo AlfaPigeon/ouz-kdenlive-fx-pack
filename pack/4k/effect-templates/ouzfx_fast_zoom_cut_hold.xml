@@ -3,10 +3,11 @@
     <name>OuzFX Fast · Zoom Cut (Hard 130%)</name>
     <description>Instant 130% reframe, no animation – the MrBeast wide→close 'zoom cut'.</description>
     <effect id="qtblend">
-        <property name="rect">-576 -324 4992 2808 1</property>
-        <property name="rotation">0</property>
+        <property name="rect">0=-576 -324 4992 2808 1</property>
+        <property name="rotation">0=0</property>
         <property name="compositing">0</property>
         <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0</property>
     </effect>
     <effect id="boxblur">
         <property name="blur">0=0</property>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_audio_hall_echo_reverb" parentIn="0" type="customAudio">
+    <name>OuzFX AFX_Audio_Hall_Echo_Reverb</name>
+    <description>Spacious multi-tap hall echo: three cascaded delays (≈60, 260 and 295 ms → taps up to ~0.6 s) with a safety limiter. Ominous moments, inner monologue, punchlines. Lower the 'wet' values for a subtler room.</description>
+    <effect id="avfilter.compensationdelay">
+        <property name="av.mm">0</property>
+        <property name="av.cm">0</property>
+        <property name="av.m">20</property>
+        <property name="av.dry">1</property>
+        <property name="av.wet">0.55</property>
+        <property name="av.temp">20</property>
+    </effect>
+    <effect id="avfilter.compensationdelay">
+        <property name="av.mm">0</property>
+        <property name="av.cm">0</property>
+        <property name="av.m">90</property>
+        <property name="av.dry">1</property>
+        <property name="av.wet">0.5</property>
+        <property name="av.temp">20</property>
+    </effect>
+    <effect id="avfilter.compensationdelay">
+        <property name="av.mm">0</property>
+        <property name="av.cm">0</property>
+        <property name="av.m">100</property>
+        <property name="av.dry">1</property>
+        <property name="av.wet">0.45</property>
+        <property name="av.temp">20</property>
+    </effect>
+    <effect id="avfilter.lowpass">
+        <property name="av.f">0=6000</property>
+        <property name="av.t">q</property>
+        <property name="av.w">0=0.707</property>
+        <property name="av.p">2</property>
+        <property name="av.m">0=1</property>
+    </effect>
+    <effect id="avfilter.alimiter">
+        <property name="av.level_in">1</property>
+        <property name="av.level_out">1</property>
+        <property name="av.limit">0.89</property>
+        <property name="av.attack">2</property>
+        <property name="av.release">40</property>
+        <property name="av.asc">0</property>
+        <property name="av.level">0</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_idle_float_gentle" parentIn="0">
+    <name>OuzFX AFX_Move_Idle_Float_Gentle</name>
+    <description>Continuous hover for static PNGs/screenshots: ±1% vertical bob with ±1.2° sway (sine, 200 frames ≈ 8 s, loops seamlessly – extend by copying keyframes).</description>
+    <effect id="qtblend">
+        <property name="rect">0~=0 0 1080 1920 1;25~=0 -19 1080 1920 1;50~=0 -0 1080 1920 1;75~=0 19 1080 1920 1;100~=0 0 1080 1920 1;125~=0 -19 1080 1920 1;150~=0 -0 1080 1920 1;175~=0 19 1080 1920 1;200~=0 0 1080 1920 1</property>
+        <property name="rotation">0~=1.20;25~=0.00;50~=-1.20;75~=-0.00;100~=1.20;125~=0.00;150~=-1.20;175~=-0.00;200~=1.20</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;25=0.5 0.5 0 0;50=0.5 0.5 0 0;75=0.5 0.5 0 0;100=0.5 0.5 0 0;125=0.5 0.5 0 0;150=0.5 0.5 0 0;175=0.5 0.5 0 0;200=0.5 0.5 0 0</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_util_censor_blur_box" parentIn="0">
+    <name>OuzFX AFX_Util_Censor_Blur_Box</name>
+    <description>Heavy Gaussian blur inside a soft-edged rectangle – a less blocky redaction. Move/resize it in the Alpha shapes effect.</description>
+    <effect id="mask_start-frei0r.alphaspot">
+        <property name="filter.Shape">0</property>
+        <property name="filter.Position X">0=0.5</property>
+        <property name="filter.Position Y">0=0.5</property>
+        <property name="filter.Size X">0=0.22</property>
+        <property name="filter.Size Y">0=0.25</property>
+        <property name="filter.Tilt">0=0.5</property>
+        <property name="filter.Transition width">0=0.02</property>
+        <property name="filter.Min">0=0</property>
+        <property name="filter.Max">0=1</property>
+        <property name="filter.Operation">0</property>
+    </effect>
+    <effect id="avfilter.gblur">
+        <property name="av.sigma">0=40</property>
+        <property name="av.sigmaV">0=40</property>
+        <property name="av.steps">3</property>
+        <property name="av.planes">15</property>
+    </effect>
+    <effect id="mask_apply"/>
+</effectgroup>

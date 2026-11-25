@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_pip_snap_top_right" parentIn="0">
+    <name>OuzFX AFX_Move_PiP_Snap_Top_Right</name>
+    <description>Shrinks a full-screen clip to a 32% picture-in-picture and snaps it into the top-right corner with rounded edges (12 frames, cubic ease-out). For a border/shadow add 'OuzFX AFX_Util_Drop_Shadow_Polish' after it.</description>
+    <effect id="qtcrop">
+        <property name="rect">0=0 0 1080 1920;12=0 0 1080 1920</property>
+        <property name="radius">0h=0;12=0.08</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000;12=0x00000000</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0h=0 0 1080 1920 1;12=677 58 346 614 1</property>
+        <property name="rotation">0=0;12=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0;12=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

@@ -51,6 +51,10 @@ class P:
     def full(self):
         return f"0 0 {self.W} {self.H}"
 
+    def full_part(self, x, y, w, h):
+        """Rect from frame fractions -> 'x y w h' pixels (for crops / masks)."""
+        return f"{x * self.W:.0f} {y * self.H:.0f} {w * self.W:.0f} {h * self.H:.0f}"
+
 
 def kf(*keys):
     """kf((0,'v'), (10,'c','v2')...) -> '0=v;10c=v2' ; middle item = type."""

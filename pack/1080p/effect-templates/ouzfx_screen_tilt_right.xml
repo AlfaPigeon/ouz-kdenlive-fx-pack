@@ -3,32 +3,32 @@
     <name>OuzFX Screen 3D · Tilt Right</name>
     <description>Mirror of Tilt Left – panel facing right.</description>
     <effect id="qtcrop">
-        <property name="rect">0 0 1920 1080</property>
-        <property name="radius">0.035</property>
+        <property name="rect">0=0 0 1920 1080</property>
+        <property name="radius">0=0.035</property>
         <property name="circle">0</property>
-        <property name="color">0x00000000</property>
+        <property name="color">0=0x00000000</property>
     </effect>
     <effect id="frei0r.c0rners">
-        <property name="0">0.3667</property>
-        <property name="1">0.3533</property>
-        <property name="2">0.6467</property>
-        <property name="3">0.3867</property>
-        <property name="4">0.6467</property>
-        <property name="5">0.6133</property>
-        <property name="6">0.3667</property>
-        <property name="7">0.6467</property>
+        <property name="0">0=0.3667</property>
+        <property name="1">0=0.3533</property>
+        <property name="2">0=0.6467</property>
+        <property name="3">0=0.3867</property>
+        <property name="4">0=0.6467</property>
+        <property name="5">0=0.6133</property>
+        <property name="6">0=0.3667</property>
+        <property name="7">0=0.6467</property>
         <property name="8">0</property>
-        <property name="9">0.5</property>
-        <property name="10">0.5</property>
+        <property name="9">0=0.5</property>
+        <property name="10">0=0.5</property>
         <property name="11">0.166</property>
         <property name="12">1</property>
-        <property name="13">0.01</property>
+        <property name="13">0=0.01</property>
         <property name="14">0</property>
     </effect>
     <effect id="dropshadow">
-        <property name="radius">25</property>
-        <property name="x">14</property>
-        <property name="y">22</property>
-        <property name="color">#a0000000</property>
+        <property name="radius">0=25</property>
+        <property name="x">0=14</property>
+        <property name="y">0=22</property>
+        <property name="color">0=#a0000000</property>
     </effect>
 </effectgroup>

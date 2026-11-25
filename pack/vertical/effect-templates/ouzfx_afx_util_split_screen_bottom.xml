@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_util_split_screen_bottom" parentIn="0">
+    <name>OuzFX AFX_Util_Split_Screen_Bottom</name>
+    <description>Crops the centre of the clip and places it in the bottom half. Put the partner clip on another track with Split_Screen_Top. Top/Bottom = stacked layout for vertical Shorts/Reels.</description>
+    <effect id="qtcrop">
+        <property name="rect">0=0 480 1080 960</property>
+        <property name="radius">0=0</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000</property>
+    </effect>
+    <effect id="qtblend">
+        <property name="rect">0=0 480 1080 1920 1</property>
+        <property name="rotation">0=0</property>
+        <property name="compositing">0</property>
+        <property name="distort">0</property>
+        <property name="rotate_anchor">0=0.5 0.5 0 0</property>
+    </effect>
+</effectgroup>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_move_text_typewriter_wipe_fast" parentIn="0">
+    <name>OuzFX AFX_Move_Text_Typewriter_Wipe_Fast</name>
+    <description>Linear left-to-right crop reveal that uncovers a line of text over 25 frames (1 s @25 fps). Put it on a title clip; drag the last keyframe to change the speed.</description>
+    <effect id="qtcrop">
+        <property name="rect">0=0 0 1 2160;25=0 0 3840 2160</property>
+        <property name="radius">0=0;25=0</property>
+        <property name="circle">0</property>
+        <property name="color">0=0x00000000;25=0x00000000</property>
+    </effect>
+    <effect id="boxblur">
+        <property name="blur">0=0</property>
+        <property name="hori">0=1</property>
+        <property name="vert">0=1</property>
+    </effect>
+</effectgroup>

@@ -3,15 +3,15 @@
     <name>OuzFX Stylize · VHS Tape</name>
     <description>Scanlines, chroma bleed, soft blur, noise and slightly washed colour – instant 90s tape.</description>
     <effect id="avfilter.chromashift">
-        <property name="av.cbh">6</property>
-        <property name="av.crh">-6</property>
-        <property name="av.cbv">0</property>
-        <property name="av.crv">0</property>
+        <property name="av.cbh">0=6</property>
+        <property name="av.crh">0=-6</property>
+        <property name="av.cbv">0=0</property>
+        <property name="av.crv">0=0</property>
         <property name="av.edge">0</property>
     </effect>
     <effect id="avfilter.gblur">
-        <property name="av.sigma">1.2</property>
-        <property name="av.sigmaV">0.4</property>
+        <property name="av.sigma">0=1.2</property>
+        <property name="av.sigmaV">0=0.4</property>
         <property name="av.steps">1</property>
         <property name="av.planes">15</property>
     </effect>

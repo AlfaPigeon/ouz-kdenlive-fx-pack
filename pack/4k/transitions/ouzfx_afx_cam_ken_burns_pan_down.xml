@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kpartgui>
+<transition tag="affine" id="ouzfx_afx_cam_ken_burns_pan_down">
+    <name>OuzFX AFX_Cam_Ken_Burns_Pan_Down</name>
+    <description>Tilts down across a 120% image (top → bottom) over the composition length.</description>
+    <author>Oğuz Kaan Özsoy (OuzFX)</author>
+    <parameter type="animatedrect" name="rect" default="0 0 %width %height 1" value="0c=-384 0 4608 2592 1;-1=-384 -432 4608 2592 1">
+        <name>Rectangle</name>
+    </parameter>
+    <parameter type="keyframe" name="rotate_x" max="1800" min="-1800" default="0" factor="10" notintimeline="1" value="0=0;-1=0">
+        <name>Rotate X</name>
+    </parameter>
+    <parameter type="keyframe" name="rotate_y" max="1800" min="-1800" default="0" factor="10" notintimeline="1" value="0=0;-1=0">
+        <name>Rotate Y</name>
+    </parameter>
+    <parameter type="keyframe" name="rotate_z" max="1800" min="-1800" default="0" factor="10" notintimeline="1" value="0=0;-1=0">
+        <name>Rotate Z</name>
+    </parameter>
+    <parameter type="bool" name="distort" default="0" min="0" max="1">
+        <name>Distort</name>
+    </parameter>
+    <parameter type="fixed" name="keyed" default="1" min="1" max="1"/>
+    <parameter type="bool" name="repeat_off" default="1" min="0" max="1">
+        <name>Disable repeat</name>
+    </parameter>
+    <parameter type="bool" name="mirror_off" default="1" min="0" max="1">
+        <name>Disable mirror</name>
+    </parameter>
+</transition>

@@ -67,8 +67,30 @@ def background():
     return im.filter(ImageFilter.GaussianBlur(4))
 
 
+def sticker():
+    """Transparent PNG with a card graphic (for PNG/sticker/shadow presets)."""
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    card = grad((255, 120, 60), (230, 40, 120), 760, 400).convert("RGBA")
+    mask = Image.new("L", (760, 400), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, 759, 399], 48, fill=255)
+    im.paste(card, ((W - 760) // 2, (H - 400) // 2), mask)
+    d = ImageDraw.Draw(im)
+    d.text((W / 2, H / 2 - 30), "NEW VIDEO", font=ImageFont.truetype(BOLD, 110), anchor="mm", fill="white")
+    d.text((W / 2, H / 2 + 90), "OuzFX sticker", font=ImageFont.truetype(BOLD, 50), anchor="mm", fill=(255, 235, 220))
+    return im
+
+
+def title():
+    """Transparent title card – white caption text like a Kdenlive title clip."""
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.text((W / 2, H / 2), "THIS CHANGES EVERYTHING", font=ImageFont.truetype(BOLD, 120), anchor="mm",
+           fill="white", stroke_width=7, stroke_fill="black")
+    return im
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
-    for n, fn in [("a", clip_a), ("b", clip_b), ("screen", screen), ("bg", background)]:
+    for n, fn in [("a", clip_a), ("b", clip_b), ("screen", screen), ("bg", background), ("sticker", sticker), ("title", title)]:
         fn().save(os.path.join(OUT, n + ".png"))
     print("ok")

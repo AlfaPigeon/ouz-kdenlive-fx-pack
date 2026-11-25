@@ -7,7 +7,8 @@ rm -rf dist && mkdir -p dist/kde-store
 NAME="kdenlive-fx-pack-v$VERSION"
 STAGE="$(mktemp -d)/$NAME"
 mkdir -p "$STAGE"
-cp -r pack overlays install.sh install.ps1 README.md LICENSE VERSION "$STAGE/"
+cp -r pack overlays sfx install.sh install.ps1 README.md CHANGELOG.md LICENSE VERSION "$STAGE/"
+rm -f "$STAGE/sfx/sfx.json"
 rm -f "$STAGE/pack/catalog.json"
 ( cd "$(dirname "$STAGE")" && tar czf "$OLDPWD/dist/$NAME.tar.gz" "$NAME" && python3 -c "import shutil,sys; shutil.make_archive(sys.argv[1], \"zip\", \".\", sys.argv[2])" "$OLDPWD/dist/$NAME" "$NAME" )
 # KDE Store / KNewStuff: files must sit at the archive ROOT, because Kdenlive's

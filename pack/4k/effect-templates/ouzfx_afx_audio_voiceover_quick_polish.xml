@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effectgroup id="ouzfx_afx_audio_voiceover_quick_polish" parentIn="0" type="customAudio">
+    <name>OuzFX AFX_Audio_Voiceover_Quick_Polish</name>
+    <description>Starter vocal chain: 80 Hz high-pass (mic rumble), gentle loudness leveling towards -18 LUFS (Kdenlive's Dynamic Loudness, ±6 dB) and a -1 dBFS safety limiter.</description>
+    <effect id="avfilter.highpass">
+        <property name="av.f">80</property>
+        <property name="av.t">q</property>
+        <property name="av.w">0.707</property>
+        <property name="av.p">2</property>
+        <property name="av.m">1</property>
+    </effect>
+    <effect id="dynamic_loudness">
+        <property name="target_loudness">-18</property>
+        <property name="window">2</property>
+        <property name="max_gain">6</property>
+        <property name="min_gain">-6</property>
+        <property name="max_rate">3</property>
+    </effect>
+    <effect id="avfilter.alimiter">
+        <property name="av.level_in">1.2</property>
+        <property name="av.level_out">1</property>
+        <property name="av.limit">0.89</property>
+        <property name="av.attack">2</property>
+        <property name="av.release">40</property>
+        <property name="av.asc">0</property>
+        <property name="av.level">0</property>
+    </effect>
+</effectgroup>

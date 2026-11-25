@@ -15,6 +15,7 @@ from PIL import Image
 
 sys.path.insert(0, os.path.dirname(__file__))
 import presets  # noqa: E402
+import presets_afx  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 PACK = os.path.join(ROOT, "pack")
@@ -30,7 +31,17 @@ CAT_SHORT = {
 
 
 def display_name(item):
+    if item["category"].startswith("AFX_"):
+        return f"{PREFIX} {item['category']}_{item['name']}"
     return f"{PREFIX} {CAT_SHORT[item['category']]} · {item['name']}"
+
+
+def all_effects(p):
+    return presets.effect_templates(p) + presets_afx.afx_templates(p)
+
+
+def all_compositions():
+    return presets.compositions() + presets_afx.afx_compositions()
 
 
 def effect_id(item):
@@ -57,31 +68,40 @@ def key_frames(value):
 
 
 def normalize(eid, props, where):
-    """Kdenlive requires every animated parameter of one effect to have keyframes at
-    the same positions (KeyframeModelList::checkConsistency, otherwise it shows
-    'Missing keyframe detected' and patches it). Expand constants accordingly."""
+    """Write every animated parameter as an MLT keyframe string.
+
+    * Kdenlive requires every animated parameter of one effect to have keyframes at the
+      same positions (KeyframeModelList::checkConsistency, otherwise it shows 'Missing
+      keyframe detected' and patches it) -> constants are expanded to the keyed frames.
+    * When a template is applied, EffectStackModel::fromXml passes animated values through
+      KeyframeModel::getAnimationStringWithOffset(), which returns an EMPTY string for a
+      plain value such as "0.5" (MLT creates no animation for it). So even static values
+      must be written as a single keyframe: "0=0.5"."""
     keyed = {k: key_frames(str(v)) for k, v in props.items() if key_frames(str(v))}
-    if not keyed:
-        return props
-    union = sorted({f for ks in keyed.values() for f in ks})
+    union = sorted({f for ks in keyed.values() for f in ks}) or [0]
     for k, ks in keyed.items():
         if sorted(ks) != union:
             raise ValueError(f"{where}: {eid}.{k} keyframes {ks} != {union}")
     out = dict(props)
-    for p in PARAMS[eid]:
+    for p in PARAMS.get(eid, []):
         if not p["animated"] or p["name"] in keyed:
             continue
         if p["name"].startswith("kdenlive:"):
-            raise ValueError(f"{where}: {eid} has fake param {p['name']} - do not keyframe this effect")
+            if union != [0]:
+                raise ValueError(f"{where}: {eid} has fake param {p['name']} - do not keyframe this effect")
+            continue
         val = props.get(p["name"], p["default"])
         if val is None or "%" in str(val):
+            if p["name"] not in props and union == [0]:
+                continue  # leave unset: Kdenlive fills in its own default
             raise ValueError(f"{where}: cannot expand {eid}.{p['name']}={val}")
         out[p["name"]] = ";".join(f"{f}={val}" for f in union)
     return out
 
 def effect_template_xml(item):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
-             f'<effectgroup id={quoteattr(effect_id(item))} parentIn="0">',
+             f'<effectgroup id={quoteattr(effect_id(item))} parentIn="0"'
+             + (' type="customAudio"' if item.get("audio") else "") + '>',
              f'    <name>{escape(display_name(item))}</name>',
              f'    <description>{escape(item["desc"])}</description>']
     for eid, props in item["effects"]:
@@ -258,11 +278,11 @@ def main():
         shutil.rmtree(PACK)
     catalog = {"effects": [], "compositions": [], "lumas": []}
     for prof, (w, h) in PROFILES.items():
-        for item in presets.effect_templates(presets.P(w, h)):
+        for item in all_effects(presets.P(w, h)):
             write(os.path.join(PACK, prof, "effect-templates", effect_id(item) + ".xml"), effect_template_xml(item))
             if prof == "1080p":
                 catalog["effects"].append(dict(item, id=effect_id(item), display=display_name(item)))
-    for item in presets.compositions():
+    for item in all_compositions():
         for prof, (w, h) in PROFILES.items():
             write(os.path.join(PACK, prof, "transitions", "ouzfx_" + item["slug"] + ".xml"), composition_xml(item, w, h))
         catalog["compositions"].append(dict(item, id="ouzfx_" + item["slug"], display=display_name(item),
